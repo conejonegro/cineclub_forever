@@ -15,6 +15,9 @@ function Testonav() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
+          <Link to="/peliculas" className="nav-link">
+              Peliculas
+            </Link>
           <Link to="/contacto" className="nav-link">
               Contacto
             </Link>

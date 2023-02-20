@@ -1,12 +1,15 @@
 import '../css/pelicula.css';
 import React from 'react';
-// import Col from 'react-bootstrap/Col';
+import { Link } from 'react-router-dom';
+
 
 function Pelicula({datos}) {
   return (
           <div className="main-container-pelicula col-md-6 col-xl-4 col-xxl-3" >
             <div className='movie-container'>
+              <Link to="/pelicula-detalle" >
                 <img src={datos.poster} alt={datos.nombre} className="poster " />
+              </Link>
                 <h2>{datos.nombre}</h2>
                 <p>{datos.sinopsis}</p>
               </div>

@@ -1,9 +1,9 @@
 import '../css/home-page.css';
 
-function HomePage() {
+function HomePage({titulo}) {
   return (
     <div className="home-page container">
-        <h1>Ultimas Peliculas Agregadass</h1>
+        <h1>{titulo}</h1>
     </div>
   );
 }
