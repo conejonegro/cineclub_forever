@@ -28,7 +28,7 @@ function Footer(){
                         <h2>Contactanos</h2>
                         <p>Tel:+52 33-2343-1091</p>
                         <p>Email: <a href="mailto:trlvdsgn@gmail.com">trlvdsgn@gmail.com</a></p>
-                        <p>Direccion: Lerdo de Tejada 2407 B, Col Arcos Vallarta guadalajara Jalisco Mexico</p>
+                        <p>Direccion: Lerdo de Tejada 2407 B, Col Arcos Vallarta guadalajara Jalisco Mexicos</p>
                     </Col>
                 </Row>
             </Container>
