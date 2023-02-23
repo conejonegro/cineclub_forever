@@ -76,5 +76,6 @@ root.render(
       <Footer />
     </BrowserRouter>
     <AppiCall />
+    {console.log('hola')}
   </React.StrictMode>
 );
