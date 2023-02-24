@@ -11,8 +11,8 @@ import Testonav from "./components/Testonav";
 import "./css/index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Contacto from "./pages/Contacto";
-import AppiCall from "./components/ApiCall";
-import PeliculaDEtalle from "./pages/pelicula-detalle";
+// import AppiCall from "./components/ApiCall";
+import PeliculaDetalle from "./pages/pelicula-detalle";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 let peliculasDataArraySliced = Object.values(peliculasData).slice(0, 4);
@@ -48,7 +48,7 @@ root.render(
                 <Row className="justify-content-between ">
                   <HomePage titulo="Todas las Peliculas" />
                   {peliculasDataArray.map((pelicula) => (
-                    <Pelicula key={pelicula.nombre} datos={pelicula} />
+                    <Pelicula key={pelicula.id} datos={pelicula} />
                   ))}
                 </Row>
               </Container>
@@ -59,13 +59,13 @@ root.render(
         <Route path="/contacto" element={<Contacto />} />
         {/* ROUTE PELICULA DETALLE */}
         <Route
-          path="/pelicula-detalle"
+          path="/pelicula-detalle/:peliculaId"
           element={
        
               <Container>
                 <Row className="justify-content-between ">
-                  
-                    <PeliculaDEtalle  datos={peliculasDataArray[1]}/>
+
+                  <PeliculaDetalle  datos={peliculasData}/>
                 
                 </Row>
               </Container>
@@ -75,7 +75,6 @@ root.render(
       </Routes>
       <Footer />
     </BrowserRouter>
-    <AppiCall />
-    {console.log('hola')}
+    {/* <AppiCall /> */}
   </React.StrictMode>
 );
