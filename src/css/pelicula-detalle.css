@@ -1,3 +1,35 @@
+.movie-info h1 {
+    font-weight: 700;
+    margin-right: .2em;
+    display: inline-block;
+}
+.movie-info {
+   color: white;
+}
+.titulo-pelicula span{
+    display: inline-block;
+}
+
 .poster img{
-    max-width: 300px;
+    width: 100%;
+    height: auto;
+}
+.poster{
+    background-color: peachpuff;
+    max-width: 303px;
+}
+.movie-info{
+    margin-left: 4%;
+}
+.main-movie-banner{
+    background-image: url('/Users/luisrosales/Desktop/Luis/cineclub-forever-github/cineclub_forever/src/img/el-padrino-background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.banner-support{
+    padding: 4%;
+    background: #0000007d;
+}
+.titulo-pelicula{
+   
 }
