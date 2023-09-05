@@ -2,7 +2,9 @@ footer{
     background-color: #342a39;
     color: #ffffff;
     padding: 2em;
-    margin-top: 2em;
+    width: 100%;
+    bottom: 0;
+    display: block;
 }
 .footer-logo img{
     max-width: 80px;

@@ -15,8 +15,8 @@
     height: auto;
 }
 .poster{
-    background-color: peachpuff;
     max-width: 303px;
+    width: 100%;
 }
 .movie-info{
     margin-left: 4%;
@@ -25,6 +25,8 @@
     background-image: url('/Users/luisrosales/Desktop/Luis/cineclub-forever-github/cineclub_forever/src/img/el-padrino-background.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: inset 1px 1px 79px 273px #5b5b5b4d;
+    background-position: center;
 }
 .banner-support{
     padding: 4%;
@@ -32,4 +34,11 @@
 }
 .titulo-pelicula{
    
+}
+video{
+    max-width: 800px;
+    display: flex;
+    margin: 32px auto;
+    margin-bottom: 0;
+    padding-bottom: 32px;
 }
