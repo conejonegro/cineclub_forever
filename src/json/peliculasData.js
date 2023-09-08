@@ -2,13 +2,15 @@ const peliculasData = [];
 
 peliculasData.push({
   id: 1,
-  slug: "el-padrino",
-  nombre: "El Padrino",
+  slug: "dressed-to-kill",
+  nombre: "Dressed to Kill",
   sinopsis:
-    "La familia Corleone es una de las más poderosas de Nueva York en 1945.",
+    "Una misteriosa mujer rubia mata a uno de los pacientes de un psiquiatra, y luego va en busca de la única testigo.",
   poster:
-    "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+    "https://streaming.trlvdsgn.website/wp-content/uploads/2023/08/dressed-to-till-poster.jpg",
   release_date: "mayo-2023",
+  video_url:
+    "https://streaming.trlvdsgn.website/wp-content/uploads/2023/08/dressed-to-kill.mp4",
 });
 peliculasData.push({
   id: 2,
@@ -19,6 +21,8 @@ peliculasData.push({
   poster:
     "https://m.media-amazon.com/images/M/MV5BZjZlZDlkYTktMmU1My00ZDBiLWFlNjEtYTBhNjVhOTM4ZjJjXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg",
   release_date: "mayo-2023",
+  video_url:
+    "https://streaming.trlvdsgn.website/wp-content/uploads/2023/07/enferma-de-mi.mp4%22",
 });
 peliculasData.push({
   id: 3,
@@ -29,6 +33,8 @@ peliculasData.push({
   poster:
     "https://m.media-amazon.com/images/M/MV5BM2NlZDI0ZDktNTg5OS00ZjQ1LWI4MDEtN2I0MDE5NWRiNzA4XkEyXkFqcGdeQXVyMTY5Nzc4MDY@._V1_FMjpg_UX1000_.jpg",
   release_date: "mayo-2023",
+  video_url:
+    "https://streaming.trlvdsgn.website/wp-content/uploads/2023/07/enferma-de-mi.mp4%22",
 });
 peliculasData.push({
   id: 4,
@@ -39,6 +45,8 @@ peliculasData.push({
   poster:
     "https://m.media-amazon.com/images/M/MV5BNGJlMTVlYWQtYmM5OC00MDgwLTk3NzAtMGViY2VjOGU0YjlkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1101_.jpg",
   release_date: "mayo-2023",
+  video_url:
+    "https://streaming.trlvdsgn.website/wp-content/uploads/2023/07/enferma-de-mi.mp4%22",
 });
 peliculasData.push({
   id: 5,
@@ -49,6 +57,8 @@ peliculasData.push({
   poster:
     "https://m.media-amazon.com/images/M/MV5BM2NlZDI0ZDktNTg5OS00ZjQ1LWI4MDEtN2I0MDE5NWRiNzA4XkEyXkFqcGdeQXVyMTY5Nzc4MDY@._V1_FMjpg_UX1000_.jpg",
   release_date: "mayo-2023",
+  video_url:
+    "https://streaming.trlvdsgn.website/wp-content/uploads/2023/07/enferma-de-mi.mp4%22",
 });
 peliculasData.push({
   id: 6,
@@ -59,6 +69,8 @@ peliculasData.push({
   poster:
     "https://m.media-amazon.com/images/M/MV5BM2NlZDI0ZDktNTg5OS00ZjQ1LWI4MDEtN2I0MDE5NWRiNzA4XkEyXkFqcGdeQXVyMTY5Nzc4MDY@._V1_FMjpg_UX1000_.jpg",
   release_date: "mayo-2023",
+  video_url:
+    "https://streaming.trlvdsgn.website/wp-content/uploads/2023/07/enferma-de-mi.mp4%22",
 });
 
 export default peliculasData;
