@@ -16,12 +16,13 @@ function Footer(){
                         <h2>Sitemap</h2>
                         <ul className='sitemap-list'>
                             <li><a href="/">Home</a></li>
-                            <li><a href="/videos/">Videos</a></li>
+                            <li><a href="/peliculas/">Peliculas</a></li>
+                            <li><a href="/contacto/">Contacto</a></li>
                         </ul>
                     </Col>
                     <Col md={3} className="friend-sites">
                         <h2>Friend Sites</h2>
-                        <a href="#">TRLVDSGN</a>
+                        <a href="#">true Love Design - TRLVDSGN</a>
                         <a href="#">Trlvdsgn Store</a>
                     </Col>
                     <Col md={3}>

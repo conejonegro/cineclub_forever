@@ -12,6 +12,7 @@ footer{
 }
 footer a{
     text-decoration: none;
+    color: white;
 }
 .sitemap-list{
     list-style-type: none;

@@ -4,8 +4,11 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: 22px;
+    row-gap: 22px;
     justify-content: center;
     width: 100%;
+    margin-top: 32px;
+    justify-content: flex-start;
 }
 .poster{
     max-width: 282px;
@@ -15,4 +18,14 @@
     background-color: black;
     width: 100%;
     padding: 0.6em;
+}
+.movie-container a{
+   color: white;
+   text-decoration: none;
+}
+.movie-container p{
+   margin-bottom: 0;
+}
+.movie-container h2{
+   margin-top: 16px;
 }

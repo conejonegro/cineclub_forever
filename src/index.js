@@ -15,8 +15,6 @@ import PeliculaDetalle from "./pages/pelicula-detalle";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
- let peliculasDataArraySliced = Object.values(peliculasData).slice(0, 4);
-const peliculasDataArray = Object.values(peliculasData);
 
 root.render(
 
@@ -34,5 +32,5 @@ root.render(
       <Footer />
     </BrowserRouter>
     // {/* <AppiCall /> */}
-
+  
 );
