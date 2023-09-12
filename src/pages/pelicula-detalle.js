@@ -31,7 +31,7 @@ function PeliculaDetalle(){
                     </Row>   
                 </Container>
             </div>
-            <Video />
+            <Video url={peliculasDataLooped.video_url} />
         </section>
     )
    
