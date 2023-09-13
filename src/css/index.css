@@ -36,3 +36,9 @@ body {
 .navbar-brand{
   color:#000000de;
 }
+
+@media(max-width:767px){
+  .nav-ul {
+    flex-direction: column;
+}
+}

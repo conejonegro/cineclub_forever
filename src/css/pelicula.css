@@ -29,3 +29,9 @@
 .movie-container h2{
    margin-top: 16px;
 }
+
+@media(max-width:768px){
+    .main-container-pelicula{
+        justify-content: center;
+    }
+}

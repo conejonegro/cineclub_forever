@@ -27,7 +27,7 @@ root.render(
         <Route path="/peliculas" element={ <Pelicula titulo="Todas las Peliculas" json={peliculasData} />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
-        {/* <Route path="/api-test" element={ <TmdbApiCall /> } /> */}
+        <Route path="/api-test" element={ <TmdbApiCall /> } />
         <Route path="*" element={<p>Not Found 404</p>} />
 
       </Routes>

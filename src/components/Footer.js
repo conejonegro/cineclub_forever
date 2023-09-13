@@ -2,8 +2,10 @@ import '../css/footer.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Link } from 'react-router-dom';
 
 function Footer(){
+    
     return(
         <footer>
             <Container>
@@ -15,15 +17,15 @@ function Footer(){
                     <Col md={3}>
                         <h2>Sitemap</h2>
                         <ul className='sitemap-list'>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/peliculas/">Peliculas</a></li>
-                            <li><a href="/contacto/">Contacto</a></li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/peliculas">Peliculas</Link></li>
+                            <li><Link to="/contacto">Contacto</Link></li>
                         </ul>
                     </Col>
                     <Col md={3} className="friend-sites">
                         <h2>Friend Sites</h2>
-                        <a href="#">true Love Design - TRLVDSGN</a>
-                        <a href="#">Trlvdsgn Store</a>
+                        <a href="https://trlvdsgn.website/" target='_blank'>true Love Design - TRLVDSGN</a>
+                        <a href="https://store.trlvdsgn.website/" target='_blank'>Trlvdsgn Store</a>
                     </Col>
                     <Col md={3}>
                         <h2>Contactanos</h2>
