@@ -1,6 +1,5 @@
 import peliculasData from "../json/peliculasData";
-import ReactPlayer from 'react-player';
-import { useState } from "react";
+
 
 const Video = ({url}) => {
   console.log(peliculasData);

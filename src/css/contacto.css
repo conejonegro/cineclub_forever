@@ -1,0 +1,33 @@
+.input{
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    max-width: 800px;
+    margin: 32px auto;
+}
+.input input{
+    border: 1px solid gray;
+    box-shadow: none;
+    height: 36px;
+}
+form button{
+    display: flex;
+    color: white;
+    margin: 16px auto;
+    padding: 1rem 3rem;
+    border: none;
+    background-color: black;
+    font-weight: 700;
+    font-size: 20px;
+}
+form textarea{
+   box-shadow: none;
+}
+.contactanos-title-cont{
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    max-width: 800px;
+    margin: 32px auto;
+}
