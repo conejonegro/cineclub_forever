@@ -1,9 +1,22 @@
 import axios from 'axios';
 import React from 'react';
+import peliculasData from '../json/peliculasData'
 
 
 const API_KEY = 'd35b24b361166e540ee6c082ddecd6bf';
-const baseURL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`;
+
+const peliculaNombre = peliculasData.map( (pelicula) => (
+   pelicula.nombre
+   
+
+));
+console.log(peliculaNombre)
+ const nameQuery = "donnie+darko";
+// const baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
+//  const baseURL = `https://api.themoviedb.org/3/movie/346698?api_key=${API_KEY}`;
+//  const baseURL = `https://api.themoviedb.org/3/movie/346698/keywords?api_key=${API_KEY}`;
+const baseURL = `https://api.themoviedb.org/3/search/movie?query=${nameQuery}&api_key=${API_KEY}`;
+
 
 function TmdbApiCall(){
 
@@ -12,23 +25,30 @@ function TmdbApiCall(){
 
     React.useEffect(() => {
         console.log("entra use efect")
+        
+        peliculaNombre.map( (pelicula) => {
+
+          console.log(pelicula)
+         
+          
+        } )
+
         axios.get(baseURL).then((response) => {
           setPost(response.data);
           setLoading(false);
           
         });
       }, []);
-    //   const datos = Object.values(post);
-    //   console.log(datos)
+        
       
       if (loading) {
         return <p>Cargando...</p>;
       }else{
       
         const datos = Object.values(post);
-        console.log(datos[0])
+          console.log(datos)
         return (
-            <h1>{datos[1][0].title}</h1>
+            <h1>ddd</h1>
          );   
       }
 
