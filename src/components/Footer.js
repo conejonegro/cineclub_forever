@@ -24,8 +24,8 @@ function Footer(){
                     </Col>
                     <Col md={3} className="friend-sites">
                         <h2>Friend Sites</h2>
-                        <a href="https://trlvdsgn.website/" target='_blank'>true Love Design - TRLVDSGN</a>
-                        <a href="https://store.trlvdsgn.website/" target='_blank'>Trlvdsgn Store</a>
+                        <a href="https://trlvdsgn.website/" rel="noreferrer" target='_blank'>true Love Design - TRLVDSGN</a>
+                        <a href="https://store.trlvdsgn.website/" rel="noreferrer" target='_blank'>Trlvdsgn Store</a>
                     </Col>
                     <Col md={3}>
                         <h2>Contactanos</h2>
