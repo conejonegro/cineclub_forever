@@ -33,6 +33,11 @@ body {
     margin-bottom: 4px;
     justify-content: center;
 }
+.navbar-nav{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
 .navbar-brand{
   color:#000000de;
 }

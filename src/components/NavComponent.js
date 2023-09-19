@@ -22,6 +22,13 @@ function NavComponent() {
                </li>
               ))}
             </ul>
+            <ul className='nav-ul nav-login'>
+              {navItemsLogin.map((e) => (
+                 <li>
+                    <NavLink to={e.item_url} className="nav-link">{e.text}</NavLink>
+               </li>
+              ))}
+            </ul>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -40,6 +47,19 @@ navItems.push({
 navItems.push({
   text: 'API test',
   item_url: '/api-test'
+});
+const navItemsLogin = [];
+navItemsLogin.push({
+  text: 'Login',
+  item_url: '/login'
+});
+navItemsLogin.push({
+  text: 'Logout',
+  item_url: '/logout'
+});
+navItemsLogin.push({
+  text: 'Profile',
+  item_url: '/profile'
 });
 
 export default NavComponent;
