@@ -11,10 +11,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Contacto from "./pages/Contacto";
 //import AppiCall from "./components/ApiCall";
 import PeliculaDetalle from "./pages/pelicula-detalle";
-import TmdbApiCall from "./components/TmdbAPICall";
-import Login from "./components/Login";
-import Profile from "./components/Profile";
-import Logout from "./components/Logout";
+// import TmdbApiCall from "./components/TmdbAPICall";
+// import Login from "./components/Login";
+// import Profile from "./components/Profile";
+// import Logout from "./components/Logout";
 
 
 
@@ -30,10 +30,10 @@ root.render(
         <Route path="/peliculas" element={ <Pelicula titulo="Todas las Peliculas" json={peliculasData} />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
-        <Route path="/api-test" element={ <TmdbApiCall /> } />
-        <Route path="/login" element={ <Login /> } />
+        {/* <Route path="/api-test" element={ <TmdbApiCall /> } /> */}
+        {/* <Route path="/login" element={ <Login /> } />
         <Route path="/Logout" element={ <Logout /> } />
-        <Route path="/profile" element={ <Profile /> } />
+        <Route path="/profile" element={ <Profile /> } /> */}
         <Route path="*" element={<p>Not Found 404</p>} />
 
       </Routes>

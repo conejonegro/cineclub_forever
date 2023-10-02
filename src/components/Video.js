@@ -32,7 +32,7 @@ const Video = ({url, subtitles}) => {
           default/>
           Sorry, your browser doesn't support videos.
         </video>
-        <img src=".."/>
+       
        
       </>
     );
