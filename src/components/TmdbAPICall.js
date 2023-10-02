@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
-import peliculasData from '../json/peliculasData'
+import { Container } from 'react-bootstrap';
+import peliculasData from '../json/peliculasData';
 
 
 const API_KEY = 'd35b24b361166e540ee6c082ddecd6bf';
@@ -46,13 +47,13 @@ function TmdbApiCall(){
       }else{
       
         const datos = Object.values(post);
-          console.log(datos)
+          console.log(datos[1])
         return (
-            <h1>ddd</h1>
+          <Container className='my-4'>
+            <h1>{datos[1][0].original_title}</h1>
+          </Container>
          );   
       }
-
-     
      
 }
 
