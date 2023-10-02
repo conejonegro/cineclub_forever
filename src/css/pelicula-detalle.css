@@ -3,9 +3,6 @@
     margin-right: .2em;
     display: inline-block;
 }
-.movie-info {
-   color: white;
-}
 .titulo-pelicula span{
     display: inline-block;
 }
@@ -21,6 +18,8 @@
 }
 .movie-info{
     margin-left: 4%;
+    margin-top: 64px;
+    color: white;
 }
 .main-movie-banner{
     background-image: url('/Users/luisrosales/Desktop/Luis/cineclub-forever-github/cineclub_forever/src/img/el-padrino-background.jpeg');
