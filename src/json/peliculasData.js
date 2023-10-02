@@ -1,18 +1,19 @@
 const peliculasData = [];
 
 peliculasData.push({
-  id: 1,
-  slug: "dressed-to-kill",
-  nombre: "Dressed to Kill",
+  id: 3,
+  slug: "No-One-Will-Save-You",
+  nombre: "No One Will Save You",
   sinopsis:
-    "Una misteriosa mujer rubia mata a uno de los pacientes de un psiquiatra, y luego va en busca de la única testigo.",
+    "Brynn es una joven brillante que vive apartada de un vecindario que la ha aislado. Solitaria pero optimista, encuentra consuelo en el hogar donde creció, hasta que unos extraños ruidos la despiertan en mitad de la noche.",
   poster:
-    "https://streaming.trlvdsgn.website/wp-content/uploads/2023/08/dressed-to-till-poster.jpg",
-  release_date: "mayo-2023",
+    "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/udniPSAJS6RDarNgSBK8IUsFthf.jpg",
+  release_date: "22/9/2023",
   subtitles: "https://trlvdsgn.website/img/dressed-to-kill-sbus.vtt",
   video_url:
-    "https://streaming.trlvdsgn.website/wp-content/uploads/2023/08/dressed-to-kill.mp4",
+    "https://streaming.trlvdsgn.website//wp-content/uploads/2023/10/no-one.mp4",
 });
+
 peliculasData.push({
   id: 2,
   slug: "the-innocents",
@@ -26,32 +27,7 @@ peliculasData.push({
   video_url:
     "https://streaming.trlvdsgn.website/wp-content/uploads/2023/09/the-innocents.mp4",
 });
-peliculasData.push({
-  id: 3,
-  slug: "No-One-Will-Save-You",
-  nombre: "No One Will Save You",
-  sinopsis:
-    "Brynn es una joven brillante que vive apartada de un vecindario que la ha aislado. Solitaria pero optimista, encuentra consuelo en el hogar donde creció, hasta que unos extraños ruidos la despiertan en mitad de la noche.",
-  poster:
-    "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/udniPSAJS6RDarNgSBK8IUsFthf.jpg",
-  release_date: "22/9/2023",
-  subtitles: "https://trlvdsgn.website/img/dressed-to-kill-sbus.vtt",
-  video_url:
-    "https://streaming.trlvdsgn.website//wp-content/uploads/2023/10/no-one.mp4",
-});
-peliculasData.push({
-  id: 4,
-  slug: "titane",
-  nombre: "TITANE",
-  sinopsis:
-    "Es una película visualmente impactante y perturbadora que desafía las convenciones cinematográficas. La dirección de Julia Ducournau es audaz y arriesgada, y la actuación de Agathe Rousselle en el papel principal es extraordinaria.",
-  poster:
-    "https://m.media-amazon.com/images/M/MV5BNGJlMTVlYWQtYmM5OC00MDgwLTk3NzAtMGViY2VjOGU0YjlkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1101_.jpg",
-  release_date: "mayo-2023",
-  subtitles: "https://trlvdsgn.website/img/dressed-to-kill-sbus.vtt",
-  video_url:
-    "https://streaming.trlvdsgn.website/wp-content/uploads/2021/12/Titane-1080-x264-yts.mp4",
-});
+
 peliculasData.push({
   id: 5,
   slug: "ocho-y-medio",
@@ -65,6 +41,21 @@ peliculasData.push({
   video_url:
     "https://streaming.trlvdsgn.website/wp-content/uploads/2023/09/ocho-y-medio.mp4",
 });
+
+peliculasData.push({
+  id: 1,
+  slug: "dressed-to-kill",
+  nombre: "Dressed to Kill",
+  sinopsis:
+    "Una misteriosa mujer rubia mata a uno de los pacientes de un psiquiatra, y luego va en busca de la única testigo.",
+  poster:
+    "https://streaming.trlvdsgn.website/wp-content/uploads/2023/08/dressed-to-till-poster.jpg",
+  release_date: "mayo-2023",
+  subtitles: "https://trlvdsgn.website/img/dressed-to-kill-sbus.vtt",
+  video_url:
+    "https://streaming.trlvdsgn.website/wp-content/uploads/2023/08/dressed-to-kill.mp4",
+});
+
 peliculasData.push({
   id: 6,
   slug: "enferma-de-mi",
@@ -78,6 +69,7 @@ peliculasData.push({
   video_url:
     "https://streaming.trlvdsgn.website/wp-content/uploads/2023/07/enferma-de-mi.mp4",
 });
+
 peliculasData.push({
   id: 7,
   slug: "lux-aeterna",
@@ -91,6 +83,7 @@ peliculasData.push({
   video_url:
     "https://streaming.trlvdsgn.website/wp-content/uploads/2023/06/lux-aeterna.mp4",
 });
+
 peliculasData.push({
   id: 8,
   slug: "vortex",
@@ -104,6 +97,7 @@ peliculasData.push({
   video_url:
     "https://streaming.trlvdsgn.website/wp-content/uploads/2023/05/vortex.mp4",
 });
+
 peliculasData.push({
   id: 9,
   slug: "infinity-pool",
@@ -117,6 +111,7 @@ peliculasData.push({
   video_url:
     "https://streaming.trlvdsgn.website/wp-content/uploads/2023/04/infinity.mp4",
 });
+
 peliculasData.push({
   id: 10,
   slug: "men",
@@ -130,6 +125,7 @@ peliculasData.push({
   video_url:
     "https://streaming.trlvdsgn.website/wp-content/uploads/2022/07/men.mp4",
 });
+
 peliculasData.push({
   id: 11,
   slug: "crimes-of-the-future",
@@ -143,6 +139,7 @@ peliculasData.push({
   video_url:
     "https://streaming.trlvdsgn.website/wp-content/uploads/2022/07/crimes-of-the-future.mp4",
 });
+
 peliculasData.push({
   id: 12,
   slug: "the-fly",
@@ -156,6 +153,21 @@ peliculasData.push({
   video_url:
     "https://streaming.trlvdsgn.website/wp-content/uploads/2022/03/the-fly.mp4",
 });
+
+peliculasData.push({
+  id: 4,
+  slug: "titane",
+  nombre: "TITANE",
+  sinopsis:
+    "Es una película visualmente impactante y perturbadora que desafía las convenciones cinematográficas. La dirección de Julia Ducournau es audaz y arriesgada, y la actuación de Agathe Rousselle en el papel principal es extraordinaria.",
+  poster:
+    "https://m.media-amazon.com/images/M/MV5BNGJlMTVlYWQtYmM5OC00MDgwLTk3NzAtMGViY2VjOGU0YjlkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1101_.jpg",
+  release_date: "mayo-2023",
+  subtitles: "https://trlvdsgn.website/img/dressed-to-kill-sbus.vtt",
+  video_url:
+    "https://streaming.trlvdsgn.website/wp-content/uploads/2021/12/Titane-1080-x264-yts.mp4",
+});
+
 peliculasData.push({
   id: 13,
   slug: "bad-boy-bubby",
