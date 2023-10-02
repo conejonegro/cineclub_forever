@@ -22,7 +22,7 @@ function Pelicula({titulo, json}) {
   if (isHomePage === '/') {
     console.log('HOMEPAGE!!')
     return(
-      <Container id="peliculasCont">
+      <div id="peliculasCont">
         <h1>{titulo}</h1>
         <Row className="justify-content-between ">
           <div className="main-container-pelicula col-md-6 col-xl-4 col-xxl-3" >
@@ -40,7 +40,7 @@ function Pelicula({titulo, json}) {
             
           </div>
         </Row>
-      </Container>
+      </div>
     )
  } else{
   console.log('else')
