@@ -12,11 +12,9 @@ import Contacto from "./pages/Contacto";
 //import AppiCall from "./components/ApiCall";
 import PeliculaDetalle from "./pages/pelicula-detalle";
 // import TmdbApiCall from "./components/TmdbAPICall";
-// import Login from "./components/Login";
+import Login from "./pages/Login";
 // import Profile from "./components/Profile";
-// import Logout from "./components/Logout";
-
-
+import Logout from "./components/Logout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -31,9 +29,9 @@ root.render(
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
         {/* <Route path="/api-test" element={ <TmdbApiCall /> } /> */}
-        {/* <Route path="/login" element={ <Login /> } />
+        <Route path="/login" element={ <Login /> } />
         <Route path="/Logout" element={ <Logout /> } />
-        <Route path="/profile" element={ <Profile /> } /> */}
+        {/* <Route path="/profile" element={ <Profile /> } /> */}
         <Route path="*" element={<p>Not Found 404</p>} />
 
       </Routes>
