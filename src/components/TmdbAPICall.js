@@ -5,52 +5,53 @@ import peliculasData from '../json/peliculasData';
 
 
 const API_KEY = 'd35b24b361166e540ee6c082ddecd6bf';
+const movie_id = 552;
+const movie_ids = [550, 552];
 
 const peliculaNombre = peliculasData.map( (pelicula) => (
    pelicula.nombre
    
 
 ));
-console.log(peliculaNombre)
+// console.log(peliculaNombre)
  const nameQuery = "donnie+darko";
 // const baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
-//  const baseURL = `https://api.themoviedb.org/3/movie/346698?api_key=${API_KEY}`;
+ const baseURL = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}`;
 //  const baseURL = `https://api.themoviedb.org/3/movie/346698/keywords?api_key=${API_KEY}`;
-const baseURL = `https://api.themoviedb.org/3/search/movie?query=${nameQuery}&api_key=${API_KEY}`;
+// const baseURL = `https://api.themoviedb.org/3/search/movie?query=${nameQuery}&api_key=${API_KEY}`;
 
 
 function TmdbApiCall(){
 
     const [post, setPost] = React.useState(null);
     const [loading, setLoading] = React.useState(true);
+    
 
     React.useEffect(() => {
-        console.log("entra use efect")
+        // console.log("entra use efect")
         
-        peliculaNombre.map( (pelicula) => {
+        const movies_from_api = movie_ids.map( (movie_id) => {
 
-          console.log(pelicula)
-         
-          
+          axios.get(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}`).then((response) => {
+            setPost(response.data);
+            setLoading(false);
+            // console.log(response.data)
+            
+          });
+
         } )
-
-        axios.get(baseURL).then((response) => {
-          setPost(response.data);
-          setLoading(false);
-          
-        });
+ 
       }, []);
         
-      
       if (loading) {
         return <p>Cargando...</p>;
       }else{
       
-        const datos = Object.values(post);
-          console.log(datos[1])
+        // const datos = Object.values(post);
+           console.log(post)
         return (
           <Container className='my-4'>
-            <h1>{datos[1][0].original_title}</h1>
+            <h1>{post.original_title}</h1>
           </Container>
          );   
       }
