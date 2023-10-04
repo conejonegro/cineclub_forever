@@ -8,6 +8,8 @@ import peliculasData from "../json/peliculasData";
 import Footer from "./Footer";
 import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./scrollToTop";
+import TmdbApiCall from "./TmdbAPICall";
+
 
 function CineclubRoutes(){
 
@@ -21,7 +23,7 @@ function CineclubRoutes(){
                 <Route path="/peliculas" element={ <Pelicula titulo="Todas las Peliculas" json={peliculasData} />} />
                 <Route path="/contacto" element={<Contacto />} />
                 <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
-                {/* <Route path="/api-test" element={ <TmdbApiCall /> } /> */}
+                <Route path="/api-test" element={ <TmdbApiCall /> } />
                 {/* <Route path="/login" element={ <Login /> } />
                 <Route path="/Logout" element={ <Logout /> } />
                 <Route path="/profile" element={ <Profile /> } /> */}

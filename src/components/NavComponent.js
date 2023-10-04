@@ -44,10 +44,10 @@ navItems.push({
   text: 'Contacto',
   item_url: '/contacto'
 });
-// navItems.push({
-//   text: 'API test',
-//   item_url: '/api-test'
-// });
+navItems.push({
+  text: 'API test',
+  item_url: '/api-test'
+});
 
 const navItemsLogin = [];
 navItemsLogin.push({
