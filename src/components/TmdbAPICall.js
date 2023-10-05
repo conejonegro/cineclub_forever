@@ -15,6 +15,12 @@ const movies_id = [{
                     },
                     { 
                       id: 660942
+                    },
+                    { 
+                      id: 9426
+                    },
+                    { 
+                      id: 780609
                     }
                   ];
 const IMG_PATH = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'

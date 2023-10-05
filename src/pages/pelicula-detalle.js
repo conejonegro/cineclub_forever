@@ -9,7 +9,7 @@ function PeliculaDetalle(){
      const { slug } = useParams();
      const peliculasDataLooped = peliculasData.find((post) => (post.slug === slug));
     //  console.log(peliculasDataLooped);
-    //  console.log(slug);
+      console.log(slug);
     
     return(
         <section className="main-movie-banner" style={{backgroundImage: `url(${peliculasDataLooped.poster})`}}>
