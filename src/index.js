@@ -15,6 +15,7 @@ import PeliculaDetalle from "./pages/pelicula-detalle";
 import Login from "./pages/Login";
 // import Profile from "./components/Profile";
 import Logout from "./components/Logout";
+import LoginPassword from "./pages/LoginPassword";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -30,6 +31,7 @@ root.render(
         <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
         {/* <Route path="/api-test" element={ <TmdbApiCall /> } /> */}
         <Route path="/login" element={ <Login /> } />
+        <Route path="/login" element={ <LoginPassword /> } />
         <Route path="/Logout" element={ <Logout /> } />
         {/* <Route path="/profile" element={ <Profile /> } /> */}
         <Route path="*" element={<p>Not Found 404</p>} />
