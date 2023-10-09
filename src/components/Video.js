@@ -21,6 +21,7 @@ const Video = ({url, subtitles}) => {
   }, []); 
  
   console.log("hola", subtitlesState);
+  console.log("hola", peliculas);
 
     return (
       <>
