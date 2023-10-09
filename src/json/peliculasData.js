@@ -107,7 +107,7 @@ peliculasData.push({
   poster:
     "https://m.media-amazon.com/images/M/MV5BNDY2YjFiNDQtODdkZi00ZGIzLTk2NTQtMGY5YmUzMWIzYWYxXkEyXkFqcGdeQXVyNjM0MTI4Mw@@._V1_FMjpg_UX1125_.jpg",
   release_date: "2022",
-  subtitles: "https://firebasestorage.googleapis.com/v0/b/cineclub-forever.appspot.com/o/men-subs.vtt?alt=media&token=fce6bfb5-44ee-44ec-a409-4bf2425deeb6",
+  subtitles: "https://trlvdsgn.website/img/dressed-to-kill-sbus.vtt",
   video_url:
     "https://streaming.trlvdsgn.website/wp-content/uploads/2022/07/men.mp4",
 });
