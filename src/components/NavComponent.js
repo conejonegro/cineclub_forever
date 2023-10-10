@@ -55,6 +55,10 @@ navItemsLogin.push({
   item_url: '/login'
 });
 navItemsLogin.push({
+  text: 'Sign In',
+  item_url: '/sign-in'
+});
+navItemsLogin.push({
   text: 'Logout',
   item_url: '/logout'
 });

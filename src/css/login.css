@@ -1,9 +1,8 @@
-form{
+#loginForm{
+    max-width: 400px;
     display: flex;
     flex-direction: column;
-    max-width: 800px;
     justify-content: center;
     margin: 0 auto;
-    row-gap: 12px;
-    margin-bottom: 32px;
+    margin-top: 42px;
 }

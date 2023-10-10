@@ -16,6 +16,7 @@ import Login from "./pages/Login";
 // import Profile from "./components/Profile";
 import Logout from "./components/Logout";
 import LoginPassword from "./pages/LoginPassword";
+import SignIn from "./pages/SignIn";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -31,7 +32,8 @@ root.render(
         <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
         {/* <Route path="/api-test" element={ <TmdbApiCall /> } /> */}
         <Route path="/login" element={ <Login /> } />
-        <Route path="/login" element={ <LoginPassword /> } />
+        <Route path="/login" element={ <Login /> } />
+        <Route path="/sign-in" element={ <SignIn /> } />
         <Route path="/Logout" element={ <Logout /> } />
         {/* <Route path="/profile" element={ <Profile /> } /> */}
         <Route path="*" element={<p>Not Found 404</p>} />
