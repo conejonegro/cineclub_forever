@@ -50,7 +50,7 @@ function Login() {
         <section className="my-4">
             <div className="container-fluid h-custom">
                 <div className="row d-flex justify-content-center align-items-center h-100">
-                    <div className="col-md-9 col-lg-6 col-xl-5 d-flex justify-content-center">
+                    <div className="col-md-9 col-lg-6 col-xl-3 d-flex justify-content-center">
                         <img src={cineclubLogo} className="img-fluid" alt="Cineclub logo by Carlos" width={350}/>
                     </div>
                     <div className="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
