@@ -1,43 +1,20 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { initializeApp } from 'firebase/app';
 import "../css/login.css";
 import { Link } from "react-router-dom";
 import cineclubLogo from "../img/cineclub-logo.png";
 import { useEffect, useState } from "react";
+import FirebaseSettings from "../components/FirebaseSettings";
+import { useNavigate } from 'react-router-dom';
 
-// //TODO: Replace the following with your app's Firebase project configuration
-const firebaseConfig = {
-      apiKey: "AIzaSyB4inu3nJ8z6w9zLNyImLLpnBE_A-jnLKw",
-      authDomain: "cineclub-forever.firebaseapp.com",
-      databaseURL: "https://cineclub-forever-default-rtdb.firebaseio.com",
-      projectId: "cineclub-forever",
-      storageBucket: "cineclub-forever.appspot.com",
-      messagingSenderId: "136815813538",
-      appId: "1:136815813538:web:e33c7164516bb34a4448fb"
-    };
-
-    const app = initializeApp(firebaseConfig);
-
+    const app = FirebaseSettings;
     const provider = new GoogleAuthProvider();
-
-
-
-    
-    
 
 
 function Login() {
 
-    const [user, setUser] = useState(null);
-    const [data, setData] = useState('');
-
-    useEffect( () => {
-        
-
-    },[] );
-
-
-    function loginWithGoogle(){
+    const [myUserState, setMyUserstate] = useState(null);
+    const navigate = useNavigate();
+    const googleLogin = () => {
         const auth = getAuth();
         signInWithPopup(auth, provider)
         .then((result) => {
@@ -46,7 +23,8 @@ function Login() {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        setUser(user);
+        localStorage.setItem('userData', JSON.stringify(user));
+        setMyUserstate(user);
         // IdP data available using getAdditionalUserInfo(result)
         // ...
       }).catch((error) => {
@@ -59,15 +37,24 @@ function Login() {
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
       });
-     
     }
 
-    console.log(user)
-    if(user){
-        return(
-            <h1>estas logueado</h1>
-        )
-    }else{
+    function loginWithGoogle(){
+        googleLogin();
+      
+    }
+    
+    const userDataString = localStorage.getItem('userData');
+    const userData = JSON.parse(userDataString);
+
+    useEffect(() => {
+        if(userData){
+            navigate('/')
+        }
+        
+      }, [userData]);
+
+
         return(
             <section className="my-4">
                 <div className="container-fluid h-custom">
@@ -127,7 +114,7 @@ function Login() {
      
             </section>
         )
-    }
+    
 
    
 

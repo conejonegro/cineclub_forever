@@ -5,7 +5,7 @@ import HomePage from "./components/HomePage";
 import {Pelicula} from "./components/Pelicula";
 import peliculasData from "./json/peliculasData";
 import Footer from "./components/Footer";
-import NavComponent from "./components/NavComponent";
+import {NavComponent} from "./components/NavComponent";
 import "./css/index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Contacto from "./pages/Contacto";
@@ -32,9 +32,8 @@ root.render(
         <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
         {/* <Route path="/api-test" element={ <TmdbApiCall /> } /> */}
         <Route path="/login" element={ <Login /> } />
-        <Route path="/login" element={ <Login /> } />
         <Route path="/sign-in" element={ <SignIn /> } />
-        <Route path="/Logout" element={ <Logout /> } />
+        <Route path="/profile" element={ <Logout /> } />
         {/* <Route path="/profile" element={ <Profile /> } /> */}
         <Route path="*" element={<p>Not Found 404</p>} />
 
