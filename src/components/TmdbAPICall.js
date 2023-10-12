@@ -64,7 +64,7 @@ function TmdbApiCall() {
   }, []);
 
   if (loading) {
-    return <p>Cargando...</p>;
+    return <h5 className='container'>Cargando...</h5>;
   }
   console.log(posts)
   return (
