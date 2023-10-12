@@ -1,12 +1,9 @@
-import { getAuth, GoogleAuthProvider, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import "../css/login.css";
-import { Link } from "react-router-dom";
 import cineclubLogo from "../img/cineclub-logo.png";
-import { useEffect, useState } from "react";
-import FirebaseSettings from "../components/FirebaseSettings";
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
 
-const app = FirebaseSettings;
+
 
 function SignIn(){
 
@@ -14,7 +11,6 @@ const [email, setInputEmail] = useState("");
 const [password, setInputPassword] = useState("");
 const [logged, setLogged] = useState();
 const [error, setError] = useState();
-const navigate = useNavigate();
 
  //Functions
  function handleValueEmail(e){
@@ -40,7 +36,6 @@ const userPasswordAuth = () => {
         // ...
     })
     .catch((error) => {
-        const errorCode = error.code;
         const errorMessage = error.message;
         setError(errorMessage)
         console.log(errorMessage);

@@ -1,23 +1,21 @@
-import { useNavigate } from "react-router";
 import { useEffect } from "react";
+import {Outlet, useNavigate } from "react-router";
 
 const userDataString = localStorage.getItem('userData');
 const userData = JSON.parse(userDataString);
 
+function ProtectedRoutes({redirectTo="/", isLogged}){
 
-function ProtectedRoutes({children}){
     const navigate = useNavigate();
+    useEffect(()=>{
+      if(userData){
+        navigate("/");
+        window.location.reload();
+      }
+    },[])
 
-    useEffect(() => {
-        if(userData){
-            navigate('/')
-        }
+      return <Outlet />
         
-      }, [userData]);
-      return (
-        children
-      )
-    
-}
+      }    
 
 export default ProtectedRoutes;

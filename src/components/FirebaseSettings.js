@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -9,10 +10,13 @@ const firebaseConfig = {
   projectId: "cineclub-forever",
   storageBucket: "cineclub-forever.appspot.com",
   messagingSenderId: "136815813538",
-  appId: "1:136815813538:web:e33c7164516bb34a4448fb"
+  appId: "1:136815813538:web:e33c7164516bb34a4448fb",
+  databaseURL: "https://cineclub-forever-default-rtdb.firebaseio.com/"
 };
 
 // Initialize Firebase
 const FirebaseSettings = initializeApp(firebaseConfig);
+
+const database = getDatabase(FirebaseSettings);
 
 export default FirebaseSettings;

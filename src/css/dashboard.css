@@ -1,0 +1,23 @@
+.dashboard{
+    background-color: #f1f1f1;
+    padding: 2em;
+}
+.dashboard-input-cont{
+    max-width: 400px;
+    width: 100%;
+    row-gap: 37px;
+    justify-content: start;
+    display: flex;
+    column-gap: 16px;
+    margin-bottom: 12px;
+}
+.dashboard-input-cont input{
+    width: 100%;
+    margin-left: 16px;
+    max-width: 300px;
+}.dashboard-input-cont label{
+    width: 100%;
+}
+form{
+    max-width: 350px;
+}

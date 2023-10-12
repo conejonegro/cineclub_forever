@@ -23,6 +23,8 @@ import { useState } from "react";
 import Dashboard from "./dashboard/Dashboard";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const userDataString = localStorage.getItem('userData');
+const userData = JSON.parse(userDataString);
 
 root.render(
 
@@ -35,9 +37,12 @@ root.render(
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
         {/* <Route path="/api-test" element={ <TmdbApiCall /> } /> */}
-        <Route path="/login" element={ <ProtectedRoutes> <Login /> </ProtectedRoutes>  } />
-        <Route path="/registro" element={ <SignIn /> } />
+        <Route element={<ProtectedRoutes/>}>
+          <Route path="/login" element={ <Login /> } />
+        </Route>
         <Route path="/admin" element={ <Dashboard /> } />
+        <Route path="/registro" element={ <SignIn /> } />
+        
         <Route path="/profile" element={ <Logout /> } />
         {/* <Route path="/profile" element={ <Profile /> } /> */}
         <Route path="*" element={<p>Not Found 404</p>} />
