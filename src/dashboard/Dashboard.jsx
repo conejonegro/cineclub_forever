@@ -2,7 +2,9 @@ import { getDatabase, ref, set } from "firebase/database";
 import peliculasData from "../json/peliculasData";
 import FirebaseSettings from "../components/FirebaseSettings";
 import { useState } from "react";
-import "../css/dashboard.css"
+import "../css/dashboard.css";
+import ShowData from "./ShowData";
+
 
 // Initialize Realtime Database and get a reference to the service
 
@@ -54,50 +56,51 @@ function Dashboard(){
         
       }
 
-    //Functions to Capture value
-    function captureValue(e){
-        setIdValue(e.target.value);
-       
-    }
-    function captureValueNombre(e){
-        setNombreValue(e.target.value);
-       
-    } 
-    function captureValuePoster(e){
-        setPosterValue(e.target.value);
-       
-    } 
-    function captureValueFecha(e){
-        setFechaValue(e.target.value);
+        //Functions to Capture value
+        function captureValue(e){
+            setIdValue(e.target.value);
         
-    } 
-    function captureValueSinopsis(e){
-        setSinopsisValue(e.target.value);
-      
-    } 
-    function captureValueSlug(e){
-        setSlugValue(e.target.value);
-      
-    } 
-    function captureValueSubtitulos(e){
-        setSubtitulosValue(e.target.value);
+        }
+        function captureValueNombre(e){
+            setNombreValue(e.target.value);
         
-    } 
-    function captureValueVideo(e){
-        setVideoValue(e.target.value);
+        } 
+        function captureValuePoster(e){
+            setPosterValue(e.target.value);
         
-    } 
-   
-
-    function loadDummyData(){
-        setFakeData(dataFake)
-        writeNewMovie(idValue, nombreValue, posterValue, fechaValue, sinopsisValue, slugValue, subtitulosValue, videoValue);
-      }
-
+        } 
+        function captureValueFecha(e){
+            setFechaValue(e.target.value);
+            
+        } 
+        function captureValueSinopsis(e){
+            setSinopsisValue(e.target.value);
+        
+        } 
+        function captureValueSlug(e){
+            setSlugValue(e.target.value);
+        
+        } 
+        function captureValueSubtitulos(e){
+            setSubtitulosValue(e.target.value);
+            
+        } 
+        function captureValueVideo(e){
+            setVideoValue(e.target.value);
+            
+        } 
     
+
+        function loadDummyData(){
+            setFakeData(dataFake)
+            writeNewMovie(idValue, nombreValue, posterValue, fechaValue, sinopsisValue, slugValue, subtitulosValue, videoValue);
+        }
+
+        
 
     return(
         <section className="dashboard">
+            <ShowData/>
             <div className="container  my-4">
                 <h1><b>Dashboard</b></h1>
                 <h3>Agregar una nueva pelicula:</h3>
