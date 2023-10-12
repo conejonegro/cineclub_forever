@@ -4,30 +4,25 @@ import { useNavigate } from 'react-router-dom';
 import { navItemsLogin } from "./NavComponent";
 import { useEffect } from "react";
 
-
-
-
 function Logout({}) {
 
     const userDataString = localStorage.getItem('userData');
     const userData = JSON.parse(userDataString);
+    const navigate = useNavigate();
 
+// Intento de actualizar la navegacion para que desaparezca un item 
     useEffect(() => {
         if(!userData) {
             navItemsLogin[2].user=false;
             console.log(navItemsLogin);
         }
     },[]);
-
+// Intento de actualizar la navegacion para que
    
-
-    const navigate = useNavigate();
-
     function logOutFromCineclub(){
 
         localStorage.removeItem('userData');
         console.log("loggin out")
-        console.log(userData);
         const auth = getAuth();
             signOut(auth).then(() => {
             // Sign-out successful.
@@ -35,16 +30,16 @@ function Logout({}) {
             }).catch((error) => {
             // An error happened.
             });
-            
-            console.log(navigate);
+            // Redirigir a Home una vez DESLOGUEADO
+            navigate("/");
 
-            // Redirige a la página deseada
-            // history.push('/');
     }
 
     if(!userData){
         return(
-            <h1>Esta pagina deberia estar escondida si no hay datos de usuario</h1>
+            <div className="container my-4">
+                <h1>Esta ruta deberia estar escondida si no hay datos de usuario</h1>
+            </div>
         )
     }else{
         return(
@@ -60,8 +55,6 @@ function Logout({}) {
             </div>
         )
     }
-
-   
 }
 
 

@@ -46,6 +46,7 @@ function Login() {
     
     const userDataString = localStorage.getItem('userData');
     const userData = JSON.parse(userDataString);
+    console.log(myUserState)
 
     useEffect(() => {
         if(userData){
