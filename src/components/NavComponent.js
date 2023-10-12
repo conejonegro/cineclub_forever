@@ -71,4 +71,4 @@ navItemsLogin.push({
 //   item_url: '/profile'
 // });
 
-export {NavComponent, navItemsLogin};
+export {NavComponent};

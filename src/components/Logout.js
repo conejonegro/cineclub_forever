@@ -1,7 +1,6 @@
 import { getAuth, signOut } from "firebase/auth";
 import "../css/profile.css";
 import { useNavigate } from 'react-router-dom';
-import { navItemsLogin } from "./NavComponent";
 import { useEffect } from "react";
 
 function Logout({}) {
@@ -11,12 +10,12 @@ function Logout({}) {
     const navigate = useNavigate();
 
 // Intento de actualizar la navegacion para que desaparezca un item 
-    useEffect(() => {
-        if(!userData) {
-            navItemsLogin[2].user=false;
-            console.log(navItemsLogin);
-        }
-    },[]);
+    // useEffect(() => {
+    //     if(!userData) {
+    //         navItemsLogin[2].user=false;
+    //         console.log(navItemsLogin);
+    //     }
+    // },[]);
 // Intento de actualizar la navegacion para que
    
     function logOutFromCineclub(){
@@ -32,6 +31,7 @@ function Logout({}) {
             });
             // Redirigir a Home una vez DESLOGUEADO
             navigate("/");
+            window.location.reload();
 
     }
 
