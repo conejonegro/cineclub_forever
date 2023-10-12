@@ -45,8 +45,8 @@ function Logout({}) {
         return(
             <div className="container my-4 firebase-profile-cont">
                 <h1>Perfil:</h1>
-                <img src={userData.photoURL} alt={`${userData.displayName} Photo`}/>
-                <p><b>Nombre</b>: {userData.displayName}</p>
+                {userData.photoURL ? <img src={userData.photoURL} alt={`${userData.displayName} Photo`}/> : ""}
+                {userData.displayName ? <p><b>Nombre</b>: {userData.displayName}</p> : ""}
                 <p><b>Email:</b> {userData.email}</p>
                 
                 <button type="button" onClick={logOutFromCineclub}>

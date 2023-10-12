@@ -57,9 +57,14 @@ navItemsLogin.push({
   item_url: '/login'
 });
 navItemsLogin.push({
-  text: 'Sign In',
+  text: 'Dashboard',
   user: true,
-  item_url: '/sign-in'
+  item_url: '/admin'
+});
+navItemsLogin.push({
+  text: 'Registro',
+  user: true,
+  item_url: '/registro'
 });
 navItemsLogin.push({
   text: 'Profile',

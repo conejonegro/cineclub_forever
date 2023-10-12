@@ -20,6 +20,7 @@ import SignIn from "./pages/SignIn";
 import ProtectedRoutes from "./components/ProtecteRoutes";
 import { navItemsLogin } from "./components/NavComponent";
 import { useState } from "react";
+import Dashboard from "./dashboard/Dashboard";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -35,7 +36,8 @@ root.render(
         <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
         {/* <Route path="/api-test" element={ <TmdbApiCall /> } /> */}
         <Route path="/login" element={ <ProtectedRoutes> <Login /> </ProtectedRoutes>  } />
-        <Route path="/sign-in" element={ <SignIn /> } />
+        <Route path="/registro" element={ <SignIn /> } />
+        <Route path="/admin" element={ <Dashboard /> } />
         <Route path="/profile" element={ <Logout /> } />
         {/* <Route path="/profile" element={ <Profile /> } /> */}
         <Route path="*" element={<p>Not Found 404</p>} />

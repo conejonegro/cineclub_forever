@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword } from "firebase/auth";
 import "../css/login.css";
 import { Link } from "react-router-dom";
 import cineclubLogo from "../img/cineclub-logo.png";
@@ -9,11 +9,26 @@ import { useNavigate } from 'react-router-dom';
     const app = FirebaseSettings;
     const provider = new GoogleAuthProvider();
 
-
 function Login() {
 
+    const [email, setInputEmail] = useState("");
+    const [password, setInputPassword] = useState("");
     const [myUserState, setMyUserstate] = useState(null);
     const navigate = useNavigate();
+
+    //Functions
+    function handleValueEmail(e){
+
+        setInputEmail(e.target.value);
+        console.log(email);
+    
+    }
+     function handleValuePassword(e){
+    
+        setInputPassword(e.target.value);
+        console.log(password);
+    
+    }
     const googleLogin = () => {
         const auth = getAuth();
         signInWithPopup(auth, provider)
@@ -39,6 +54,23 @@ function Login() {
       });
     }
 
+    const userPasswordLogin = () => {
+        const auth = getAuth();
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                localStorage.setItem('userData', JSON.stringify(user));
+                setMyUserstate(user);
+                // ...
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+    }
+    
+    
     function loginWithGoogle(){
         googleLogin();
       
@@ -46,7 +78,6 @@ function Login() {
     
     const userDataString = localStorage.getItem('userData');
     const userData = JSON.parse(userDataString);
-    console.log(myUserState)
 
     useEffect(() => {
         if(userData){
@@ -80,14 +111,14 @@ function Login() {
                         
                         <div className="form-outline mb-4">
                             <input type="email" id="form3Example3" className="form-control form-control-lg"
-                            placeholder="Enter a valid email address" />
+                            placeholder="Enter a valid email address" value={email} onChange={handleValueEmail}/>
                             <label className="form-label" htmlFor="form3Example3">Email address</label>
                         </div>
     
                         
                         <div className="form-outline mb-3">
                             <input type="password" id="form3Example4" className="form-control form-control-lg"
-                            placeholder="Enter password" />
+                            placeholder="Enter password" value={password} onChange={handleValuePassword} />
                             <label className="form-label" htmlFor="form3Example4">Password</label>
                         </div>
     
@@ -103,8 +134,8 @@ function Login() {
                         </div>
     
                         <div className="text-center text-lg-start mt-4 pt-2">
-                            <button type="button" className="btn btn-primary btn-lg">Login</button>
-                            <p className="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <Link to="/sign-in"
+                            <button type="button" className="btn btn-primary btn-lg" onClick={userPasswordLogin}>Login</button>
+                            <p className="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <Link to="/registro"
                                 className="link-danger">Register</Link></p>
                         </div>
     
