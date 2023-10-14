@@ -10,7 +10,7 @@ function ProtectedRoutes({redirectTo="/", isLogged}){
     useEffect(()=>{
       if(userData){
         navigate("/");
-        window.location.reload();
+        // window.location.reload();
       }
     },[])
 

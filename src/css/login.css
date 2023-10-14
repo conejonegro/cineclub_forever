@@ -6,3 +6,8 @@
     margin: 0 auto;
     margin-top: 42px;
 }
+.error-toast{
+    color: rgb(255, 255, 255) !important;
+    font-weight: 700;
+    background-color: red !important;
+}
