@@ -8,7 +8,7 @@ import peliculasData from "../json/peliculasData";
 import Footer from "./Footer";
 import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./scrollToTop";
-import TmdbApiCall from "./TmdbAPICall";
+import {TmdbApiCall} from "./TmdbAPICall";
 
 
 function CineclubRoutes(){
