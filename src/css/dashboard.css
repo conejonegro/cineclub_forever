@@ -18,7 +18,7 @@
 }.dashboard-input-cont label{
     width: 100%;
 }
-form{
+#dashboardForm{
     display: flex;
     justify-content: start;
     flex-wrap: wrap;

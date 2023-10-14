@@ -105,7 +105,7 @@ function Dashboard(){
                 <h1><b>Dashboard</b></h1>
                 <h3>Agregar una nueva pelicula:</h3>
 
-                <form>
+                <form id="dashboardForm">
 
                     <div className="form-outline mb-4">
                         <label>ID: </label>
