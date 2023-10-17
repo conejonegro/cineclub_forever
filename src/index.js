@@ -21,6 +21,7 @@ import ProtectedRoutes from "./components/ProtecteRoutes";
 import { navItemsLogin } from "./components/NavComponent";
 import { useState } from "react";
 import Dashboard from "./dashboard/Dashboard";
+import CineclubRoutes from "./components/CineclubRoutes";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const userDataString = localStorage.getItem('userData');
@@ -28,29 +29,7 @@ const userData = JSON.parse(userDataString);
 
 root.render(
 
-    <BrowserRouter>
-      <NavComponent />
-      <Routes>
-
-        <Route path="/" element= {<HomePage titulo="Ultimas Peliculas agregadas" json={peliculasData} />} />
-        <Route path="/peliculas" element={ <Pelicula titulo="Todas las Peliculas" json={peliculasData} />} />
-        <Route path="/contacto" element={<Contacto />} />
-        <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
-        {/* <Route path="/api-test" element={ <TmdbApiCall /> } /> */}
-        <Route element={<ProtectedRoutes/>}>
-          <Route path="/login" element={ <Login /> } />
-        </Route>
-        <Route path="/admin" element={ <Dashboard /> } />
-        <Route path="/registro" element={ <SignIn /> } />
-        <Route path="/api-test" element={ <TmdbApiCall /> } />
-        
-        <Route path="/profile" element={ <Logout /> } />
-        {/* <Route path="/profile" element={ <Profile /> } /> */}
-        <Route path="*" element={<p>Not Found 404</p>} />
-
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <CineclubRoutes />
     // {/* <AppiCall /> */}
   
 );
