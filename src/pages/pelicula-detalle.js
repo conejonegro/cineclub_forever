@@ -16,6 +16,8 @@ function PeliculaDetalle({}){
 const [posts, setPosts] = useState([]);
 const [loading, setLoading] = useState(true);
 const [rDate, setRDate] = useState();
+const userDataString = localStorage.getItem('userData');
+const userData = JSON.parse(userDataString);
 
 // API CALL
   useEffect(() => {
@@ -68,6 +70,40 @@ const [rDate, setRDate] = useState();
 
   console.log(peliculasDataLooped)
 
+  if(userData){
+    return (
+          <>
+          {loading ? 'loading' : 
+            <section className="main-movie-banner" style={{backgroundImage: `url(${IMG_PATH+peliculasDataLooped.poster})`}}>
+              <div className="banner-support">
+                  <Container className="container">
+                      <Row>
+                          <div className="col-lg-4 poster">
+                              <img src={IMG_PATH+peliculasDataLooped.poster} alt="Poster descriptivo" />
+                          </div>
+                          <div className="col-lg-8 movie-info">
+                              <div className="titulo-pelicula">
+                                  <h1>{peliculasDataLooped.original_title}</h1><span>({rDate})</span>
+                                  {/* <p>{peliculasDataLooped.genero}</p> */}
+                              </div>
+                              <p>{peliculasDataLooped.sinopsis}</p> 
+                              
+                              <p><b>Fecha de Lanzamientosss</b> {rDate}</p>
+                          </div>
+                      </Row>   
+                  </Container>
+              </div>
+              <Video url={peliculasDataLooped.video_url} subtitles={peliculasDataLooped.subtitles} />
+            </section>
+          }
+          
+        </>    
+    )            
+  }
+  else{
+
+  }
+
     return(
       <>
         {loading ? 'loading' : 
@@ -85,12 +121,12 @@ const [rDate, setRDate] = useState();
                             </div>
                             <p>{peliculasDataLooped.sinopsis}</p> 
                             
-                            <p><b>Fecha de Lanzamiento</b> {rDate}</p>
+                            <p><b>Fecha de Lanzamientoaaaaaa</b> {rDate}</p>
                         </div>
                     </Row>   
                 </Container>
             </div>
-            <Video url={peliculasDataLooped.video_url} subtitles={peliculasDataLooped.subtitles} />
+            <h5 className="inicia-sesion">Inicia Sesion para ver el Video...</h5>
           </section>
         }
         
