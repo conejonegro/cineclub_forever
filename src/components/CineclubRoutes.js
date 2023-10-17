@@ -28,7 +28,6 @@ function CineclubRoutes(){
                 <Route path="/peliculas" element={ <TmdbApiCall titulo="Todas las Peliculas" json={peliculasData} />} />
                 <Route path="/contacto" element={<Contacto />} />
                 <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
-                <Route path="/api-test" element={ <TmdbApiCall /> } />
                 <Route element={<ProtectedRoutes />}>
                     <Route path="/login" element={ <Login /> } />
                 </Route>

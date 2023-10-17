@@ -6,7 +6,7 @@ import PeliculaDetalle from '../pages/pelicula-detalle';
 
 const API_KEY = 'd35b24b361166e540ee6c082ddecd6bf';
 const IMG_PATH = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'
-const movies_id = [{ id: 550  }, { id: 552 },{ id: 788734 },{ id: 660942 },{ id: 9426 },{ id: 780609  }, { id: 882598}, {id: 7452}, {id: 26422}];
+const movies_id = [{ id: 460885  }, { id: 17111 },{ id: 772071 },{ id: 660942 },{ id: 9426 },{ id: 780609  }, { id: 882598}, {id: 7452}, {id: 26422}];
 
 //  const nameQuery = "donnie+darko";
 // const baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
