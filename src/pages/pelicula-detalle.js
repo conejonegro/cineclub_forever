@@ -12,12 +12,12 @@ const IMG_PATH = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'
 const movies_id = [{ id: 550  }, { id: 552 },{ id: 788734 },{ id: 660942 },{ id: 9426 },{ id: 780609  }, { id: 882598}, {id: 7452}, {id: 26422}];
 
 function PeliculaDetalle({}){
-// API CALL
 
 const [posts, setPosts] = useState([]);
 const [loading, setLoading] = useState(true);
 const [rDate, setRDate] = useState();
 
+// API CALL
   useEffect(() => {
 
     const fetchData = async () => {
@@ -47,28 +47,22 @@ const [rDate, setRDate] = useState();
     fetchData();
   }, []);
 
-  console.log(posts)
-
   let myPosts = posts.map((post) => {
     post.title.toLowerCase();
     return(
         {original_title: post.original_title, slug: post.title.toLowerCase().replace(/\s+/g, '-'), id: post.id, poster: post.poster_path, sinopsis: post.overview, release_date: post.release_date}
     )});
 
-    console.log(myPosts)
+  const { slug } = useParams();
+  const peliculasDataLooped = myPosts.find((post) => (post.slug === slug));
 
-
-     const { slug } = useParams();
-     const peliculasDataLooped = myPosts.find((post) => (post.slug === slug));
-     console.log(peliculasDataLooped)
-      // setRDate(peliculasDataLooped.release_date)
-      // console.log(rDate)
-    // const releaseDate = peliculasDataLooped.release_date;
-    // // const slashRDate = releaseDate.replace("/-/g", "/");
-    // console.log(releaseDate)
-
-    
-    
+  useEffect(() => {
+    if (peliculasDataLooped && peliculasDataLooped.release_date) {
+      const releaseDate = peliculasDataLooped.release_date;
+      const slashRDate = releaseDate.replace(/-/g, "/");
+      setRDate(slashRDate);
+    }
+  }, [peliculasDataLooped]);
 
     return(
       <>
@@ -82,12 +76,12 @@ const [rDate, setRDate] = useState();
                         </div>
                         <div className="col-lg-8 movie-info">
                             <div className="titulo-pelicula">
-                                <h1>{peliculasDataLooped.original_title}</h1><span>({peliculasDataLooped.release_date})</span>
+                                <h1>{peliculasDataLooped.original_title}</h1><span>({rDate})</span>
                                 {/* <p>{peliculasDataLooped.genero}</p> */}
                             </div>
                             <p>{peliculasDataLooped.sinopsis}</p> 
                             
-                            <p><b>Fecha de Lanzamiento</b> {peliculasDataLooped.release_date}</p>
+                            <p><b>Fecha de Lanzamiento</b> {rDate}</p>
                         </div>
                     </Row>   
                 </Container>
