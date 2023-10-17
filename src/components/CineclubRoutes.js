@@ -13,6 +13,7 @@ import Logout from "./Logout";
 import Login from "../pages/Login";
 import Dashboard from "../dashboard/Dashboard";
 import Registro from "../pages/Registro";
+import ProtectedRoutes from "./ProtectedRoutes";
 
 
 function CineclubRoutes(){
@@ -23,12 +24,14 @@ function CineclubRoutes(){
             <NavComponent />
             <Routes>
 
-                <Route path="/" element= {<HomePage titulo="Ultimas Peliculas agregadas" json={peliculasData} />} />
-                <Route path="/peliculas" element={ <Pelicula titulo="Todas las Peliculas" json={peliculasData} />} />
+                <Route path="/" element= {<TmdbApiCall />} />
+                <Route path="/peliculas" element={ <TmdbApiCall titulo="Todas las Peliculas" json={peliculasData} />} />
                 <Route path="/contacto" element={<Contacto />} />
                 <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
                 <Route path="/api-test" element={ <TmdbApiCall /> } />
-                <Route path="/login" element={ <Login /> } />
+                <Route element={<ProtectedRoutes />}>
+                    <Route path="/login" element={ <Login /> } />
+                </Route>
                 <Route path="/Logout" element={ <Logout /> } />
                 <Route path="/admin" element={ <Dashboard /> } />
                 <Route path="/registro" element={ <Registro /> } />

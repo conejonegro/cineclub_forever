@@ -91,7 +91,7 @@ function Login() {
                 console.log(user);
                 
                     notifySuccess();
-
+                    window.location.reload();
               
                 // ...
             })

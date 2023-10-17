@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import PeliculaDetalle from '../pages/pelicula-detalle';
 
 const API_KEY = 'd35b24b361166e540ee6c082ddecd6bf';
@@ -17,6 +17,8 @@ const movies_id = [{ id: 550  }, { id: 552 },{ id: 788734 },{ id: 660942 },{ id:
 function TmdbApiCall() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
+  const isHomePage = location.pathname;
 
   useEffect(() => {
 
@@ -37,6 +39,7 @@ function TmdbApiCall() {
 
         setPosts(postData);
         setLoading(false);
+        console.log(postData);
       } catch (error) {
         console.error('Error fetching data:', error);
         setLoading(false);
@@ -55,37 +58,61 @@ function TmdbApiCall() {
   let myPosts = posts.map((post) => {
     post.title.toLowerCase();
     return(
-      [{original_title: post.original_title, slug: post.title.toLowerCase().replace(/\s+/g, '-'), id: post.id, poster: post.poster_path, sinopsis: post.overview, release_date: post.release_date}]
+      {original_title: post.original_title, slug: post.title.toLowerCase().replace(/\s+/g, '-'), id: post.id, poster: post.poster_path, sinopsis: post.overview, release_date: post.release_date}
     )});
 
   
-  return (
-   
-    <div id="peliculasCont" className='container'>
-        <h1>Todas las peliculas</h1>
+  const peliculasDataArraySliced = myPosts.slice(0, 4);
+  console.log(peliculasDataArraySliced)
+
+  if (isHomePage === '/') {
+    return(
+      <div id="peliculasCont" className='container my-4'>
+        <h1 className='my-4'>Ultimas peliculas...</h1>
         <Row className="justify-content-between ">
-          <div className="main-container-pelicula col-md-6 col-xl-4 col-xxl-3" >
+          
+              {peliculasDataArraySliced.map((post) => {
+                return(
+                  <div className='movie-container' key={post.id}>
+                    <Link to={"/peliculas-detalle/"+post.slug}>
+                      <img src={IMG_PATH+post.poster} alt={post.nombre} className="poster " />
+                    
+                      <h2>{post.original_title}</h2>
+                      <p>{post.sinopsis.substring(0, 80)+'...'}</p>
+                    </Link>
+                </div>
+                )
+                
+              })}
 
-
-      {myPosts.map((post) => {  
-        return(
-          <div key={post[0].id} className='movie-container'>
-              {  }
-              <Link to={"/peliculas-detalle/"+post[0].slug}>
-            
-                <img src={IMG_PATH+post[0].poster} alt={post[0].title} className="poster "/>
-                <h2>{post[0].original_title}</h2>
-                <p>{post[0].sinopsis.substring(0, 80)+'...'}</p>
-            </Link>
-        
-          </div>
-        )
-      })}
-
+        </Row>
       </div>
-      </Row>
-    </div>
-  );
+    )
+  }
+  else{
+    return (
+      <div id="peliculasCont" className='container my-4'>
+        <h1 className='my-4'>Todas peliculas.</h1>
+        <Row className="justify-content-between todas-peliculas-imdb">
+          
+              {myPosts.map((post) => {
+                return(
+                  <div className='movie-container' key={post.id}>
+                    <Link to={"/peliculas-detalle/"+post.slug}>
+                      <img src={IMG_PATH+post.poster} alt={post.nombre} className="poster " />
+                    
+                      <h2>{post.original_title}</h2>
+                      <p>{post.sinopsis.substring(0, 80)+'...'}</p>
+                    </Link>
+                </div>
+                )
+                
+              })}
+
+        </Row>
+      </div>
+    );
+  }
 
 }
 

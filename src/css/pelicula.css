@@ -13,6 +13,9 @@
 .poster{
     max-width: 282px;
 }   
+.todas-peliculas-imdb{
+    row-gap: 32px;
+}
 .movie-container{
     max-width: 300px;
     background-color: black;
