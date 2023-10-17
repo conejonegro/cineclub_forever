@@ -11,7 +11,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Contacto from "./pages/Contacto";
 //import AppiCall from "./components/ApiCall";
 import PeliculaDetalle from "./pages/pelicula-detalle";
-// import TmdbApiCall from "./components/TmdbAPICall";
+import {TmdbApiCall} from "./components/TmdbAPICall";
 import Login from "./pages/Login";
 // import Profile from "./components/Profile";
 import Logout from "./components/Logout";
@@ -42,6 +42,7 @@ root.render(
         </Route>
         <Route path="/admin" element={ <Dashboard /> } />
         <Route path="/registro" element={ <SignIn /> } />
+        <Route path="/api-test" element={ <TmdbApiCall /> } />
         
         <Route path="/profile" element={ <Logout /> } />
         {/* <Route path="/profile" element={ <Profile /> } /> */}
