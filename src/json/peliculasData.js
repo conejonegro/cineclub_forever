@@ -8,7 +8,7 @@ peliculasData.push({
     "Brynn es una joven brillante que vive apartada de un vecindario que la ha aislado. Solitaria pero optimista, encuentra consuelo en el hogar donde creció, hasta que unos extraños ruidos la despiertan en mitad de la noche.",
   poster:
     "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/udniPSAJS6RDarNgSBK8IUsFthf.jpg",
-  release_date: "22/9/2023",
+  release_date: "2023",
   subtitles: "https://trlvdsgn.website/img/dressed-to-kill-sbus.vtt",
   video_url:
     "https://streaming.trlvdsgn.website//wp-content/uploads/2023/10/no-one.mp4",

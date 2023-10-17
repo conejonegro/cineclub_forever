@@ -8,12 +8,6 @@ import { Container, Row } from 'react-bootstrap';
 
 function Pelicula({titulo, json}) {
 
-
-  // const peliculasDataLooped = peliculasData.find((post) => (post.slug === slug));
-  console.log('hola params')
-
-  // console.log(peliculasDataLooped);
-
   const location = useLocation();
   const isHomePage = location.pathname;
   console.log(location)
