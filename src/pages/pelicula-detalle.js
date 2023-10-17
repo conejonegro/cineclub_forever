@@ -9,13 +9,14 @@ import axios from "axios";
 
 const API_KEY = 'd35b24b361166e540ee6c082ddecd6bf';
 const IMG_PATH = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'
-const movies_id = [{ id: 550  }, { id: 552 },{ id: 788734 },{ id: 660942 },{ id: 9426 },{ id: 780609  }, { id: 882598}];
+const movies_id = [{ id: 550  }, { id: 552 },{ id: 788734 },{ id: 660942 },{ id: 9426 },{ id: 780609  }, { id: 882598}, {id: 7452}, {id: 26422}];
 
 function PeliculaDetalle({}){
 // API CALL
 
 const [posts, setPosts] = useState([]);
 const [loading, setLoading] = useState(true);
+const [rDate, setRDate] = useState();
 
   useEffect(() => {
 
@@ -59,8 +60,13 @@ const [loading, setLoading] = useState(true);
 
      const { slug } = useParams();
      const peliculasDataLooped = myPosts.find((post) => (post.slug === slug));
-     console.log(peliculasDataLooped);
-    //   console.log(myPosts);
+     console.log(peliculasDataLooped)
+      // setRDate(peliculasDataLooped.release_date)
+      // console.log(rDate)
+    // const releaseDate = peliculasDataLooped.release_date;
+    // // const slashRDate = releaseDate.replace("/-/g", "/");
+    // console.log(releaseDate)
+
     
     
 
@@ -80,7 +86,7 @@ const [loading, setLoading] = useState(true);
                                 {/* <p>{peliculasDataLooped.genero}</p> */}
                             </div>
                             <p>{peliculasDataLooped.sinopsis}</p> 
-                            {/* <p>{peliculasDataLooped.director}</p> */}
+                            
                             <p><b>Fecha de Lanzamiento</b> {peliculasDataLooped.release_date}</p>
                         </div>
                     </Row>   
