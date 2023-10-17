@@ -56,6 +56,8 @@ const [rDate, setRDate] = useState();
   const { slug } = useParams();
   const peliculasDataLooped = myPosts.find((post) => (post.slug === slug));
 
+  console.log(myPosts)
+
   useEffect(() => {
     if (peliculasDataLooped && peliculasDataLooped.release_date) {
       const releaseDate = peliculasDataLooped.release_date;
@@ -63,6 +65,8 @@ const [rDate, setRDate] = useState();
       setRDate(slashRDate);
     }
   }, [peliculasDataLooped]);
+
+  console.log(peliculasDataLooped)
 
     return(
       <>

@@ -16,7 +16,7 @@ import Login from "./pages/Login";
 // import Profile from "./components/Profile";
 import Logout from "./components/Logout";
 import LoginPassword from "./pages/LoginPassword";
-import SignIn from "./pages/SignIn";
+import SignIn from "./pages/Registro.jsx";
 import ProtectedRoutes from "./components/ProtecteRoutes";
 import { navItemsLogin } from "./components/NavComponent";
 import { useState } from "react";
