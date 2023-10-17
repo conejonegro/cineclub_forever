@@ -22,13 +22,13 @@ function NavComponent() {
                </li>
               ))}
             </ul>
-            {/* <ul className='nav-ul nav-login'>
+            <ul className='nav-ul nav-login'>
               {navItemsLogin.map((e) => (
                  <li>
-                    <NavLink to={e.item_url} className="nav-link">{e.text}</NavLink>
+                    <NavLink to={e.item_url} className="nav-link">{e.user ? e.text : "" }</NavLink>
                </li>
               ))}
-            </ul> */}
+            </ul>
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -44,23 +44,36 @@ navItems.push({
   text: 'Contacto',
   item_url: '/contacto'
 });
-// navItems.push({
-//   text: 'API test',
-//   item_url: '/api-test'
-// });
+navItems.push({
+  text: 'API test',
+  item_url: '/api-test'
+});
+
 
 const navItemsLogin = [];
 navItemsLogin.push({
   text: 'Login',
+  user: true,
   item_url: '/login'
 });
 navItemsLogin.push({
-  text: 'Logout',
-  item_url: '/logout'
+  text: 'Dashboard',
+  user: true,
+  item_url: '/admin'
+});
+navItemsLogin.push({
+  text: 'Registro',
+  user: true,
+  item_url: '/registro'
 });
 navItemsLogin.push({
   text: 'Profile',
+  user: true,
   item_url: '/profile'
 });
+// navItemsLogin.push({
+//   text: 'Profile',
+//   item_url: '/profile'
+// });
 
-export default NavComponent;
+export {NavComponent};

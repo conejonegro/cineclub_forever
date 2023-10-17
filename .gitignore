@@ -1,6 +1,7 @@
 # dependencies
 /node_modules
 
+
 # production
 /build
 npm-debug.log*
@@ -8,4 +9,5 @@ yarn-debug.log*
 yarn-error.log*
 .eslintcache
 .DS_Store
+
 .firebase

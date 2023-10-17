@@ -1,9 +1,13 @@
-form{
+#loginForm{
+    max-width: 400px;
     display: flex;
     flex-direction: column;
-    max-width: 800px;
     justify-content: center;
     margin: 0 auto;
-    row-gap: 12px;
-    margin-bottom: 32px;
+    margin-top: 42px;
+}
+.error-toast{
+    color: rgb(255, 255, 255) !important;
+    font-weight: 700;
+    background-color: red !important;
 }
