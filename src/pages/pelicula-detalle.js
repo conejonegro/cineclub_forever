@@ -88,7 +88,7 @@ const userData = JSON.parse(userDataString);
                               </div>
                               <p>{peliculasDataLooped.sinopsis}</p> 
                               
-                              <p><b>Fecha de Lanzamientosss</b> {rDate}</p>
+                              <p><b>Fecha de Lanzamientos:</b> {rDate}</p>
                           </div>
                       </Row>   
                   </Container>
