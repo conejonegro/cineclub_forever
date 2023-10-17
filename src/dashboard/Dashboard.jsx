@@ -23,7 +23,7 @@ import ShowData from "./ShowData";
 
   
 function Dashboard(){
-    
+
     const [fakeData, setFakeData] = useState([]);
     const [idValue, setIdValue] = useState([]);
     const [nombreValue, setNombreValue] = useState([]);
@@ -109,7 +109,9 @@ function Dashboard(){
                 <form id="dashboardForm">
 
                     <div className="form-outline mb-4">
-                        <label>ID: </label>
+
+                        <label>The movie Datbase, movie ID: </label>
+
                         <input type="text" value={idValue} onChange={captureValue} className="form-control form-control-lg"/>
                     </div>
                     <div className="form-outline mb-4">
