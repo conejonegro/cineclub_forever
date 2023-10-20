@@ -3,7 +3,8 @@ import "../css/login.css";
 import cineclubLogo from "../img/cineclub-logo.png";
 import { useState } from "react";
 
-
+const userLocal =  localStorage.getItem('userData');
+const userData = JSON.parse(userLocal)
 
 function Registro(){
 
