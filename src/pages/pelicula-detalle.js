@@ -72,6 +72,21 @@ const userData = JSON.parse(userDataString);
 
   console.log(loading)
 
+  let value = "";
+
+  function textAreaValue(e){
+     value = e.target.value
+     console.log(value) 
+  }
+
+  function postComment(){
+    console.log(value)
+    localStorage.setItem('comment', value)
+   
+  }
+
+  const commentFromLocal = localStorage.getItem("comment");
+  console.log(commentFromLocal)
  
     return (
           <>
@@ -100,11 +115,19 @@ const userData = JSON.parse(userDataString);
               </div>
               {
                 userData ? 
+                <>
                   <Video url={peliculasDataLooped.video_url} subtitles={peliculasDataLooped.subtitles} />
+                  {commentFromLocal ?  <p className="comment-from-local">{commentFromLocal}</p> : ""}
+                  <div className="comment-box">
+                    <textarea  rows="3" cols="30" placeholder="Escribe tu comentario" onChange={textAreaValue}></textarea>
+                    <button className="btn btn-primary btn-lg " onClick={postComment}>Enviar</button>
+                  </div>
+                </>
                 : 
                   <h5 className="inicia-sesion">Inicia Sesion para ver el Video...</h5>
               }
-              
+
+
             </section>
           }
         </>    

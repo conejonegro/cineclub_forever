@@ -49,3 +49,17 @@ video{
     padding: 32px 0;
     margin-bottom: 0;
 }
+.comment-box {
+    margin: 0 auto;
+    max-width: 300px;
+}
+.comment-box textarea{
+   
+}
+.comment-box button{
+   display: block;
+}
+.comment-from-local{
+    color: white;
+    text-align: center;
+}
