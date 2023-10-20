@@ -37,7 +37,7 @@ function Dashboard(){
     const [errorMessage, setErrorMessage] = useState("");
 
     function writeNewMovie(movieId, nombre, poster, release_date, sinopsis, slug, subtitles, video_url) {
-        if(idValue === "" || nombreValue === "" || posterValue === "" || fechaValue === "" || sinopsisValue === "" || slugValue === "" || subtitulosValue === "" || videoValue === ""){
+        if(idValue == "" || nombreValue == "" || posterValue == "" || fechaValue == "" || sinopsisValue == "" || slugValue == "" || subtitulosValue == "" || videoValue === ""){
             setErrorMessage("Error: nose pude agregar la pelicula, Llena todos los campos");
             console.log(idValue);
         }else{
