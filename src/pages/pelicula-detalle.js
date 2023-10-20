@@ -68,9 +68,9 @@ const userData = JSON.parse(userDataString);
     }
   }, [peliculasDataLooped]);
 
-  console.log(peliculasDataLooped)
+  console.log(loading)
 
-  if(userData){
+ 
     return (
           <>
           {loading ? 'loading' : 
@@ -93,47 +93,18 @@ const userData = JSON.parse(userDataString);
                       </Row>   
                   </Container>
               </div>
-              <Video url={peliculasDataLooped.video_url} subtitles={peliculasDataLooped.subtitles} />
+              {
+                userData ? 
+                  <Video url={peliculasDataLooped.video_url} subtitles={peliculasDataLooped.subtitles} />
+                : 
+                  <h5 className="inicia-sesion">Inicia Sesion para ver el Video...</h5>
+              }
+              
             </section>
           }
-          
         </>    
     )            
-  }
-  else{
-
-  }
-
-    return(
-      <>
-        {loading ? 'loading' : 
-          <section className="main-movie-banner" style={{backgroundImage: `url(${IMG_PATH+peliculasDataLooped.poster})`}}>
-            <div className="banner-support">
-                <Container className="container">
-                    <Row>
-                        <div className="col-lg-4 poster">
-                            <img src={IMG_PATH+peliculasDataLooped.poster} alt="Poster descriptivo" />
-                        </div>
-                        <div className="col-lg-8 movie-info">
-                            <div className="titulo-pelicula">
-                                <h1>{peliculasDataLooped.original_title}</h1><span>({rDate})</span>
-                                {/* <p>{peliculasDataLooped.genero}</p> */}
-                            </div>
-                            <p>{peliculasDataLooped.sinopsis}</p> 
-                            
-                            <p><b>Fecha de Lanzamiento:</b> {rDate}</p>
-                        </div>
-                    </Row>   
-                </Container>
-            </div>
-            <h5 className="inicia-sesion">Inicia Sesion para ver el Video...</h5>
-          </section>
-        }
-        
-      </>                   
-    )
-
-   
+  
 }
 
 export default PeliculaDetalle;
