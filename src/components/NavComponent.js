@@ -6,6 +6,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { UserContext } from './UserProvider';
 import { useContext } from 'react';
 import { useEffect } from 'react';
+import { useState } from 'react';
 
 function NavComponent() {
 
@@ -13,12 +14,9 @@ function NavComponent() {
  const userData = JSON.parse(userLocal)
  console.log(userData)
 
-   const {user, setUser} = useContext(UserContext)
-   console.log(user)
-
-   useEffect(() => {
-      // setUser(true)
-   }, [])
+   const user = useContext(UserContext)
+   
+    console.log(user)
 
    return (
     <Navbar bg="light" expand="lg">
@@ -44,7 +42,7 @@ function NavComponent() {
                     
                     return(
                       <>
-                      {console.log("dentro del return",user)}
+                    
                         {/* <li> <NavLink to="/admin" className="nav-link">Dashboard</NavLink></li> */}
                         <li> <NavLink to="/logout" className="nav-link">Profile</NavLink></li>
                       </>

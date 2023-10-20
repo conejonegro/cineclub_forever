@@ -14,4 +14,4 @@ const UserProvider = ({ children }) => {
     );
   };
 
-export  {UserProvider};
+export  { UserProvider };
