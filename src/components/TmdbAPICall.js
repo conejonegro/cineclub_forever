@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import PeliculaDetalle from '../pages/pelicula-detalle';
+import ShowData from '../dashboard/ShowData';
 
 const API_KEY = 'd35b24b361166e540ee6c082ddecd6bf';
 const IMG_PATH = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'
@@ -64,10 +65,14 @@ function TmdbApiCall() {
   
   const peliculasDataArraySliced = myPosts.slice(0, 4);
   console.log(peliculasDataArraySliced)
+// Llamada a la API de Firebase
+
+
 
   if (isHomePage === '/') {
     return(
       <div id="peliculasCont" className='container my-4'>
+        
         <h1 className='my-4'>Ultimas peliculas...</h1>
         <Row className="justify-content-between ">
           
@@ -86,6 +91,7 @@ function TmdbApiCall() {
               })}
 
         </Row>
+        
       </div>
     )
   }

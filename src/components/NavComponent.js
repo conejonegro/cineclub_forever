@@ -43,7 +43,7 @@ function NavComponent() {
                     return(
                       <>
                     
-                        {/* <li> <NavLink to="/admin" className="nav-link">Dashboard</NavLink></li> */}
+                        <li> <NavLink to="/admin" className="nav-link">Dashboard</NavLink></li>
                         <li> <NavLink to="/logout" className="nav-link">Profile</NavLink></li>
                       </>
                     )
