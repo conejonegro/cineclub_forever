@@ -28,7 +28,7 @@ const userData = JSON.parse(userDataString);
         const responses = await Promise.all(
 
           movies_id.map((movie) =>
-            axios.get(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${API_KEY}`)
+            axios.get(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${API_KEY}&language=es-MX`)
 
           )
         );
@@ -49,10 +49,12 @@ const userData = JSON.parse(userDataString);
     fetchData();
   }, []);
 
+  console.log(posts)
+
   let myPosts = posts.map((post) => {
     post.title.toLowerCase();
     return(
-        {original_title: post.original_title, slug: post.title.toLowerCase().replace(/\s+/g, '-'), id: post.id, poster: post.poster_path, sinopsis: post.overview, release_date: post.release_date}
+        {original_title: post.title, slug: post.title.toLowerCase().replace(/\s+/g, '-'), id: post.id, poster: post.poster_path, sinopsis: post.overview, release_date: post.release_date, generos: post.genres}
     )});
 
   const { slug } = useParams();
@@ -83,12 +85,15 @@ const userData = JSON.parse(userDataString);
                           </div>
                           <div className="col-lg-8 movie-info">
                               <div className="titulo-pelicula">
-                                  <h1>{peliculasDataLooped.original_title}</h1><span>({rDate})</span>
+                                  <h1>{peliculasDataLooped.original_title}</h1><span>({peliculasDataLooped.generos[0].name})</span>
                                   {/* <p>{peliculasDataLooped.genero}</p> */}
                               </div>
                               <p>{peliculasDataLooped.sinopsis}</p> 
                               
                               <p><b>Fecha de Lanzamientos:</b> {rDate}</p>
+                              <p><b>Genero:</b> {peliculasDataLooped.generos.map(genero => {
+                                return genero.name + ", "
+                              })}</p>
                           </div>
                       </Row>   
                   </Container>

@@ -7,7 +7,7 @@ import ShowData from '../dashboard/ShowData';
 
 const API_KEY = 'd35b24b361166e540ee6c082ddecd6bf';
 const IMG_PATH = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'
-const movies_id = [{ id: 460885  }, { id: 17111 },{ id: 772071 },{ id: 660942 },{ id: 9426 },{ id: 780609  }, { id: 882598}, {id: 7452}, {id: 26422}];
+const movies_id = [{ id: 460885  }, { id: 17111 },{ id: 772071 },{ id: 660942 },{ id: 9426 },{ id: 780609  }, { id: 882598}, {id: 7452}];
 
 //  const nameQuery = "donnie+darko";
 // const baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
@@ -29,7 +29,7 @@ function TmdbApiCall() {
         const responses = await Promise.all(
 
           movies_id.map((movie) =>
-            axios.get(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${API_KEY}`)
+            axios.get(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${API_KEY}&language=es-MX`)
 
           )
         );
@@ -59,7 +59,7 @@ function TmdbApiCall() {
   let myPosts = posts.map((post) => {
     post.title.toLowerCase();
     return(
-      {original_title: post.original_title, slug: post.title.toLowerCase().replace(/\s+/g, '-'), id: post.id, poster: post.poster_path, sinopsis: post.overview, release_date: post.release_date}
+      {title: post.title, slug: post.title.toLowerCase().replace(/\s+/g, '-'), id: post.id, poster: post.poster_path, sinopsis: post.overview, release_date: post.release_date}
     )});
 
   
@@ -82,7 +82,7 @@ function TmdbApiCall() {
                     <Link to={"/peliculas-detalle/"+post.slug}>
                       <img src={IMG_PATH+post.poster} alt={post.nombre} className="poster " />
                     
-                      <h2>{post.original_title}</h2>
+                      <h2>{post.title}</h2>
                       <p>{post.sinopsis.substring(0, 80)+'...'}</p>
                     </Link>
                 </div>
@@ -107,7 +107,7 @@ function TmdbApiCall() {
                     <Link to={"/peliculas-detalle/"+post.slug}>
                       <img src={IMG_PATH+post.poster} alt={post.nombre} className="poster " />
                     
-                      <h2>{post.original_title}</h2>
+                      <h2>{post.title}</h2>
                       <p>{post.sinopsis.substring(0, 80)+'...'}</p>
                     </Link>
                 </div>
