@@ -1,7 +1,9 @@
 import { getAuth, signOut } from "firebase/auth";
 import "../css/profile.css";
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { UserContext } from "./UserProvider";
+import { useContext } from "react";
 
 function Logout({}) {
 

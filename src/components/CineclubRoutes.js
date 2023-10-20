@@ -14,7 +14,7 @@ import Login from "../pages/Login";
 import Dashboard from "../dashboard/Dashboard";
 import Registro from "../pages/Registro";
 import ProtectedRoutes from "./ProtectedRoutes";
-
+import { UserProvider } from "./UserProvider";
 
 function CineclubRoutes(){
 
@@ -30,12 +30,23 @@ function CineclubRoutes(){
                 <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
                 <Route element={<ProtectedRoutes />}>
                     <Route path="/login" element={ <Login /> } />
+                    <Route path="/registro" element={ <Registro /> } />
                 </Route>
+
+                <Route element={
+                    <UserProvider>
+                        <Route element={<NavComponent />} />
+                        <Route path="/login" element={ <Login /> } />
+                    </UserProvider>}
+                />
+                
+                    
+
                 <Route path="/Logout" element={ <Logout /> } />
                 <Route path="/admin" element={ <Dashboard /> } />
-                <Route path="/registro" element={ <Registro /> } />
+                
                 <Route path="/profile" element={ <Logout /> } />
-                <Route path="*" element={<p>Not Found 404</p>} />
+                <Route path="*" element={<p className="container my-4">Not Found 404</p>} />
 
             </Routes>
             <Footer />
