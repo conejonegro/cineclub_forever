@@ -74,7 +74,7 @@ function TmdbApiCall() {
       <div id="peliculasCont" className='container my-4'>
         
         <h1 className='my-4'>Ultimas peliculas...</h1>
-        <Row className="justify-content-between ">
+        <Row className="justify-content-center todas-peliculas-imdb">
           
               {peliculasDataArraySliced.map((post) => {
                 return(
@@ -99,7 +99,7 @@ function TmdbApiCall() {
     return (
       <div id="peliculasCont" className='container my-4'>
         <h1 className='my-4'>Todas peliculas.</h1>
-        <Row className="justify-content-between todas-peliculas-imdb">
+        <Row className="justify-content-center todas-peliculas-imdb">
           
               {myPosts.map((post) => {
                 return(

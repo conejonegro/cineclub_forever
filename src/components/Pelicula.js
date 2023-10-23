@@ -18,7 +18,7 @@ function Pelicula({titulo, json}) {
     return(
       <div id="peliculasCont">
         <h1>{titulo}</h1>
-        <Row className="justify-content-between ">
+        <Row className="justify-content-center ">
           <div className="main-container-pelicula col-md-6 col-xl-4 col-xxl-3" >
             
               {peliculasDataArraySliced.map((pelicula) => (
@@ -41,7 +41,7 @@ function Pelicula({titulo, json}) {
   return (  
     <Container id="peliculasCont">
       <h1>{titulo}</h1>
-      <Row className="justify-content-between ">
+      <Row className="justify-content-center ">
         <div className="main-container-pelicula col-md-6 col-xl-4 col-xxl-3" >
           
             {json.map((pelicula) => (
