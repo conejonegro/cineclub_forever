@@ -3,9 +3,10 @@ import "../css/login.css";
 import cineclubLogo from "../img/cineclub-logo.png";
 import { useState } from "react";
 
+const userLocal =  localStorage.getItem('userData');
+const userData = JSON.parse(userLocal)
 
-
-function SignIn(){
+function Registro(){
 
 const [email, setInputEmail] = useState("");
 const [password, setInputPassword] = useState("");
@@ -93,4 +94,4 @@ return(
     )
 }
 
-export default SignIn;
+export default Registro;

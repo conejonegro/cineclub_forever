@@ -3,21 +3,22 @@ import "../css/login.css";
 import { Link } from "react-router-dom";
 import cineclubLogo from "../img/cineclub-logo.png";
 import { useEffect, useState } from "react";
-import FirebaseSettings from "../components/FirebaseSettings";
-import { useNavigate } from 'react-router-dom';
 import {toast, Toaster}  from 'react-hot-toast';
+import { UserContext } from "../components/UserProvider";
+import { useContext } from "react";
 
-    const provider = new GoogleAuthProvider();
+const provider = new GoogleAuthProvider();
 
 function Login() {
 
+    const { user, setUser } = useContext(UserContext)
+
     const [email, setInputEmail] = useState("");
     const [password, setInputPassword] = useState("");
-    const [myUserState, setMyUserstate] = useState(null);
-    const navigate = useNavigate();
+    const [myUserState, setMyUserstate] = useState();
 
-    // Push Notifications 
-    
+
+
 
     // UseEffect
     useEffect(() => {
@@ -57,8 +58,10 @@ function Login() {
         const user = result.user;
         localStorage.setItem('userData', JSON.stringify(user));
         setMyUserstate(user);
+        setUser(true)
+        // console.log(userr)
         // IdP data available using getAdditionalUserInfo(result)
-        window.location.reload();
+         window.location.reload();
         // ...
       }).catch((error) => {
         // Handle Errors here.
@@ -91,7 +94,7 @@ function Login() {
                 console.log(user);
                 
                     notifySuccess();
-
+                    window.location.reload();
               
                 // ...
             })

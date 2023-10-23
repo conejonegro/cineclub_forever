@@ -3,9 +3,22 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link, NavLink } from 'react-router-dom';
+import { UserContext } from './UserProvider';
+import { useContext } from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 function NavComponent() {
-  return (
+
+ const userLocal =  localStorage.getItem('userData');
+ const userData = JSON.parse(userLocal)
+ console.log(userData)
+
+   const user = useContext(UserContext)
+   
+    console.log(user)
+
+   return (
     <Navbar bg="light" expand="lg">
       <Container>
       <NavLink to="/" className="navbar-brand" id='nav_logo'>
@@ -23,17 +36,39 @@ function NavComponent() {
               ))}
             </ul>
             <ul className='nav-ul nav-login'>
-              {navItemsLogin.map((e) => (
-                 <li>
-                    <NavLink to={e.item_url} className="nav-link">{e.user ? e.text : "" }</NavLink>
-               </li>
-              ))}
+    
+            {(() => {
+                  if(userData){
+                    
+                    return(
+                      <>
+                    
+                        <li> <NavLink to="/admin" className="nav-link">Dashboard</NavLink></li>
+                        <li> <NavLink to="/logout" className="nav-link">Profile</NavLink></li>
+                      </>
+                    )
+                  }
+                 else{
+
+                    return(
+                      <>
+                      
+                        <li>  <NavLink to="/login" className="nav-link">Iniciar Sesion</NavLink> </li>
+                        <li>  <NavLink to="/registro" className="nav-link">Registro</NavLink> </li>
+                      </>
+                    )
+                  } 
+            })()}
+
             </ul>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
+
+
+  
 }
 const navItems = [];
 navItems.push({
@@ -44,21 +79,16 @@ navItems.push({
   text: 'Contacto',
   item_url: '/contacto'
 });
-navItems.push({
-  text: 'API test',
-  item_url: '/api-test'
-});
-
 
 const navItemsLogin = [];
 navItemsLogin.push({
-  text: 'Login',
-  user: true,
+  text: 'Iniciar Sesion',
+  user: false,
   item_url: '/login'
 });
 navItemsLogin.push({
   text: 'Dashboard',
-  user: true,
+  user: false,
   item_url: '/admin'
 });
 navItemsLogin.push({
@@ -68,7 +98,7 @@ navItemsLogin.push({
 });
 navItemsLogin.push({
   text: 'Profile',
-  user: true,
+  user: false,
   item_url: '/profile'
 });
 // navItemsLogin.push({
