@@ -86,11 +86,11 @@ navItemsLogin.push({
   user: false,
   item_url: '/login'
 });
-navItemsLogin.push({
-  text: 'Dashboard',
-  user: false,
-  item_url: '/admin'
-});
+// navItemsLogin.push({
+//   text: 'Dashboard',
+//   user: false,
+//   item_url: '/admin'
+// });
 navItemsLogin.push({
   text: 'Registro',
   user: true,

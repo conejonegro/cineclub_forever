@@ -101,7 +101,7 @@ function Dashboard(){
 
     return(
         <section className="dashboard">
-            <ShowData/>
+            {/* <ShowData/>
             <div className="container  my-4">
                 <h1><b>Dashboard</b></h1>
                 <h3>Agregar una nueva pelicula:</h3>
@@ -149,7 +149,7 @@ function Dashboard(){
                 {successMessage ? <p className="alert alert-success">{successMessage}</p> : ""}
                 {errorMessage ? <p className="alert alert-danger">{errorMessage}</p> : ""}
 
-            </div>
+            </div> */}
         </section>
     )
 }
