@@ -9,6 +9,10 @@ function ShowData(){
         if (snapshot.exists()) {
             // console.log('Hola Data')
             console.log(snapshot.val());
+            return(
+                snapshot.val()
+            )
+            // console.log(snapshot)
             
         } else {
             console.log("No data available");
@@ -16,6 +20,8 @@ function ShowData(){
         }).catch((error) => {
         console.error(error);
         });
+        
+        console.log(dbRef, "Hola Data")
             return(
                 <></>
             )
