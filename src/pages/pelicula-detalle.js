@@ -6,50 +6,74 @@ import peliculasData from "../json/peliculasData";
 import Video from "../components/Video";
 import { useState,useEffect } from "react";
 import axios from "axios";
+import { collection, getDocs } from "firebase/firestore"; 
+import FirebaseSettings from "../components/FirebaseSettings";
+import { getFirestore } from "firebase/firestore";
 
+const db = getFirestore(FirebaseSettings);
 const API_KEY = 'd35b24b361166e540ee6c082ddecd6bf';
 const IMG_PATH = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'
-const movies_id = [{ id: 460885  }, { id: 17111 },{ id: 772071 },{ id: 660942 },{ id: 9426 },{ id: 780609  }, { id: 882598}, {id: 7452}, {id: 26422}];
 
 function PeliculaDetalle({}){
 
 const [posts, setPosts] = useState([]);
 const [loading, setLoading] = useState(true);
 const [rDate, setRDate] = useState();
+const [dataFromFirebase, setDataFromFirebase] = useState([]);
 const userDataString = localStorage.getItem('userData');
 const userData = JSON.parse(userDataString);
+const [arrayFromFirebase, setArrayFromFirebase] = useState([]);
 
 // API CALL
-  useEffect(() => {
+useEffect(() => {
+  async function fetchDataFromFirebase() {
 
-    const fetchData = async () => {
+    const data = [];
+    const querySnapshot = await getDocs(collection(db, 'peliculas'));
+    querySnapshot.forEach((doc) => {
+      const daTaEach = doc.data();
+      if (daTaEach) {
+        data.push(daTaEach);
+      }
+    });
 
-      try {
+    setDataFromFirebase(data);
+
+    const arrayData = data.map((elem) => (
+      { id: elem.id }
+      ));
+
+    setArrayFromFirebase(arrayData);
+
+    try {
+      if (arrayData.length > 0) { // Verifica si arrayData tiene datos
+        
         const responses = await Promise.all(
-
-          movies_id.map((movie) =>
+          arrayData.map((movie) =>
             axios.get(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${API_KEY}&language=es-MX`)
-
           )
         );
-        
-        const postData = responses.map((response) => (
-          response.data
-          ));
 
+        const postData = responses.map((response) => response.data);
         setPosts(postData);
-        setLoading(false)
-       
-      } catch (error) {
-        console.error('Error fetching data:', error);
-       
+        setLoading(false);
+      } else {
+        setLoading(true);
       }
-    };
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      setLoading(false);
+    }
+  }
 
-    fetchData();
-  }, []);
+  fetchDataFromFirebase();
+}, []);
 
-  console.log(posts)
+
+
+    console.log(posts)
+
+   console.log('arreglo desde firebase', arrayFromFirebase)
 
   let myPosts = posts.map((post) => {
     post.title.toLowerCase();
@@ -57,10 +81,12 @@ const userData = JSON.parse(userDataString);
         {original_title: post.title, slug: post.title.toLowerCase().replace(/\s+/g, '-'), id: post.id, poster: post.poster_path, sinopsis: post.overview, release_date: post.release_date, generos: post.genres, calificacion: post.vote_average}
     )});
 
+    console.log('my posts', myPosts)
+
   const { slug } = useParams();
   const peliculasDataLooped = myPosts.find((post) => (post.slug === slug));
 
-  console.log(myPosts)
+  // console.log(myPosts)
 
   useEffect(() => {
     if (peliculasDataLooped && peliculasDataLooped.release_date) {
@@ -70,23 +96,28 @@ const userData = JSON.parse(userDataString);
     }
   }, [peliculasDataLooped]);
 
-  console.log(loading)
+   console.log(peliculasDataLooped)
 
+// Desarrollo comentarios
   let value = "";
 
   function textAreaValue(e){
      value = e.target.value
-     console.log(value) 
+    //  console.log(value) 
   }
 
   function postComment(){
-    console.log(value)
+    // console.log(value)
     localStorage.setItem('comment', value)
    
   }
 
   const commentFromLocal = localStorage.getItem("comment");
-  console.log(commentFromLocal)
+  // console.log(commentFromLocal)
+
+  if (!dataFromFirebase) {
+    return <div>Cargando datos de Firebase...</div>;
+  }
  
     return (
           <>
@@ -120,6 +151,7 @@ const userData = JSON.parse(userDataString);
                 userData ? 
                 <>
                   <Video url={peliculasDataLooped.video_url} subtitles={peliculasDataLooped.subtitles} />
+                {/* Desarrollo comentarios */}
                   {commentFromLocal ?  <p className="comment-from-local">{commentFromLocal}</p> : ""}
                   <div className="comment-box">
                     <textarea  rows="3" cols="30" placeholder="Escribe tu comentario" onChange={textAreaValue}></textarea>
