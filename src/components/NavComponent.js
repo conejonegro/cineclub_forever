@@ -10,9 +10,36 @@ import { useState } from 'react';
 
 function NavComponent() {
 
+  const [primerNombre, setPrimerNombre] = useState("");
+
  const userLocal =  localStorage.getItem('userData');
  const userData = JSON.parse(userLocal)
  console.log(userData)
+
+ 
+ 
+    useEffect(() => {
+      
+      
+      if(userData){
+       
+        if(!userData.displayName){
+          setPrimerNombre("Profile")
+        }else{
+          const primerEspacioIndex = userData.displayName.indexOf(' ');
+          if (primerEspacioIndex !== -1) {
+            setPrimerNombre(userData.displayName.substring(0, primerEspacioIndex));
+            console.log(primerNombre); // Esto imprimirá "Luis"
+          } 
+        }
+        
+      }
+
+      
+    }, [])
+ 
+
+  
 
    const user = useContext(UserContext)
    
@@ -44,7 +71,7 @@ function NavComponent() {
                       <>
                     
                         <li> <NavLink to="/admin" className="nav-link">Dashboard</NavLink></li>
-                        <li> <NavLink to="/logout" className="nav-link">Profile</NavLink></li>
+                        <li> <NavLink to="/logout" className="nav-link">{primerNombre ? primerNombre : "Profile"}</NavLink></li>
                       </>
                     )
                   }

@@ -54,7 +54,7 @@ const userData = JSON.parse(userDataString);
   let myPosts = posts.map((post) => {
     post.title.toLowerCase();
     return(
-        {original_title: post.title, slug: post.title.toLowerCase().replace(/\s+/g, '-'), id: post.id, poster: post.poster_path, sinopsis: post.overview, release_date: post.release_date, generos: post.genres}
+        {original_title: post.title, slug: post.title.toLowerCase().replace(/\s+/g, '-'), id: post.id, poster: post.poster_path, sinopsis: post.overview, release_date: post.release_date, generos: post.genres, calificacion: post.vote_average}
     )});
 
   const { slug } = useParams();
@@ -100,7 +100,10 @@ const userData = JSON.parse(userDataString);
                           </div>
                           <div className="col-lg-8 movie-info">
                               <div className="titulo-pelicula">
-                                  <h1>{peliculasDataLooped.original_title}</h1><span>({peliculasDataLooped.generos[0].name})</span>
+                                <div>
+                                    <h1>{peliculasDataLooped.original_title}</h1><span>({peliculasDataLooped.generos[0].name})</span>
+                                  </div>
+                                  <p>Calificacion: {peliculasDataLooped.calificacion}</p>
                                   {/* <p>{peliculasDataLooped.genero}</p> */}
                               </div>
                               <p>{peliculasDataLooped.sinopsis}</p> 

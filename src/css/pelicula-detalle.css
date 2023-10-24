@@ -32,7 +32,9 @@
     background: #0000007d;
 }
 .titulo-pelicula{
-   
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
 }
 video{
     max-width: 800px;
