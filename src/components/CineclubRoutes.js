@@ -16,16 +16,20 @@ import Registro from "../pages/Registro";
 import ProtectedRoutes from "./ProtectedRoutes";
 import { UserProvider } from "./UserProvider";
 
+
 function CineclubRoutes(){
 
     return(
+
+        
        
         <BrowserRouter>
+            
             <NavComponent />
             <Routes>
 
                 <Route path="/" element= {<TmdbApiCall />} />
-                <Route path="/peliculas" element={ <TmdbApiCall titulo="Todas las Peliculas" json={peliculasData} />} />
+                <Route path="/peliculas" element={ <TmdbApiCall />} />
                 <Route path="/contacto" element={<Contacto />} />
                 <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
                 <Route element={<ProtectedRoutes />}>
@@ -43,6 +47,7 @@ function CineclubRoutes(){
             <Footer />
             <ScrollToTop />
         </ BrowserRouter>
+        
     // {/* <AppiCall /> */}
     )
 }

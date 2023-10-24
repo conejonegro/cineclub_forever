@@ -1,19 +1,20 @@
-import { collection, getDocs, query } from "firebase/firestore"; 
+import { collection, getDocs } from "firebase/firestore"; 
 import { getFirestore } from "firebase/firestore";
 import FirebaseSettings from "../components/FirebaseSettings";
-import { useEffect, useState } from "react";
-import { TmdbApiCall } from "../components/TmdbAPICall";
+import { useEffect, useState, createContext } from "react";
 
 
 const db = getFirestore(FirebaseSettings);
 
+export const dataFromFirebaseContext = createContext();
 function ShowData(){
-
-    const [dataFromFirebase, setDataFromFirebase] = useState([]); // Usamos useState para gestionar el estado del arreglo.
+  
+   const [dataFromFirebase, setDataFromFirebase] = useState([]); // Usamos useState para gestionar el estado del arreglo.
 
     useEffect(() => {
 
       async function fetchDataFromFirebase() {
+
         const data = [];
         const querySnapshot = await getDocs(collection(db, 'peliculas'));
         querySnapshot.forEach(doc => {
@@ -23,7 +24,7 @@ function ShowData(){
           }
         });
   
-        console.log(data); // Esto imprimirá el arreglo en la consola.
+        //  console.log(data); // Esto imprimirá el arreglo en la consola.
         setDataFromFirebase(data); // Actualizamos el estado con los datos obtenidos de Firebase.
       }
   
@@ -31,21 +32,17 @@ function ShowData(){
 
     }, []);
 
-    console.log(dataFromFirebase); 
+    // console.log(dataFromFirebase)
     
     return(
-       <>
-       <ul>
-        {dataFromFirebase.map((item, index) => (
-          <li key={index}>{item.tmdb_id}</li> 
-        ))}
-      </ul>
-      
-      
-       </>
+        <dataFromFirebaseContext.Provider value={dataFromFirebase}>
+          <div>
+           <h1></h1>
+          </div>
+        </dataFromFirebaseContext.Provider>
      
     )
 }
 
 
-export default ShowData;
+export {ShowData};
