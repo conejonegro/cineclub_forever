@@ -2,17 +2,11 @@
 import FirebaseSettings from "../components/FirebaseSettings";
 import { useState } from "react";
 import "../css/dashboard.css";
-import ShowData from "./ShowData";
 import { collection, addDoc } from "firebase/firestore"; 
 import { getFirestore } from "firebase/firestore";
 
-
-// Initialize Realtime Database and get a reference to the service
-
-
 const db = getFirestore(FirebaseSettings);
  
-
 function Dashboard(){
 
     const [idValue, setIdValue] = useState([]);
@@ -51,6 +45,8 @@ function Dashboard(){
               tmdb_id: idValue
             });
             console.log("Document written correctly with ID: ", docRef.id);
+            setsuccessMessage("Campo agregado con exito")
+            setErrorMessage(false)
           } catch (e) {
             console.error("Error adding document: ", e);
           }
@@ -58,30 +54,6 @@ function Dashboard(){
         }
 
     }
-
-    // function writeNewMovie(movieId, nombre, poster, release_date, sinopsis, slug, subtitles, video_url) {
-    //     if(idValue == "" || nombreValue == "" || posterValue == "" || fechaValue == "" || sinopsisValue == "" || slugValue == "" || subtitulosValue == "" || videoValue === ""){
-    //         setErrorMessage("Error: nose pude agregar la pelicula, Llena todos los campos");
-    //         console.log(idValue);
-    //     }else{
-    //         const database = getDatabase();
-    //             set(ref(database, '/' + nombre), {
-    //             id: movieId,
-    //             nombre: nombre,
-    //             poster : poster,
-    //             release_date: release_date,
-    //             sinopsis: sinopsis,
-    //             slug: slug,
-    //             subtitles: subtitles,
-    //             video_url: video_url,
-    //             });
-    //             setsuccessMessage("Pelicula Agregada con Exito");  
-    //     }
-        
-    //   }
-
-    
-        
 
     return(
         <section className="dashboard">
