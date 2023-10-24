@@ -42,7 +42,7 @@ function Dashboard(){
             const docRef = await addDoc(collection(db, "peliculas"), {
               subtitle_url: subtitulosValue,
               video_url: setVideoValue,
-              tmdb_id: idValue
+              id: idValue
             });
             console.log("Document written correctly with ID: ", docRef.id);
             setsuccessMessage("Campo agregado con exito")
