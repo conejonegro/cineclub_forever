@@ -15,14 +15,17 @@ import Dashboard from "../dashboard/Dashboard";
 import Registro from "../pages/Registro";
 import ProtectedRoutes from "./ProtectedRoutes";
 import { UserProvider } from "./UserProvider";
+import { Navigate } from "react-router";
+
+
+const userDataString = localStorage.getItem('userData');
+const userData = JSON.parse(userDataString);
 
 
 function CineclubRoutes(){
 
     return(
 
-        
-       
         <BrowserRouter>
             
             <NavComponent />
@@ -32,15 +35,16 @@ function CineclubRoutes(){
                 <Route path="/peliculas" element={ <TmdbApiCall />} />
                 <Route path="/contacto" element={<Contacto />} />
                 <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
-                <Route element={<ProtectedRoutes />}>
+                
+                <Route element={<ProtectedRoutes user={userData} />}>
                     <Route path="/login" element={ <Login /> } />
                     <Route path="/registro" element={ <Registro /> } />
+                    
                 </Route>
                 
-                <Route path="/login" element={ <Login /> } />
-                <Route path="/Logout" element={ <Logout /> } />
-                <Route path="/admin" element={ <Dashboard /> } />
-                <Route path="/profile" element={ <Logout /> } />
+                <Route path="/admin" element={ userData ? <Dashboard /> : <Navigate to="/" /> } />
+                <Route path="/profile" element={userData ? <Logout /> : <Navigate to="/" />  } />
+                
                 <Route path="*" element={<p className="container">Not Found 404</p>} />
 
             </Routes>

@@ -71,7 +71,7 @@ function NavComponent() {
                       <>
                     
                         <li> <NavLink to="/admin" className="nav-link">Dashboard</NavLink></li>
-                        <li> <NavLink to="/logout" className="nav-link">{primerNombre ? primerNombre : "Profile"}</NavLink></li>
+                        <li> <NavLink to="/profile" className="nav-link">{primerNombre ? primerNombre : "Profile"}</NavLink></li>
                       </>
                     )
                   }
