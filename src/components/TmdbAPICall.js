@@ -5,8 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import PeliculaDetalle from '../pages/pelicula-detalle';
 import {dataFromFirebaseContext, ShowData} from '../dashboard/ShowData';
 import FirebaseSettings from "../components/FirebaseSettings";
-import { getFirestore } from "firebase/firestore";
-import { collection, getDocs } from "firebase/firestore"; 
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const db = getFirestore(FirebaseSettings);
 const API_KEY = 'd35b24b361166e540ee6c082ddecd6bf';
@@ -31,9 +30,12 @@ function TmdbApiCall() {
     useEffect(() => {
 
       async function fetchDataFromFirebase() {
+        
 
         const data = [];
+        
         const querySnapshot = await getDocs(collection(db, 'peliculas'));
+        
         querySnapshot.forEach(doc => {
           const daTaEach = doc.data();
           if (daTaEach) {
