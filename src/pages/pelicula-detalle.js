@@ -71,9 +71,9 @@ useEffect(() => {
 
 
 
-    console.log(posts)
+    // console.log(posts)
 
-   console.log('arreglo desde firebase', arrayFromFirebase)
+  //  console.log('arreglo desde firebase', arrayFromFirebase)
 
   let myPosts = posts.map((post) => {
     post.title.toLowerCase();
@@ -81,7 +81,7 @@ useEffect(() => {
         {original_title: post.title, slug: post.title.toLowerCase().replace(/\s+/g, '-'), id: post.id, poster: post.poster_path, sinopsis: post.overview, release_date: post.release_date, generos: post.genres, calificacion: post.vote_average}
     )});
 
-    console.log('my posts', myPosts)
+    // console.log('my posts', myPosts)
 
   const { slug } = useParams();
   const peliculasDataLooped = myPosts.find((post) => (post.slug === slug));
@@ -96,7 +96,7 @@ useEffect(() => {
     }
   }, [peliculasDataLooped]);
 
-   console.log(peliculasDataLooped)
+  //  console.log(peliculasDataLooped)
 
 // Desarrollo comentarios
   let value = "";

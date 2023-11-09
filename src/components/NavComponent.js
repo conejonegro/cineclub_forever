@@ -7,6 +7,7 @@ import { UserContext } from './UserProvider';
 import { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Search from './Search';
 
 function NavComponent() {
 
@@ -14,7 +15,7 @@ function NavComponent() {
 
  const userLocal =  localStorage.getItem('userData');
  const userData = JSON.parse(userLocal)
- console.log(userData)
+//  console.log(userData)
 
  
  
@@ -29,7 +30,7 @@ function NavComponent() {
           const primerEspacioIndex = userData.displayName.indexOf(' ');
           if (primerEspacioIndex !== -1) {
             setPrimerNombre(userData.displayName.substring(0, primerEspacioIndex));
-            console.log(primerNombre); // Esto imprimirá "Luis"
+            // console.log(primerNombre); // Esto imprimirá "Luis"
           } 
         }
         
@@ -43,7 +44,7 @@ function NavComponent() {
 
    const user = useContext(UserContext)
    
-    console.log(user)
+    // console.log(user)
 
    return (
     <Navbar bg="light" expand="lg">
@@ -88,6 +89,7 @@ function NavComponent() {
             })()}
 
             </ul>
+            <Search/>
           </Nav>
         </Navbar.Collapse>
       </Container>

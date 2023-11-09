@@ -16,6 +16,7 @@ import Registro from "../pages/Registro";
 import ProtectedRoutes from "./ProtectedRoutes";
 import { UserProvider } from "./UserProvider";
 import { Navigate } from "react-router";
+import SearchPage from "../pages/SearchPage";
 
 
 const userDataString = localStorage.getItem('userData');
@@ -44,6 +45,7 @@ function CineclubRoutes(){
                 
                 <Route path="/admin" element={ userData ? <Dashboard /> : <Navigate to="/" /> } />
                 <Route path="/profile" element={userData ? <Logout /> : <Navigate to="/" />  } />
+                <Route path="/search" element={<SearchPage />} />
                 
                 <Route path="*" element={<p className="container">Not Found 404</p>} />
 

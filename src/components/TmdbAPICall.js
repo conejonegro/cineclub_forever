@@ -45,7 +45,7 @@ function TmdbApiCall() {
   
         //  console.log(data); // Esto imprimirá el arreglo en la consola.
         setDataFromFirebase(data); // Actualizamos el estado con los datos obtenidos de Firebase.
-        console.log(data)
+        // console.log(data)
        
       }
   
@@ -63,7 +63,7 @@ function TmdbApiCall() {
   
             )
           );
-          console.log(responses)
+          //  console.log(responses)
           
           const postData = responses.map((response) => (
             response.data
@@ -71,8 +71,8 @@ function TmdbApiCall() {
   
           setPosts(postData);
           setLoading(false);
-           console.log(postData);
-           console.log(posts);
+          //  console.log(postData);
+          //  console.log(posts);
           
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -91,7 +91,7 @@ function TmdbApiCall() {
       return ({id: id.id}) 
     })
 
-      console.log(arrayFromFirebase)
+      // console.log(arrayFromFirebase)
 
     
       // console.log(movies_id)
@@ -100,7 +100,7 @@ function TmdbApiCall() {
   if (loading) {
     return <h5 className='container'>Cargando...</h5>;
   }
-   console.log(posts)
+  //  console.log(posts)
 
 
   let myPosts = posts.map((post) => {
