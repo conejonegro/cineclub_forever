@@ -1,10 +1,26 @@
+import { useState, useContext, useEffect } from "react";
+import {searchContext} from "../components/SearchProvider";
+
 function SearchPage() {
 
+    const { dataFromSearch } = useContext(searchContext);
+
+
     return ( 
-        <div>
-            <h1 className="container my-4 display-5">Hola Search </h1>
-            
-        </div>
+        <>
+            {dataFromSearch ? 
+                (<div>
+                
+                    <h1 className="container my-4 ">{
+
+                        
+
+                    }</h1>
+
+                </div>) :
+                <div className="container my-4">Haz tu Busqueda</div>
+            }
+        </>
        
      );
 }

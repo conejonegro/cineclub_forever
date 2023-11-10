@@ -3,8 +3,6 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link, NavLink } from 'react-router-dom';
-import { UserContext } from './UserProvider';
-import { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Search from './Search';
@@ -36,13 +34,7 @@ function NavComponent() {
         
       }
 
-      
     }, [])
- 
-
-  
-
-   const user = useContext(UserContext)
    
     // console.log(user)
 

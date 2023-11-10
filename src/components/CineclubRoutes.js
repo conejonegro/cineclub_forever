@@ -14,7 +14,7 @@ import Login from "../pages/Login";
 import Dashboard from "../dashboard/Dashboard";
 import Registro from "../pages/Registro";
 import ProtectedRoutes from "./ProtectedRoutes";
-import { UserProvider } from "./UserProvider";
+import { UserProvider } from "./SearchProvider";
 import { Navigate } from "react-router";
 import SearchPage from "../pages/SearchPage";
 
