@@ -29,10 +29,11 @@ function Search() {
 
     function inputData(e){
         console.log(e.target.value);
-         userSearch = e.target.value
+        userSearch = e.target.value
          
         
     }
+
     function searchOnAPI(e){
         e.preventDefault();
 
@@ -43,28 +44,8 @@ function Search() {
 
     function onClickButton(){
         setSearchString(userSearch)
-        
+
     }
-
-
-    // useEffect(() => {
-
-    //     async function getData(){
-
-    //         try{
-    
-    //             // const response = await axios.get(`https://api.themoviedb.org/3/movie/${2}?api_key=${API_KEY}&language=es-MX`)
-    //             const responseTwo = await axios.get(`https://api.themoviedb.org/3/search/movie?query=${userSearch}&api_key=${API_KEY}`)
-    //             console.log(responseTwo.data)
-                
-    //         }
-    //         catch(error){
-    //             console.log(error)
-    //         }
-    
-    //     }
-    //     getData();
-    // }, [])
 
     return ( 
        

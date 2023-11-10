@@ -1,6 +1,11 @@
 function SearchPage() {
+
     return ( 
-        <h1>Hola Search</h1>
+        <div>
+            <h1 className="container my-4 display-5">Hola Search </h1>
+            
+        </div>
+       
      );
 }
 
