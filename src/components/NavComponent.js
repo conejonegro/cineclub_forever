@@ -81,8 +81,10 @@ function NavComponent() {
             })()}
 
             </ul>
-            <Search/>
+            
           </Nav>
+        
+         <Link to="/search"> <button className="btn btn-outline-success" type="submit"  >Search</button></Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>

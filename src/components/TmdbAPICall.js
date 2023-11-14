@@ -9,7 +9,7 @@ import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const db = getFirestore(FirebaseSettings);
 const API_KEY = 'd35b24b361166e540ee6c082ddecd6bf';
-const IMG_PATH = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'
+const IMG_PATH = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/';
 // const movies_id = [{ id: 460885  }, { id: 17111 },{ id: 772071 },{ id: 660942 },{ id: 9426 },{ id: 780609  }, { id: 882598}, {id: 7452}];
 
 //  const nameQuery = "donnie+darko";
@@ -120,6 +120,7 @@ if (!dataFromFirebase) {
 
 
   if (isHomePage === '/') {
+    console.log(peliculasDataArraySliced)
     return(
       <div id="peliculasCont" className='container my-4'>
       
@@ -146,6 +147,7 @@ if (!dataFromFirebase) {
     )
   }
   else{
+    console.log(myPosts)
     return (
       <div id="peliculasCont" className='container my-4'>
         <h1 className='my-4'>Todas peliculas.</h1>

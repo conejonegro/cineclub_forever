@@ -9,48 +9,10 @@ function Search() {
 
    const { searchData, searchOnAPI, inputData, getData, dataFromSearch } = useContext(searchContext);
 
-    console.log(searchData, dataFromSearch)
-  
-    // const [dataFromSearch, setDataFromSearch] = useState();
-
-    // let userSearch;
-
-    // async function getData(){
-
-    //     try{
-
-    //         // const response = await axios.get(`https://api.themoviedb.org/3/movie/${2}?api_key=${API_KEY}&language=es-MX`)
-    //         const responseTwo = await axios.get(`https://api.themoviedb.org/3/search/movie?query=${userSearch}&api_key=${API_KEY}`)
-    //         console.log(responseTwo.data)
-    //         setDataFromSearch(responseTwo.data)
-            
-            
-    //     }
-    //     catch(error){
-    //         console.log(error)
-    //     }
-
-    // }
-
-    // function inputData(e){
-    //     console.log(e.target.value);
-    //     userSearch = e.target.value
-         
-    // }
-
-    // function searchOnAPI(e){
-    //     e.preventDefault();
-
-    //     console.log('clickkk')
-    //     getData();
-        
-    // }
-
-    // console.log(dataFromSearch)
 
     return ( 
        
-        <form className="d-flex" role="search" type='submit' onSubmit={searchOnAPI}>
+        <form className="d-flex search-bar-form" role="search" type='submit' onSubmit={searchOnAPI}>
              {/* {dataFromSearch ? <Navigate to='/search' /> : ''} */}
             <input className="form-control me-2" onChange={inputData} type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit"  >Search</button>

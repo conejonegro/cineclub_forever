@@ -152,11 +152,11 @@ useEffect(() => {
                 <>
                   <Video url={peliculasDataLooped.video_url} subtitles={peliculasDataLooped.subtitles} />
                 {/* Desarrollo comentarios */}
-                  {commentFromLocal ?  <p className="comment-from-local">{commentFromLocal}</p> : ""}
-                  <div className="comment-box">
+                  {/* {commentFromLocal ?  <p className="comment-from-local">{commentFromLocal}</p> : ""} */}
+                  {/* <div className="comment-box">
                     <textarea  rows="3" cols="30" placeholder="Escribe tu comentario" onChange={textAreaValue}></textarea>
                     <button className="btn btn-primary btn-lg " onClick={postComment}>Enviar</button>
-                  </div>
+                  </div> */}
                 </>
                 : 
                   <h5 className="inicia-sesion">Inicia Sesion para ver el Video...</h5>

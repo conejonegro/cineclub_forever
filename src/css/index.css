@@ -25,6 +25,10 @@ body {
     color: rgba(3, 3, 3, 0.7);
     font-weight: 500;
 }
+.search-bar-form{
+  align-items: center;
+  max-width: 400px;
+}
 .nav-ul{
   list-style-type: none !important;
     padding: 0;
