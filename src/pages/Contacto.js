@@ -4,7 +4,7 @@ function Contacto(){
     return(
         <Container>
             <div className="contactanos-title-cont">   
-                <h1>Contactanos:</h1>
+                <h1>Contactanos::</h1>
                 <p><b>Streaming de peliculas – Guadalajara Jalisco</b><br/>Tienes alguna pregunta relacionada con el sitio?<br/>Contactanos por este medio y nos pondremos en contacto.</p>
             </div>
            <form onSubmit={(e)=>{
