@@ -1,7 +1,4 @@
 import { getDatabase, ref, child, get } from "firebase/database";
-
-
-
 function ShowData(){
 
     const dbRef = ref(getDatabase());
@@ -23,7 +20,7 @@ function ShowData(){
         
         console.log(dbRef, "Hola Data")
             return(
-                <></>
+                <h1>hola</h1>
             )
         }
 
