@@ -15,7 +15,7 @@ function AppiCall() {
     
     return (
       <div>
-       {console.log(data)}
+       {/*console.log(data)*/}
       </div>
     );
   }

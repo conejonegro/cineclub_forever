@@ -20,13 +20,13 @@ const Video = ({url, subtitles}) => {
     
   }, []); 
  
-  console.log("hola", subtitlesState);
+ // console.log("hola", subtitlesState);
  
 
     return (
       <>
         <video controls>
-        {console.log(peliculasData)}
+        {/*console.log(peliculasData)*/}
           <source src={url} type="video/mp4" preload="auto" controls="controls" width="300" height="150" data-setup="{}"  />
           <track 
           label="Subtitulos" 

@@ -12,11 +12,11 @@ function NavComponent() {
 
  const userLocal =  localStorage.getItem('userData');
  const userData = JSON.parse(userLocal)
- console.log(userData)
+ //console.log(userData)
 
    const user = useContext(UserContext)
    
-    console.log(user)
+   // console.log(user)
 
    return (
     <Navbar bg="light" expand="lg">

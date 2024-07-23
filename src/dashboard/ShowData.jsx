@@ -5,7 +5,7 @@ function ShowData(){
         get(child(dbRef, `/`)).then((snapshot) => {
         if (snapshot.exists()) {
             // console.log('Hola Data')
-            console.log(snapshot.val());
+           // console.log(snapshot.val());
             return(
                 snapshot.val()
             )
@@ -18,7 +18,7 @@ function ShowData(){
         console.error(error);
         });
         
-        console.log(dbRef, "Hola Data")
+       // console.log(dbRef, "Hola Data")
             return(
                 <h1>hola</h1>
             )

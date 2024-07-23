@@ -3,7 +3,7 @@ import {Pelicula} from './Pelicula';
 
 function HomePage({titulo, json}) {
 
-  console.log('contenido json dentro homepage para filtrar')
+  //console.log('contenido json dentro homepage para filtrar')
 
   return (
     <div className="home-page container">

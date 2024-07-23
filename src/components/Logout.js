@@ -23,11 +23,11 @@ function Logout({}) {
     function logOutFromCineclub(){
 
         localStorage.removeItem('userData');
-        console.log("loggin out")
+        //console.log("loggin out")
         const auth = getAuth();
             signOut(auth).then(() => {
             // Sign-out successful.
-            console.log(auth)
+           // console.log(auth)
             }).catch((error) => {
             // An error happened.
             });

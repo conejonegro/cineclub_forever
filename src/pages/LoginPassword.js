@@ -11,7 +11,7 @@ function LoginPassword(){
             </div>
            <form onSubmit={(e)=>{
             e.preventDefault();
-            console.log(e.target.nombre.value);
+          //  console.log(e.target.nombre.value);
            }}>  
                 <div className="input">
                     <label>Nombre</label>

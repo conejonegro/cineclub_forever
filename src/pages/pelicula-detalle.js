@@ -49,7 +49,7 @@ const userData = JSON.parse(userDataString);
     fetchData();
   }, []);
 
-  console.log(posts)
+ //console.log(posts)
 
   let myPosts = posts.map((post) => {
     post.title.toLowerCase();
@@ -60,7 +60,7 @@ const userData = JSON.parse(userDataString);
   const { slug } = useParams();
   const peliculasDataLooped = myPosts.find((post) => (post.slug === slug));
 
-  console.log(myPosts)
+ // console.log(myPosts)
 
   useEffect(() => {
     if (peliculasDataLooped && peliculasDataLooped.release_date) {
@@ -70,17 +70,17 @@ const userData = JSON.parse(userDataString);
     }
   }, [peliculasDataLooped]);
 
-  console.log(loading)
+ // console.log(loading)
 
   let value = "";
 
   function textAreaValue(e){
      value = e.target.value
-     console.log(value) 
+    // console.log(value) 
   }
 
   function postComment(){
-    console.log(value)
+   // console.log(value)
     localStorage.setItem('comment', value)
    
   }

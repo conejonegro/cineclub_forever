@@ -40,7 +40,7 @@ function TmdbApiCall() {
 
         setPosts(postData);
         setLoading(false);
-        console.log(postData);
+       // console.log(postData);
       } catch (error) {
         console.error('Error fetching data:', error);
         setLoading(false);
@@ -53,7 +53,7 @@ function TmdbApiCall() {
   if (loading) {
     return <h5 className='container'>Cargando...</h5>;
   }
-  console.log(posts)
+ // console.log(posts)
 
 
   let myPosts = posts.map((post) => {
@@ -64,7 +64,7 @@ function TmdbApiCall() {
 
   
   const peliculasDataArraySliced = myPosts.slice(0, 4);
-  console.log(peliculasDataArraySliced)
+ // console.log(peliculasDataArraySliced)
 // Llamada a la API de Firebase
 
 

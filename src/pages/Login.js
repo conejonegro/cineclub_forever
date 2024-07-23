@@ -28,8 +28,8 @@ function Login() {
             function handleValueEmail(e){
                 setInputEmail("");
                 setInputPassword("");
-                console.log("hola use");
-                console.log(email);
+              // console.log("hola use");
+               // console.log(email);
             }
             handleValueEmail();
         }, 1000)
@@ -71,7 +71,7 @@ function Login() {
         // The email of the user's account used.
         const email = error.customData.email;
         // The AuthCredential type that was used.
-        console.log(email)
+       // console.log(email)
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
       });
@@ -91,7 +91,7 @@ function Login() {
                 const user = userCredential.user;
                 localStorage.setItem('userData', JSON.stringify(user));
                 setMyUserstate(user);
-                console.log(user);
+               // console.log(user);
                 
                     notifySuccess();
                     window.location.reload();

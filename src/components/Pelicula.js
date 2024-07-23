@@ -10,11 +10,11 @@ function Pelicula({titulo, json}) {
 
   const location = useLocation();
   const isHomePage = location.pathname;
-  console.log(location)
+ // console.log(location)
   const peliculasDataArraySliced = json.slice(0, 4);
 
   if (isHomePage === '/') {
-    console.log('HOMEPAGE!!')
+  //  console.log('HOMEPAGE!!')
     return(
       <div id="peliculasCont">
         <h1>{titulo}</h1>
@@ -37,7 +37,7 @@ function Pelicula({titulo, json}) {
       </div>
     )
  } else{
-  console.log('else')
+ // console.log('else')
   return (  
     <Container id="peliculasCont">
       <h1>{titulo}</h1>
