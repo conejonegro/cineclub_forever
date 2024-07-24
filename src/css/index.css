@@ -41,6 +41,11 @@ body {
 .navbar-brand{
   color:#000000de;
 }
+/*#peliculasCont{
+  background-image: url(/public/static/cineclub-transformed-min.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
 
 @media(max-width:767px){
   .nav-ul {

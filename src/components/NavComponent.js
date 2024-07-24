@@ -22,7 +22,7 @@ function NavComponent() {
     <Navbar bg="light" expand="lg">
       <Container>
       <NavLink to="/" className="navbar-brand" id='nav_logo'>
-          <img src="https://streaming.trlvdsgn.website/wp-content/uploads/2022/01/fav-sineclub.png" alt='Cineclub Logo'/>
+          <img src="/static/cineclub-transformed-min.png" alt='Cineclub Logo'/>
           Cineclub Forever
         </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

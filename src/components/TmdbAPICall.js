@@ -7,7 +7,7 @@ import ShowData from '../dashboard/ShowData';
 
 const API_KEY = 'd35b24b361166e540ee6c082ddecd6bf';
 const IMG_PATH = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'
-const movies_id = [{ id: 460885  }, { id: 42148 },{ id: 772071 },{ id: 660942 },{ id: 9426 },{ id: 780609  }, { id: 882598}, {id: 7452}];
+const movies_id = [{ id: 42148 }, { id: 460885  }, { id: 772071 },{ id: 660942 },{ id: 9426 },{ id: 780609  }, { id: 882598}, {id: 7452}];
 
 //  const nameQuery = "donnie+darko";
 // const baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
