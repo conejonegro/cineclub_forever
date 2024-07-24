@@ -3,6 +3,7 @@ import peliculasData from "../json/peliculasData";
 
 
 
+
 const Video = ({url, subtitles}) => {
   const [subtitlesState, setSubtitles] = useState([]);
 
@@ -26,13 +27,13 @@ const Video = ({url, subtitles}) => {
     return (
       <>
         <video controls>
-        {/*console.log(peliculasData)*/}
+        {console.log(peliculasData)}
           <source src={url} type="video/mp4" preload="auto" controls="controls" width="300" height="150" data-setup="{}"  />
           <track 
           label="Subtitulos" 
           kind="subtitles"
           crossOrigin="anonymous"
-          src={subtitles}  
+          src={"/static/pixote-esp-translated.vtt"}  
           srcLang="es"  
           default/>
           Sorry, your browser doesn't support videos.

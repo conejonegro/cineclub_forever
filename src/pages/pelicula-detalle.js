@@ -9,7 +9,7 @@ import axios from "axios";
 
 const API_KEY = 'd35b24b361166e540ee6c082ddecd6bf';
 const IMG_PATH = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'
-const movies_id = [{ id: 460885  }, { id: 17111 },{ id: 772071 },{ id: 660942 },{ id: 9426 },{ id: 780609  }, { id: 882598}, {id: 7452}, {id: 26422}];
+const movies_id = [{ id: 460885  }, { id: 42148 },{ id: 772071 },{ id: 660942 },{ id: 9426 },{ id: 780609  }, { id: 882598}, {id: 7452}, {id: 26422}];
 
 function PeliculaDetalle({}){
 
@@ -49,7 +49,7 @@ const userData = JSON.parse(userDataString);
     fetchData();
   }, []);
 
- //console.log(posts)
+ console.log("Mis posts reales",posts)
 
   let myPosts = posts.map((post) => {
     post.title.toLowerCase();
@@ -60,7 +60,7 @@ const userData = JSON.parse(userDataString);
   const { slug } = useParams();
   const peliculasDataLooped = myPosts.find((post) => (post.slug === slug));
 
- // console.log(myPosts)
+  console.log("peliculas data loped", peliculasDataLooped)
 
   useEffect(() => {
     if (peliculasDataLooped && peliculasDataLooped.release_date) {
@@ -105,7 +105,7 @@ const userData = JSON.parse(userDataString);
                               </div>
                               <p>{peliculasDataLooped.sinopsis}</p> 
                               
-                              <p><b>Fecha de Lanzamientos:</b> {rDate}</p>
+                              <p><b>Fecha de Lanzamiento:</b> {rDate}</p>
                               <p><b>Genero:</b> {peliculasDataLooped.generos.map(genero => {
                                 return genero.name + ", "
                               })}</p>
@@ -116,7 +116,7 @@ const userData = JSON.parse(userDataString);
               {
                 userData ? 
                 <>
-                  <Video url={peliculasDataLooped.video_url} subtitles={peliculasDataLooped.subtitles} />
+                  <Video url={"https://mcseguros.com.mx/cineclub/pixote.mp4"}  />
                   {/* {commentFromLocal ?  <p className="comment-from-local">{commentFromLocal}</p> : ""} */}
                   {/* <div className="comment-box">
                     <textarea  rows="3" cols="30" placeholder="Escribe tu comentario" onChange={textAreaValue}></textarea>
