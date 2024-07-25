@@ -1,11 +1,10 @@
 import { Route, Routes } from "react-router";
 import {NavComponent} from "./NavComponent";
 import HomePage from "./HomePage";
-import { Pelicula } from "./Pelicula";
 import Contacto from "../pages/Contacto";
 import PeliculaDetalle from "../pages/pelicula-detalle";
 import peliculasData from "../json/peliculasData";
-import Footer from "./Footer";
+import Footer from "./footer/Footer";
 import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./scrollToTop";
 import {TmdbApiCall} from "./TmdbAPICall";
@@ -14,10 +13,8 @@ import Login from "../pages/Login";
 import Dashboard from "../dashboard/Dashboard";
 import Registro from "../pages/Registro";
 import ProtectedRoutes from "./ProtectedRoutes";
-import { UserProvider } from "./UserProvider";
 
 function CineclubRoutes(){
-
     return(
        
         <BrowserRouter>
@@ -43,8 +40,7 @@ function CineclubRoutes(){
             <Footer />
             <ScrollToTop />
         </ BrowserRouter>
-    // {/* <AppiCall /> */}
+
     )
 }
-
 export default CineclubRoutes;

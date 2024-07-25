@@ -1,4 +1,4 @@
-import '../css/footer.css';
+import '../../css/footer.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -11,7 +11,7 @@ function Footer(){
             <Container>
                 <Row>
                     <Col md={3} className="footer-logo">
-                        <img src="https://streaming.trlvdsgn.website/wp-content/uploads/2022/01/fav-sineclub.png" alt='Cineclub Logo'/>
+                        <img src="/static/cineclub-transformed-min.png" alt='Cineclub Logo'/>
                         <p>Streaming de Peliculas seleccionadas por CineClub Forever<sup>&reg;</sup> en Guadalajara Jalisco Mexico, sitio web creado por TRLVDSGN<sup>&trade;</sup></p>
                     </Col>
                     <Col md={3}>

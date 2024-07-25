@@ -1,13 +1,9 @@
 import '../css/home-page.css';
 import {Pelicula} from './Pelicula';
-
 function HomePage({titulo, json}) {
-
-  //console.log('contenido json dentro homepage para filtrar')
-
   return (
     <div className="home-page container">
-        <h1>{titulo}</h1>
+        <h1>{titulo}ss</h1>
         <Pelicula json={json}/>
     </div>
   );
