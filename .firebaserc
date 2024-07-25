@@ -1,5 +1,8 @@
 {
   "projects": {
     "default": "cineclub-forever"
+  },
+  "hosting": {
+    "site": "cineclub-forever"  
   }
 }

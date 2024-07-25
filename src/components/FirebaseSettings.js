@@ -6,7 +6,6 @@ import { getDatabase } from "firebase/database";
 const firebaseConfig = {
   apiKey: "AIzaSyB4inu3nJ8z6w9zLNyImLLpnBE_A-jnLKw",
   authDomain: "cineclub-forever.firebaseapp.com",
-  databaseURL: "https://cineclub-forever-default-rtdb.firebaseio.com",
   projectId: "cineclub-forever",
   storageBucket: "cineclub-forever.appspot.com",
   messagingSenderId: "136815813538",
