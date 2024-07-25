@@ -1,8 +1,14 @@
 import Container from "react-bootstrap/esm/Container";
 import '../css/contacto.css';
-function Contacto(){
+import { Helmet } from 'react-helmet';
+function Contacto({ title, description }){
     return(
         <Container>
+            <Helmet>
+                <title>{title}</title>
+                <meta name="description" content={description} />
+            </Helmet>
+
             <div className="contactanos-title-cont">   
                 <h1>Contactanos:</h1>
                 <p><b>Streaming de peliculas – Guadalajara Jalisco</b><br/>Tienes alguna pregunta relacionada con el sitio?<br/>Contactanos por este medio y nos pondremos en contacto.</p>
