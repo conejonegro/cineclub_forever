@@ -5,6 +5,7 @@ import peliculasData from "../json/peliculasData";
 import Video from "../components/Video";
 import { useState, useEffect } from "react";
 import TMDBApiCall from "../utils/TMBDApiCall";
+import { Subtitles } from "../components/subtitles";
 
 function PeliculaDetalle() {
   const IMG_PATH = process.env.REACT_APP_IMG_PATH;
@@ -12,8 +13,12 @@ function PeliculaDetalle() {
   const [loading, setLoading] = useState(true);
   const [rDate, setRDate] = useState();
 
+
   const userDataString = localStorage.getItem("userData");
   const userData = JSON.parse(userDataString);
+
+  const subtitles = Subtitles();
+  console.log("subtitulos my frind", subtitles)
 
   useEffect(() => {
     async function fetchposts() {
@@ -40,6 +45,8 @@ function PeliculaDetalle() {
 
   const { slug } = useParams();
   const peliculasDataLooped = myPosts.find((post) => post.slug === slug);
+  const sourceFound = subtitles.find((subtitle) => subtitle.name === slug);
+  console.log("subtitle found", sourceFound)
 
   useEffect(() => {
     if (peliculasDataLooped && peliculasDataLooped.release_date) {
@@ -104,7 +111,7 @@ function PeliculaDetalle() {
           </div>
           {userData ? (
             <>
-              <Video url={"https://mcseguros.com.mx/cineclub/pixote.mp4"} />
+              <Video url={sourceFound?.videoSrc} subtitle={sourceFound?.subtitlePath} />
               {/* {commentFromLocal ?  <p className="comment-from-local">{commentFromLocal}</p> : ""} */}
               {/* <div className="comment-box">
                     <textarea  rows="3" cols="30" placeholder="Escribe tu comentario" onChange={textAreaValue}></textarea>
