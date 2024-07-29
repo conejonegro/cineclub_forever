@@ -2,11 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link, NavLink } from 'react-router-dom';
-import { UserContext } from './UserProvider';
-import { useContext } from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 function NavComponent() {
 
@@ -14,10 +10,8 @@ function NavComponent() {
  const userData = JSON.parse(userLocal)
  //console.log(userData)
 
-   const user = useContext(UserContext)
-   
-   // console.log(user)
-
+   //const user = useContext(UserContext)
+  
    return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -31,7 +25,7 @@ function NavComponent() {
             <ul className='nav-ul'>
               {navItems.map((e) => (
                  <li>
-                    <NavLink to={e.item_url} className="nav-link">{e.text}</NavLink>
+                    <NavLink to={e.item_url} className="nav-link" key={e.text}>{e.text}</NavLink>
                </li>
               ))}
             </ul>

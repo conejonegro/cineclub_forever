@@ -1,13 +1,11 @@
 import { Route, Routes } from "react-router";
 import {NavComponent} from "./NavComponent";
-import HomePage from "./HomePage";
 import Contacto from "../pages/Contacto";
 import PeliculaDetalle from "../pages/pelicula-detalle";
-import peliculasData from "../json/peliculasData";
 import Footer from "./footer/Footer";
 import { BrowserRouter } from "react-router-dom";
 import ScrollToTop from "./scrollToTop";
-import {TmdbApiCall} from "./TmdbAPICall";
+import { TmdbApiCall } from "./TmdbAPICall";
 import Logout from "./Logout";
 import Login from "../pages/Login";
 import Dashboard from "../dashboard/Dashboard";
@@ -22,7 +20,7 @@ function CineclubRoutes(){
             <Routes>
 
                 <Route path="/" element= {<TmdbApiCall />} />
-                <Route path="/peliculas" element={ <TmdbApiCall titulo="Todas las Peliculas" json={peliculasData} />} />
+                <Route path="/peliculas" element={ <TmdbApiCall />} />
                 <Route path="/contacto" element={<Contacto title={"Contacto | Trlvdsgn"} description="Hola"/>} />
                 <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
                 <Route element={<ProtectedRoutes />}>
