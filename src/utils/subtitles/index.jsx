@@ -22,7 +22,7 @@ export const Subtitles = () => {
       {
          tmdb_ID: "533444",
          name: "waves",
-         videoSrc: "https://mcseguros.com.mx/cineclub/waves.mp4",
+         videoSrc: "https://mcseguros.com.mx/cineclub/wavves.mp4",
          subtitlePath: "/static/subtitles/waves-new-trans.srt.vtt"
       },
 ]
