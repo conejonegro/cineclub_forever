@@ -19,6 +19,12 @@ export const Subtitles = () => {
          videoSrc: "https://mcseguros.com.mx/cineclub/the-wild-boys.mp4",
          subtitlePath: "/static/subtitles/the-wild-boys-esp.vtt"
       },
+      {
+         tmdb_ID: "533444",
+         name: "waves",
+         videoSrc: "https://mcseguros.com.mx/cineclub/waves.mp4",
+         subtitlePath: "/static/subtitles/waves-new-trans.srt.vtt"
+      },
 ]
 
 return sutitlesObject
