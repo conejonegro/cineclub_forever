@@ -4,16 +4,33 @@
 .dark-mode #root h1{
    color: #FFF;
 }
-.dark-mode #root .nav-link, .dark-mode #root a{
-   color: #FFF;
+.dark-mode #root .nav-link, .dark-mode #root a, .dark-mode #root p, .dark-mode #root label, .dark-mode .navbar-toggler-icon{
+   color: #FFF !important;
 }
 .dark-mode #root .movie-container{
    border: 1px solid #FFF;
 }
 .dark-mode #root nav{
-   background-color: #000 !important;
+   background-color: #171717 !important;
 }
 .dark-mode #darkModeBTN{
    color: #FFF !important;
    border: 1px solid #FFF !important;
+}
+
+#darkModeBTN svg{
+   display: none;
+}
+#darkModeBTN {
+   border: none !important;
+   color: #000000a6 !important;
+}
+@media (min-width: 992px){
+   #darkModeBTN svg{
+      display: block;
+   }
+   #darkModeBTN{
+      cursor: pointer;
+      border: 1px solid #000000a6 !important;
+   }
 }

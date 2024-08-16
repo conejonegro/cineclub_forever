@@ -43,7 +43,7 @@ function TmdbApiCall() {
 
   if (isHomePage === '/') {
     return(
-      <div id="peliculasCont" className='container my-4'>
+      <div id="peliculasCont" className='container'>
         
         <h1 className='my-4'>Ultimas peliculas...</h1>
         <Row className="justify-content-center todas-peliculas-imdb">
