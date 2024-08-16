@@ -4,21 +4,35 @@ import Navbar from 'react-bootstrap/Navbar';
 import { MdDarkMode } from "react-icons/md";
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavLink } from 'react-router-dom';
+import "../css/dark-mode.css";
 import "../css/nav.css";
+import { useState } from 'react';
 
 function NavComponent() {
+  const [darkMode, setDarkMode] = useState(false)
 
  const userLocal =  localStorage.getItem('userData');
  const userData = JSON.parse(userLocal)
  //console.log(userData)
 //const user = useContext(UserContext)
-const darkMode =  false;
+//let darkMode =  false;
 
   function toggleDarkLight(){
-    darkMode? document.body.classList.remove('dark-mode') : document.body.classList.add('dark-mode');
+    //darkMode ? darkMode = false : darkMode = true; 
+    if(darkMode){
+      localStorage.setItem("darkmode", true)
+      setDarkMode(false)
+    }else{
+      localStorage.removeItem("darkmode")
+      setDarkMode(true)
+    }
     
-    console.log("toggle dark light", "clicked")
+    //localStorage.setItem("darkmode", true)
+    console.log("Mylocal storage", localStorage) 
+    console.log("darkMode?", darkMode) 
+    
   }
+  darkMode? document.body.classList.remove('dark-mode') : document.body.classList.add('dark-mode');
   
    return (
     <Navbar bg="light" expand="lg">

@@ -1,0 +1,19 @@
+.dark-mode #root{
+   background-color: #000;
+}
+.dark-mode #root h1{
+   color: #FFF;
+}
+.dark-mode #root .nav-link, .dark-mode #root a{
+   color: #FFF;
+}
+.dark-mode #root .movie-container{
+   border: 1px solid #FFF;
+}
+.dark-mode #root nav{
+   background-color: #000 !important;
+}
+.dark-mode #darkModeBTN{
+   color: #FFF !important;
+   border: 1px solid #FFF !important;
+}
