@@ -1,16 +1,24 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { MdDarkMode } from "react-icons/md";
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavLink } from 'react-router-dom';
+import "../css/nav.css";
 
 function NavComponent() {
 
  const userLocal =  localStorage.getItem('userData');
  const userData = JSON.parse(userLocal)
  //console.log(userData)
+//const user = useContext(UserContext)
+const darkMode =  false;
 
-   //const user = useContext(UserContext)
+  function toggleDarkLight(){
+    darkMode? document.body.classList.remove('dark-mode') : document.body.classList.add('dark-mode');
+    
+    console.log("toggle dark light", "clicked")
+  }
   
    return (
     <Navbar bg="light" expand="lg">
@@ -53,7 +61,10 @@ function NavComponent() {
                     )
                   } 
             })()}
-
+              <div id="darkModeBTN" className='d-flex flex-column ms-2 rounded-4 border p-2 border-dark row-gap-2 align-items-center justify-content-center' onClick={toggleDarkLight}>
+                <MdDarkMode />
+                <div>Dark Mode</div>
+              </div>
             </ul>
           </Nav>
         </Navbar.Collapse>
