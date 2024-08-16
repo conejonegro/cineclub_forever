@@ -11,6 +11,7 @@ import Login from "../pages/Login";
 import Dashboard from "../dashboard/Dashboard";
 import Registro from "../pages/Registro";
 import ProtectedRoutes from "./ProtectedRoutes";
+import Ciclos from "../pages/Ciclos";
 
 function CineclubRoutes(){
     return(
@@ -21,6 +22,7 @@ function CineclubRoutes(){
 
                 <Route path="/" element= {<TmdbApiCall />} />
                 <Route path="/peliculas" element={ <TmdbApiCall />} />
+                <Route path="/ciclos" element={ <Ciclos />} />
                 <Route path="/contacto" element={<Contacto title={"Contacto | Trlvdsgn"} description="Hola"/>} />
                 <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
                 <Route element={<ProtectedRoutes />}>

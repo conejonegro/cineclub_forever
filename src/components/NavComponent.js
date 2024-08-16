@@ -70,9 +70,14 @@ navItems.push({
   item_url: '/peliculas'
 });
 navItems.push({
+  text: 'Ciclos',
+  item_url: '/ciclos'
+});
+navItems.push({
   text: 'Contacto',
   item_url: '/contacto'
 });
+
 
 const navItemsLogin = [];
 navItemsLogin.push({
