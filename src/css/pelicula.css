@@ -18,6 +18,11 @@
     column-gap: 32px;
     margin-top: 2.5rem;
 }
+.peliculas__darkMode--container{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
 .movie-container{
     max-width: 300px;
     background-color: black;
@@ -42,6 +47,6 @@
 }
 
 #peliculasCont{
-    margin-top: 6rem;
+    margin-top: 3rem;
     margin-bottom: 6rem;
 }

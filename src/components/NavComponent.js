@@ -1,38 +1,27 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { MdDarkMode } from "react-icons/md";
-import { MdOutlineLightMode } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import "../css/dark-mode.css";
-import { useEffect, useState } from "react";
+import React, { useContext } from "react";
+import { UserContext } from "./UserProvider";
+import DarkModeBTN from "./darkModeBTN/DarkModeBTN";
+
 
 function NavComponent() {
-  const darkmodeStateFromlocal = localStorage.getItem("darkmode") === "true";
-  const [darkMode, setDarkMode] = useState(darkmodeStateFromlocal);
   const userLocal = localStorage.getItem("userData");
   const userData = JSON.parse(userLocal);
-
-  function toggleDarkLight() {
-    if (darkMode) {
-      localStorage.setItem("darkmode", false);
-      setDarkMode(false);
-    } else {
-      localStorage.setItem("darkmode", true);
-      setDarkMode(true);
-    }
-  }
-
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("dark-mode");
-    } else {
-      document.body.classList.remove("dark-mode");
-    }
-  }, [darkMode]);
+ 
+  const { darkMode } = useContext(UserContext);
 
   return (
-    <Navbar bg="light" expand="lg">
+    <>
+    <Navbar
+      
+      bg={darkMode ? "dark" : "light"}
+      variant={darkMode ? "dark" : "light"}
+      expand="lg"
+    >
       <Container>
         <NavLink to="/" className="navbar-brand" id="nav_logo">
           <img src="/static/cineclub-transformed-min.png" alt="Cineclub Logo" />
@@ -86,16 +75,10 @@ function NavComponent() {
             </ul>
           </Nav>
         </Navbar.Collapse>
-        <div
-          id="darkModeBTN"
-          className="d-flex flex-column ms-2 rounded-4 border p-2 border-dark row-gap-2 align-items-center justify-content-center"
-          onClick={toggleDarkLight}
-        >
-          {darkMode ? <MdDarkMode /> : <MdOutlineLightMode />}
-          <div>{darkMode ? "Dark Mode" : "Light Mode"}</div>
-        </div>
       </Container>
     </Navbar>
+    <DarkModeBTN />
+    </>
   );
 }
 const navItems = [];

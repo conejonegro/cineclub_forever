@@ -17,13 +17,14 @@
    color: #FFF !important;
    border: 1px solid #FFF !important;
 }
-
-#darkModeBTN svg{
-   display: none;
-}
 #darkModeBTN {
-   border: none !important;
    color: #000000a6 !important;
+   position: absolute;
+    left: 80%;
+}
+.dark-mode footer {
+   background-color: #151317 !important;
+
 }
 @media (min-width: 992px){
    #darkModeBTN svg{

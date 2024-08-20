@@ -5,3 +5,7 @@
 .firebase-profile-cont h1{
    font-weight: 600;
 }
+.firebase-profile-cont{
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
