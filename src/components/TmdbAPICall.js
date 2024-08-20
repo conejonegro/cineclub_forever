@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Row } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
-import TMDBApiCall from '../utils/TMBDApiCall';
-import '../css/home-page.css';
-import '../css/pelicula.css';
+import React, { useState, useEffect } from "react";
+import { Row } from "react-bootstrap";
+import { Link, useLocation } from "react-router-dom";
+import TMDBApiCall from "../utils/TMBDApiCall";
+import "../css/home-page.css";
+import "../css/pelicula.css";
+
 
 //  const nameQuery = "donnie+darko";
 // const baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
@@ -17,75 +18,85 @@ function TmdbApiCall() {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   const isHomePage = location.pathname;
-  const IMG_PATH = process.env.REACT_APP_IMG_PATH
+  const IMG_PATH = process.env.REACT_APP_IMG_PATH;
 
   useEffect(() => {
-   async function fetchData(){
-      const tmdbdata = await TMDBApiCall()
-      setPosts(tmdbdata)
-      setLoading(false)
-   }
-   fetchData()
+    async function fetchData() {
+      const tmdbdata = await TMDBApiCall();
+      setPosts(tmdbdata);
+      setLoading(false);
+    }
+    fetchData();
   }, []);
 
   if (loading) {
-    return <h5 className='container'>Cargando...</h5>;
+    return <h5 className="container">Cargando...</h5>;
   }
 
   let myPosts = posts?.map((post) => {
     post.title.toLowerCase();
-    return(
-      {title: post.title, slug: post.title.toLowerCase().replace(/\s+/g, '-'), id: post.id, poster: post.poster_path, sinopsis: post.overview, release_date: post.release_date}
-    )});
+    return {
+      title: post.title,
+      slug: post.title.toLowerCase().replace(/\s+/g, "-"),
+      id: post.id,
+      poster: post.poster_path,
+      sinopsis: post.overview,
+      release_date: post.release_date,
+    };
+  });
 
-  
   const peliculasDataArraySliced = myPosts.slice(0, 4);
 
-  if (isHomePage === '/') {
-    return(
-      <div id="peliculasCont" className='container my-4'>
-        
-        <h1 className='my-4'>Ultimas peliculas...</h1>
+  if (isHomePage === "/") {
+    return (
+      <div id="peliculasCont" className="container">
+       
+          <h1 className="my-4">Ultimas peliculas.</h1>
+
         <Row className="justify-content-center todas-peliculas-imdb">
-          
-              {peliculasDataArraySliced.map((post) => {
-                return(
-                  <div className='movie-container' key={post.id}>
-                    <Link to={"/peliculas-detalle/"+post.slug}>
-                      <img src={IMG_PATH+post.poster} alt={post.nombre} className="poster " />
-                      <h2>{post.title}</h2>
-                      <p>{post.sinopsis.substring(0, 80)+'...'}</p>
-                    </Link>
-                </div>
-                )
-              })}
+          {peliculasDataArraySliced.map((post) => {
+            return (
+              <div className="movie-container" key={post.id}>
+                <Link to={"/peliculas-detalle/" + post.slug}>
+                  <img
+                    src={IMG_PATH + post.poster}
+                    alt={post.nombre}
+                    className="poster "
+                  />
+                  <h2>{post.title}</h2>
+                  <p>{post.sinopsis.substring(0, 80) + "..."}</p>
+                </Link>
+              </div>
+            );
+          })}
         </Row>
       </div>
-    )
-  }
-  else{
+    );
+  } else {
     return (
-      <div id="peliculasCont" className='container my-4'>
-        <h1 className='my-4'>Todas peliculas.</h1>
+      <div id="peliculasCont" className="container my-4">
+       
+          <h1 className="my-4">Ultimas peliculas.</h1>
         <Row className="justify-content-center todas-peliculas-imdb">
-          
-              {myPosts.map((post) => {
-                return(
-                  <div className='movie-container' key={post.id}>
-                    <Link to={"/peliculas-detalle/" + post.slug}>
-                      <img src={IMG_PATH+post.poster} alt={post.nombre} className="poster " />
-                      <h2>{ post.title }</h2>
-                      <p>{ post.sinopsis.substring(0, 80) + '...' }</p>
-                    </Link>
-                </div>
-                )
-              })}
+          {myPosts.map((post) => {
+            return (
+              <div className="movie-container" key={post.id}>
+                <Link to={"/peliculas-detalle/" + post.slug}>
+                  <img
+                    src={IMG_PATH + post.poster}
+                    alt={post.nombre}
+                    className="poster "
+                  />
+                  <h2>{post.title}</h2>
+                  <p>{post.sinopsis.substring(0, 80) + "..."}</p>
+                </Link>
+              </div>
+            );
+          })}
         </Row>
       </div>
     );
   }
-
 }
 
 export { TmdbApiCall };
-
