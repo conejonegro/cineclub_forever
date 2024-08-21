@@ -26,6 +26,12 @@
    background-color: #151317 !important;
 
 }
+.dark-mode .banner-support {
+   background: #21212178;
+}
+.dark-mode .movie-info, .dark-mode #root .titulo-pelicula h1, .dark-mode #root p {
+   color: #FFF !important;
+}
 @media (min-width: 992px){
    #darkModeBTN svg{
       display: block;

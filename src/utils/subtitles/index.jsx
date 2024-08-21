@@ -2,6 +2,11 @@ export const Subtitles = () => {
 
    const sutitlesObject = [
       {
+         tmdb_ID: "50272",
+         name: "somos-lo-que-hay",
+         videoSrc: "https://mcseguros.com.mx/cineclub/somos-lo-que-hay.mp4"
+      },
+      {
          tmdb_ID: "37686",
          name: "super-8",
          videoSrc: "https://mcseguros.com.mx/cineclub/super-8.mp4",

@@ -19,7 +19,7 @@
 .movie-info{
     margin-left: 4%;
     margin-top: 64px;
-    color: white;
+    color: #000;
 }
 .main-movie-banner{
     background-repeat: no-repeat;
@@ -29,11 +29,9 @@
 }
 .banner-support{
     padding: 4%;
-    background: #0000007d;
+    background: #b7bfd87d;
 }
-.titulo-pelicula{
-   
-}
+
 video{
     max-width: 800px;
     display: flex;
