@@ -32,7 +32,7 @@ function CineclubRoutes(){
                 
                 <Route path="/login" element={ <Login /> } />
                 <Route path="/Logout" element={ <Logout /> } />
-                 <Route path="/admin" element={ <Dashboard /> } /> 
+                <Route path="/admin" element={ <Dashboard /> } /> 
                 <Route path="/profile" element={ <Logout /> } />
                 <Route path="*" element={<p className="container">Not Found 404</p>} />
 

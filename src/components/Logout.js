@@ -45,7 +45,7 @@ function Logout({}) {
         )
     }else{
         return(
-            <div className="container my-4 firebase-profile-cont">
+            <div className="container firebase-profile-cont">
                 <h1>Perfil:</h1>
                 {userData.photoURL ? <img src={userData.photoURL} alt={`${userData.displayName} Photo`}/> : ""}
                 {userData.displayName ? <p><b>Nombre</b>: {userData.displayName}</p> : ""}
