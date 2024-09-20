@@ -2,6 +2,12 @@ export const Subtitles = () => {
 
    const sutitlesObject = [
       {
+         tmdb_ID: "26280",
+         name: "j-ai-tue-ma-mere",
+         videoSrc: "https://mcseguros.com.mx/cineclub/i-killed-my-mother.mp4",
+         subtitlePath: "/static/subtitles/my-i-killed-my-mother-esp.vtt"
+      },
+      {
          tmdb_ID: "50272",
          name: "somos-lo-que-hay",
          videoSrc: "https://mcseguros.com.mx/cineclub/somos-lo-que-hay.mp4"
