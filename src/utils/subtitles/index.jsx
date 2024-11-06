@@ -2,6 +2,12 @@ export const Subtitles = () => {
 
    const sutitlesObject = [
       {
+         tmdb_ID: "2640",
+         name: "heathers",
+         videoSrc: "https://mcseguros.com.mx/cineclub/heathers.mp4",
+         subtitlePath: "/static/subtitles/heathers-esp.vtt"
+      },
+      {
          tmdb_ID: "26280",
          name: "j'ai-tué-ma-mère",
          videoSrc: "https://mcseguros.com.mx/cineclub/i-killed-my-mother.mp4",
