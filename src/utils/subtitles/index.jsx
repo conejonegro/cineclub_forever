@@ -3,7 +3,7 @@ export const Subtitles = () => {
    const sutitlesObject = [
       {
          tmdb_ID: "2640",
-         name: "heathers",
+         name: "las-heathers",
          videoSrc: "https://mcseguros.com.mx/cineclub/heathers.mp4",
          subtitlePath: "/static/subtitles/heathers-esp.vtt"
       },
