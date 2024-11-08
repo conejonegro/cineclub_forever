@@ -5,6 +5,7 @@ import Video from "../components/Video";
 import { useState, useEffect } from "react";
 import TMDBApiCall from "../utils/TMBDApiCall";
 import { Subtitles } from "../utils/subtitles";
+import { Link } from "react-router-dom";
 
 function PeliculaDetalle() {
   const IMG_PATH = process.env.REACT_APP_IMG_PATH;
@@ -15,6 +16,8 @@ function PeliculaDetalle() {
   const userData = JSON.parse(userDataString);
   const subtitles = Subtitles();
   const { slug } = useParams();
+
+  console.log("misposts", posts)
 
   let myPosts = posts.map((post) => {
     post.title.toLowerCase();
@@ -29,13 +32,12 @@ function PeliculaDetalle() {
     };
   });
 
-
   const peliculasDataLooped = myPosts.find((post) => post.slug === slug);
   const sourceFound = subtitles.find((subtitle) => subtitle.name === slug);
 
   const releaseDate = peliculasDataLooped?.release_date;
   const slashRDate = releaseDate?.replace(/-/g, "/");
-  
+
   useEffect(() => {
     setRDate(slashRDate);
 
@@ -43,14 +45,13 @@ function PeliculaDetalle() {
       const postsFromApi = await TMDBApiCall();
       setPosts(postsFromApi);
       setLoading(false);
-     
     }
     fetchposts();
   }, [slashRDate]);
 
   //let value = "";
 
- /* function textAreaValue(e) {
+  /* function textAreaValue(e) {
     value = e.target.value;
     // console.log(value)
   } */
@@ -103,7 +104,10 @@ function PeliculaDetalle() {
           </div>
           {userData ? (
             <>
-              <Video url={sourceFound?.videoSrc} subtitle={sourceFound?.subtitlePath} />
+              <Video
+                url={sourceFound?.videoSrc}
+                subtitle={sourceFound?.subtitlePath}
+              />
               {/* {commentFromLocal ?  <p className="comment-from-local">{commentFromLocal}</p> : ""} */}
               {/* <div className="comment-box">
                     <textarea  rows="3" cols="30" placeholder="Escribe tu comentario" onChange={textAreaValue}></textarea>
@@ -115,6 +119,10 @@ function PeliculaDetalle() {
               Inicia Sesion para ver el Video...
             </h5>
           )}
+          <div className="previous-next__post">
+            <div><Link >Izquierda</Link></div>
+            <div><Link to="/luis">Derecha</Link></div>
+          </div>
         </section>
       )}
     </>
