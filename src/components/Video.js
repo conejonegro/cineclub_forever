@@ -4,8 +4,8 @@ const Video = ({url, subtitle}) => {
 
     return (
       <>
-        <video controls>
-          <source src={url} type="video/mp4" preload="auto" controls="controls" width="300" height="150" data-setup="{}"  />
+        <video controls controlsList="nodownload" >
+          <source src={url} type="video/mp4" preload="auto" width="300" height="150" data-setup="{}"  />
           <track 
           label="Subtitulos" 
           kind="subtitles"

@@ -122,17 +122,10 @@ function PeliculaDetalle() {
             </Container>
           </div>
           {userData ? (
-            <>
               <Video
                 url={sourceFound?.videoSrc}
                 subtitle={sourceFound?.subtitlePath}
               />
-              {/* {commentFromLocal ?  <p className="comment-from-local">{commentFromLocal}</p> : ""} */}
-              {/* <div className="comment-box">
-                    <textarea  rows="3" cols="30" placeholder="Escribe tu comentario" onChange={textAreaValue}></textarea>
-                    <button className="btn btn-primary btn-lg " onClick={postComment}>Enviar</button>
-                  </div> */}
-            </>
           ) : (
             <h5 className="inicia-sesion">
               Inicia Sesion para ver el Video...
