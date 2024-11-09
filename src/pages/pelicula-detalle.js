@@ -6,6 +6,10 @@ import { useState, useEffect } from "react";
 import TMDBApiCall from "../utils/TMBDApiCall";
 import { Subtitles } from "../utils/subtitles";
 import { Link } from "react-router-dom";
+import { GrNext } from "react-icons/gr";
+import { GrPrevious } from "react-icons/gr";
+
+
 
 function PeliculaDetalle() {
   const IMG_PATH = process.env.REACT_APP_IMG_PATH;
@@ -16,8 +20,6 @@ function PeliculaDetalle() {
   const userData = JSON.parse(userDataString);
   const subtitles = Subtitles();
   const { slug } = useParams();
-
-  console.log("misposts", posts)
 
   let myPosts = posts.map((post) => {
     post.title.toLowerCase();
@@ -61,6 +63,23 @@ function PeliculaDetalle() {
     localStorage.setItem("comment", value);
   }
 */
+
+  // Encontrar en que posicion esta  nuestro slug y capturar el siguiente
+
+  console.log("misposts", myPosts);
+  let index = myPosts.findIndex((post) => {
+    return post.slug === slug;
+  });
+  console.log("miindex", index);
+  // Si el índice no es válido (es -1 si no encontró el slug), establecemos el índice en 0.
+  if (index === -1) {
+    index = 0;
+  }
+  // Definir el siguiente y el anterior post, con controles adicionales
+  const nextPost = myPosts[(index + 1) % myPosts.length]; // Esto asegura que vuelva al inicio si es el último
+  const prevPost = myPosts[(index - 1 + myPosts.length) % myPosts.length]; // Esto asegura que vuelva al final si es el primero
+  //console.log("nextpost", nextPost);
+
   return (
     <>
       {loading ? (
@@ -120,8 +139,14 @@ function PeliculaDetalle() {
             </h5>
           )}
           <div className="previous-next__post">
-            <div><Link >Izquierda</Link></div>
-            <div><Link to="/luis">Derecha</Link></div>
+            <Container className="links__container">
+            <div>
+              <Link to={`/peliculas-detalle/${prevPost.slug}`}><GrPrevious />  Anterior</Link>
+            </div>
+            <div>
+              <Link to={`/peliculas-detalle/${nextPost.slug}`}>Siguiente  <GrNext /></Link>
+            </div>
+            </Container>
           </div>
         </section>
       )}
