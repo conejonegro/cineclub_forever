@@ -78,7 +78,15 @@ function PeliculaDetalle() {
   // Definir el siguiente y el anterior post, con controles adicionales
   const nextPost = myPosts[(index + 1) % myPosts.length]; // Esto asegura que vuelva al inicio si es el último
   const prevPost = myPosts[(index - 1 + myPosts.length) % myPosts.length]; // Esto asegura que vuelva al final si es el primero
-  //console.log("nextpost", nextPost);
+
+  function captureBuy(){
+     console.log("precio?", )
+     localStorage.removeItem("movieToBuy");
+     localStorage.removeItem("precioDeCompra");
+     localStorage.setItem("movieToBuy", JSON.stringify(peliculasDataLooped.original_title));
+     localStorage.setItem("precioDeCompra", sourceFound.precioCompra);
+    // window.location("/checkout");
+  }
 
   return (
     <>
@@ -92,8 +100,10 @@ function PeliculaDetalle() {
           }}
         >
           <div className="banner-support">
-            <Container className="container">
+          <a href={"/checkout"} className="buyButton" onClick={captureBuy}>Comprar</a>
+            <Container>
               <Row>
+               
                 <div className="col-lg-4 poster">
                   <img
                     src={IMG_PATH + peliculasDataLooped.poster}

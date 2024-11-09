@@ -1,4 +1,4 @@
-import { createContext, useState,useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const UserContext = createContext();
 
@@ -7,6 +7,8 @@ const UserProvider = ({ children }) => {
   
     const [user, setUser] = useState(false);
     const darkmodeStateFromLocal = localStorage.getItem("darkmode") === "true";
+    const movieToBuyFromStorage = localStorage.getItem("movieToBuy");
+    const precioCompra = localStorage.getItem("precioDeCompra");
     const [darkMode, setDarkMode] = useState(darkmodeStateFromLocal);
 
     useEffect(() => {
@@ -19,7 +21,7 @@ const UserProvider = ({ children }) => {
     }, [darkMode]);
   
     return (
-      <UserContext.Provider value={{ user, setUser, darkMode, setDarkMode }}>
+      <UserContext.Provider value={{ user, setUser, darkMode, setDarkMode, movieToBuyFromStorage, precioCompra }}>
         {children}
       </UserContext.Provider>
     );
