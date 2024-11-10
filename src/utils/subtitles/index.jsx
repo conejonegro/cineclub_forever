@@ -2,6 +2,23 @@ export const Subtitles = () => {
 
    const sutitlesObject = [
       {
+         tmdb_ID: "2640",
+         name: "las-heathers",
+         videoSrc: "https://mcseguros.com.mx/cineclub/heathers.mp4",
+         subtitlePath: "/static/subtitles/heathers-esp.vtt"
+      },
+      {
+         tmdb_ID: "26280",
+         name: "j'ai-tué-ma-mère",
+         videoSrc: "https://mcseguros.com.mx/cineclub/i-killed-my-mother.mp4",
+         subtitlePath: "/static/subtitles/my-i-killed-my-mother-esp.vtt"
+      },
+      {
+         tmdb_ID: "50272",
+         name: "somos-lo-que-hay",
+         videoSrc: "https://mcseguros.com.mx/cineclub/somos-lo-que-hay.mp4"
+      },
+      {
          tmdb_ID: "37686",
          name: "super-8",
          videoSrc: "https://mcseguros.com.mx/cineclub/super-8.mp4",

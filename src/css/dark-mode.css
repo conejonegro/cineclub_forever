@@ -10,6 +10,9 @@
 .dark-mode #root .movie-container{
    border: 1px solid #FFF;
 }
+.dark-mode #root .previous-next__post{
+   background-color: #000;
+}
 .dark-mode #root nav{
    background-color: #171717 !important;
 }
@@ -25,6 +28,12 @@
 .dark-mode footer {
    background-color: #151317 !important;
 
+}
+.dark-mode .banner-support {
+   background: #21212178;
+}
+.dark-mode .movie-info, .dark-mode #root .titulo-pelicula h1, .dark-mode #root p {
+   color: #FFF !important;
 }
 @media (min-width: 992px){
    #darkModeBTN svg{

@@ -6,6 +6,19 @@
 .titulo-pelicula span{
     display: inline-block;
 }
+.previous-next__post{
+    background-color: #ffffffba;
+    font-weight: bold;
+    padding: 2rem 2rem 2rem 2rem;
+}
+.links__container{
+    display: flex;
+    justify-content: space-between;
+}
+.links__container a{
+    text-decoration: none;
+    color: black;
+}
 
 .poster img{
     width: 100%;
@@ -19,7 +32,7 @@
 .movie-info{
     margin-left: 4%;
     margin-top: 64px;
-    color: white;
+    color: #000;
 }
 .main-movie-banner{
     background-repeat: no-repeat;
@@ -29,11 +42,9 @@
 }
 .banner-support{
     padding: 4%;
-    background: #0000007d;
+    background: #b7bfd87d;
 }
-.titulo-pelicula{
-   
-}
+
 video{
     max-width: 800px;
     display: flex;
