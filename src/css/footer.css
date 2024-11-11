@@ -5,6 +5,7 @@ footer{
     width: 100%;
     bottom: 0;
     display: block;
+    position: absolute;
 }
 .footer-logo img{
     max-width: 80px;
