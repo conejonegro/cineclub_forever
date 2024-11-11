@@ -108,17 +108,17 @@ navItems.push({
   item_url: "/ciclos",
   ciclos: [
     {
-      nombre: "Teens",
-      URLciclo: "/ciclos/teens",
-    },
-    {
       nombre: "Mexicanas",
       URLciclo: "/ciclos/mexicanas",
     },
     {
       nombre: "Cyberpunk",
       URLciclo: "/ciclos/cyberpunk",
-    }
+    },
+    {
+      nombre: "Teens",
+      URLciclo: "/ciclos/teens",
+    },
   ],
 });
 navItems.push({
