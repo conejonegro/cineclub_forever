@@ -1,34 +1,53 @@
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { CiclosJSON } from "../utils/ciclos/Ciclos";
 import { useParams } from "react-router-dom";
 import TMDBApiCall from "../utils/TMBDApiCall";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import "../css/ciclo-detalle.css";
 
+export const CicloDetalle = () => {
 
+  const [peliculasEnCiclo, setPeliculasEnCiclo] = useState([]);
+  const ciclosArray = CiclosJSON();
+  const slug = useParams().slug;
+  const location = useLocation(); // Obtiene la ruta actual
+  const IMG_PATH = process.env.REACT_APP_IMG_PATH;
+  const cicloFound = ciclosArray.find(
+    (ciclo) => ciclo.nombre.toLowerCase() === slug
+  );
 
+  useEffect(() => {
+    async function fetchData() {
+      const ciclosData = await TMDBApiCall(cicloFound.peliculas);
+      setPeliculasEnCiclo(ciclosData);
+      //console.log("my data array", ciclosData);
+    }
+    fetchData();
+  }, [location.pathname]);
 
-export const CicloDetalle = () =>{
+  console.log("ese", peliculasEnCiclo)
 
-   const ciclosArray = CiclosJSON();
-   const slug = useParams().slug;
-   const ciclosData = TMDBApiCall(ciclosArray);
+  return (
+    <Container className="ciclos__main-container my-4">
 
-   console.log("ciclos data",ciclosData)
-
-
-   const cicloFound = ciclosArray.find( ciclo => ciclo.nombre.toLowerCase() === slug );
-   console.log("mis ciclos array", ciclosArray)
-   //console.log("ciclofound", cicloFound);
-   //console.log("slug",slug)
-
-   return(
-      <Container className="ciclos__main-container my-4">
+        <h1>Ciclo: {cicloFound.nombre}</h1>
+        <Row className="justify-content-center todas-peliculas-imdb">
+        {peliculasEnCiclo.map((post) => (
+          <div className="movie-container" key={post.id}>
             <div>
-               <h1>{cicloFound.nombre}</h1>
-               <div>
-                  <img src="" alt="" />
-                  <h5>{cicloFound.Peliculas.nombre}</h5>
-               </div>
+              <img
+                src={IMG_PATH + post.poster_path}
+                alt={post.nombre}
+                className="poster "
+              />
+              <h2>{post.title}</h2>
+             {/* <span className="propuesta__por-text">{ciclo.propuestaPor}</span> */} 
+             
             </div>
-      </Container>
-   )
-}
+          </div>
+        ))}
+        </Row>
+    </Container>
+  );
+};

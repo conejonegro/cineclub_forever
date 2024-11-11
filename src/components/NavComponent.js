@@ -41,7 +41,7 @@ function NavComponent() {
                   index === 1 ? (
                     <NavDropdown title="Ciclos" id="basic-nav-dropdown" key={index}>
                       {e.ciclos.map((ciclo) => (
-                        <NavLink to={ciclo.URLciclo} key={ciclo.nombre} className="ciclos__nav-item">
+                        <NavLink to={ciclo.URLciclo} key={ciclo.nombre} className="ciclos__nav-item nav-link">
                           {ciclo.nombre}
                         </NavLink>
                       ))}
@@ -118,11 +118,7 @@ navItems.push({
     {
       nombre: "Cyberpunk",
       URLciclo: "/ciclos/cyberpunk",
-    },
-    {
-      nombre: "Biograficas",
-      URLciclo: "/ciclos/biograficas",
-    },
+    }
   ],
 });
 navItems.push({

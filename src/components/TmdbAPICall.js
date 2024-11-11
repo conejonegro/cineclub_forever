@@ -6,20 +6,15 @@ import { Subtitles } from "../utils/subtitles";
 import "../css/home-page.css";
 import "../css/pelicula.css";
 
-
-//  const nameQuery = "donnie+darko";
-// const baseURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
-//  const baseURL = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}`;
 //  const baseURL = `https://api.themoviedb.org/3/movie/346698/keywords?api_key=${API_KEY}`;
 // const baseURL = `https://api.themoviedb.org/3/search/movie?query=${nameQuery}&api_key=${API_KEY}`;
-const moviesData = Subtitles();
-
 function TmdbApiCall() {
   // Hooks, and variables needed
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   const isHomePage = location.pathname;
+  const moviesData = Subtitles();
   const IMG_PATH = process.env.REACT_APP_IMG_PATH;
 
   useEffect(() => {
