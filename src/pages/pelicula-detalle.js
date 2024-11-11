@@ -44,7 +44,7 @@ function PeliculaDetalle() {
     setRDate(slashRDate);
 
     async function fetchposts() {
-      const postsFromApi = await TMDBApiCall();
+      const postsFromApi = await TMDBApiCall(subtitles);
       setPosts(postsFromApi);
       setLoading(false);
     }

@@ -3,8 +3,6 @@ footer{
     color: #ffffff;
     padding: 2em;
     width: 100%;
-    bottom: 0;
-    display: block;
     position: absolute;
 }
 .footer-logo img{

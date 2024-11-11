@@ -1,13 +1,13 @@
 import axios from "axios";
 import { Subtitles } from "./subtitles";
-export default function TMDBApiCall() {
-  const moviesData = Subtitles();
+export default function TMDBApiCall(dataArray) {
+  //const moviesData = Subtitles();
   const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
   const fetchData = async () => {
     try {
       const responses = await Promise.all(
-        moviesData.map((movie) =>
+        dataArray.map((movie) =>
           axios.get(
             `https://api.themoviedb.org/3/movie/${movie.tmdb_ID}?api_key=${API_KEY}&language=es-MX`
           )

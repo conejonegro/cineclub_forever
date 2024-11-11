@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import TMDBApiCall from "../utils/TMBDApiCall";
+import { Subtitles } from "../utils/subtitles";
 import "../css/home-page.css";
 import "../css/pelicula.css";
 
@@ -11,6 +12,7 @@ import "../css/pelicula.css";
 //  const baseURL = `https://api.themoviedb.org/3/movie/${movie_id}?api_key=${API_KEY}`;
 //  const baseURL = `https://api.themoviedb.org/3/movie/346698/keywords?api_key=${API_KEY}`;
 // const baseURL = `https://api.themoviedb.org/3/search/movie?query=${nameQuery}&api_key=${API_KEY}`;
+const moviesData = Subtitles();
 
 function TmdbApiCall() {
   // Hooks, and variables needed
@@ -22,7 +24,7 @@ function TmdbApiCall() {
 
   useEffect(() => {
     async function fetchData() {
-      const tmdbdata = await TMDBApiCall();
+      const tmdbdata = await TMDBApiCall(moviesData);
       setPosts(tmdbdata);
       setLoading(false);
     }
