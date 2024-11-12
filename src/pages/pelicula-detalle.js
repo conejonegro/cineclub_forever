@@ -94,7 +94,7 @@ function PeliculaDetalle() {
           />
           <meta
             property="og:image"
-            content={`${IMG_PATH}${peliculasDataLooped.poster}`}
+            content={"%PUBLIC_URL%/static/posters/super-8poster.jpg" }
           />
           <title>{`Película: ${peliculasDataLooped.original_title} | Cineclub Forever`}</title>
           <link rel="canonical" href="http://mysite.com/example" />
