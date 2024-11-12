@@ -8,8 +8,7 @@ import { Subtitles } from "../utils/subtitles";
 import { Link } from "react-router-dom";
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
-
-
+import { Helmet } from "react-helmet";
 
 function PeliculaDetalle() {
   const IMG_PATH = process.env.REACT_APP_IMG_PATH;
@@ -82,6 +81,25 @@ function PeliculaDetalle() {
 
   return (
     <>
+      {!loading && peliculasDataLooped && (
+        <Helmet>
+          <meta
+            name="description"
+            content="Join Cineclub Forever in Guadalajara, Jalisco, Mexico, for a unique cinematic experience! Discover classic and indie films with fellow movie lovers. Watch, discuss, and enjoy film screenings every week!"
+          />
+          <meta property="og:title" content="Peliculas en Cineclub Forever" />
+          <meta
+            property="og:description"
+            content="Join Cineclub Forever in Guadalajara, Jalisco, Mexico"
+          />
+          <meta
+            property="og:image"
+            content={`${IMG_PATH}${peliculasDataLooped.poster}`}
+          />
+          <title>{`Película: ${peliculasDataLooped.original_title} | Cineclub Forever`}</title>
+          <link rel="canonical" href="http://mysite.com/example" />
+        </Helmet>
+      )}
       {loading ? (
         "loading"
       ) : (
@@ -122,10 +140,10 @@ function PeliculaDetalle() {
             </Container>
           </div>
           {userData ? (
-              <Video
-                url={sourceFound?.videoSrc}
-                subtitle={sourceFound?.subtitlePath}
-              />
+            <Video
+              url={sourceFound?.videoSrc}
+              subtitle={sourceFound?.subtitlePath}
+            />
           ) : (
             <h5 className="inicia-sesion">
               Inicia Sesion para ver el Video...
@@ -133,12 +151,16 @@ function PeliculaDetalle() {
           )}
           <div className="previous-next__post">
             <Container className="links__container">
-            <div>
-              <Link to={`/peliculas-detalle/${prevPost.slug}`}><GrPrevious />  Anterior</Link>
-            </div>
-            <div>
-              <Link to={`/peliculas-detalle/${nextPost.slug}`}>Siguiente  <GrNext /></Link>
-            </div>
+              <div>
+                <Link to={`/peliculas-detalle/${prevPost.slug}`}>
+                  <GrPrevious /> Anterior
+                </Link>
+              </div>
+              <div>
+                <Link to={`/peliculas-detalle/${nextPost.slug}`}>
+                  Siguiente <GrNext />
+                </Link>
+              </div>
             </Container>
           </div>
         </section>

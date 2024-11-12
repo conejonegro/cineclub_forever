@@ -5,6 +5,7 @@ import TMDBApiCall from "../utils/TMBDApiCall";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "../css/ciclo-detalle.css";
+import { Helmet } from "react-helmet";
 
 export const CicloDetalle = () => {
 
@@ -26,10 +27,20 @@ export const CicloDetalle = () => {
     fetchData();
   }, [location.pathname]);
 
-  console.log("ese", peliculasEnCiclo)
+  //console.log("ese", peliculasEnCiclo)
 
   return (
     <Container className="ciclos__main-container my-4">
+      <Helmet>
+        <meta
+          name="description"
+          content={
+            "Explore our curated film cycles at Cineclub Forever! Discover themed collections featuring a diverse range of films, each handpicked to inspire and captivate movie lovers in Guadalajara."
+          }
+        />
+        <title>{`Ciclo - ${cicloFound.nombre} | Cineclub Forever`}</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
 
         <h1>Ciclo: {cicloFound.nombre}</h1>
         <Row className="justify-content-center todas-peliculas-imdb">

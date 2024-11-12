@@ -24,7 +24,7 @@ function CineclubRoutes(){
                 <Route path="/" element= {<TmdbApiCall />} />
                 <Route path="/peliculas" element={ <TmdbApiCall />} />
                 <Route path="/ciclos" element={ <Ciclos />} />
-                <Route path="/contacto" element={<Contacto title={"Contacto | Trlvdsgn"} description="Hola"/>} />
+                <Route path="/contacto" element={<Contacto /> } />
                 <Route path="/peliculas-detalle/:slug" element={ <PeliculaDetalle /> } />
                 <Route path="/ciclos/:slug" element={ <CicloDetalle /> } />
                 <Route element={<ProtectedRoutes />}>

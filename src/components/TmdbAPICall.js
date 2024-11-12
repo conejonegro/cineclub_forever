@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import TMDBApiCall from "../utils/TMBDApiCall";
 import { Subtitles } from "../utils/subtitles";
 import "../css/home-page.css";
@@ -47,8 +48,13 @@ function TmdbApiCall() {
   if (isHomePage === "/") {
     return (
       <div id="peliculasCont" className="container">
-       
-          <h1 className="my-4">Ultimas peliculas.</h1>
+        <Helmet>
+          <meta name="description" content={"Join Cineclub Forever in Guadalajara, Jalisco, Mexico, for a unique cinematic experience! Discover classic and indie films with fellow movie lovers. Watch, discuss, and enjoy film screenings every week!"} />
+          <title>Cineclub Forever | True Love Design</title>
+          <link rel="canonical" href="http://mysite.com/example" />
+        </Helmet>
+
+        <h1 className="my-4">Ultimas peliculas.</h1>
 
         <Row className="justify-content-center todas-peliculas-imdb">
           {peliculasDataArraySliced.map((post) => {
@@ -72,8 +78,12 @@ function TmdbApiCall() {
   } else {
     return (
       <div id="peliculasCont" className="container my-4">
-       
-          <h1 className="my-4">Ultimas peliculas.</h1>
+        <Helmet>
+          <meta name="description" content={"Join Cineclub Forever in Guadalajara, Jalisco, Mexico, for a unique cinematic experience! Discover classic and indie films with fellow movie lovers. Watch, discuss, and enjoy film screenings every week!"} />
+          <title>Todas Las Peliculas | Cineclub Forever</title>
+          <link rel="canonical" href="http://mysite.com/example" />
+        </Helmet>
+        <h1 className="my-4">Ultimas peliculas.</h1>
         <Row className="justify-content-center todas-peliculas-imdb">
           {myPosts.map((post) => {
             return (
