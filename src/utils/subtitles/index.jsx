@@ -5,7 +5,7 @@ export const Subtitles = () => {
          tmdb_ID: "1158915",
          name: "dìdi-(弟弟)",
          videoSrc: "https://mcseguros.com.mx/cineclub/didi.mp4",
-         subtitlePath: "/static/subtitles/didi-esp.vtt"
+         subtitlePath: "/static/subtitles/didi-esp-real.vtt"
       },
       {
          tmdb_ID: "2640",
