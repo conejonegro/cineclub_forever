@@ -2,6 +2,12 @@ export const Subtitles = () => {
 
    const sutitlesObject = [
       {
+         tmdb_ID: "1158915",
+         name: "dìdi-(弟弟)",
+         videoSrc: "https://mcseguros.com.mx/cineclub/didi.mp4",
+         subtitlePath: "/static/subtitles/didi-esp.vtt"
+      },
+      {
          tmdb_ID: "2640",
          name: "las-heathers",
          videoSrc: "https://mcseguros.com.mx/cineclub/heathers.mp4",
