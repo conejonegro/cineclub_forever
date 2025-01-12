@@ -146,7 +146,7 @@ function PeliculaDetalle() {
             />
           ) : (
             <h5 className="inicia-sesion">
-              Inicia Sesion para ver el Video...
+             Hola!, Inicia Sesion para ver la Pelicula...
             </h5>
           )}
           <div className="previous-next__post">

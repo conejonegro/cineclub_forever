@@ -59,6 +59,8 @@ video{
     text-align: center;
     padding: 32px 0;
     margin-bottom: 0;
+    font-size: 2.25rem;
+    font-weight: 800;
 }
 .comment-box {
     margin: 0 auto;
