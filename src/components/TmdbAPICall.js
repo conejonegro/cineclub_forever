@@ -57,7 +57,7 @@ function TmdbApiCall() {
         <h1 className="my-4">Ultimas peliculas.</h1>
 
         <Row className="justify-content-center todas-peliculas-imdb">
-          {peliculasDataArraySliced.map((post) => {
+          {myPosts.map((post) => {
             return (
               <div className="movie-container" key={post.id}>
                 <Link to={"/peliculas-detalle/" + post.slug}>
