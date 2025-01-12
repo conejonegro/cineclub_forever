@@ -2,6 +2,12 @@ export const Subtitles = () => {
 
    const sutitlesObject = [
       {
+         tmdb_ID: "974950",
+         name: "emilia-pérez",
+         videoSrc: "https://mcseguros.com.mx/cineclub/emilia-perez.mp4",
+         subtitlePath: "/static/subtitles/emilia-perez-subs.vtt"
+      },
+      {
          tmdb_ID: "1158915",
          name: "dìdi-(弟弟)",
          videoSrc: "https://mcseguros.com.mx/cineclub/didi.mp4",
