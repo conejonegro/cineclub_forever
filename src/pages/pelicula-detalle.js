@@ -79,6 +79,13 @@ function PeliculaDetalle() {
   const prevPost = myPosts[(index - 1 + myPosts.length) % myPosts.length]; // Esto asegura que vuelva al final si es el primero
   //console.log("nextpost", nextPost);
 
+  const [rating, setRating] = useState(0);
+
+  const handleStarClick = (index) => {
+    setRating(index + 1);
+    console.log("rating", rating);
+  };
+
   return (
     <>
       {!loading && peliculasDataLooped && (
@@ -94,7 +101,7 @@ function PeliculaDetalle() {
           />
           <meta
             property="og:image"
-            content={`${IMG_PATH + peliculasDataLooped.poster}` }
+            content={`${IMG_PATH + peliculasDataLooped.poster}`}
           />
           <title>{`Película: ${peliculasDataLooped.original_title} | Cineclub Forever`}</title>
           <link rel="canonical" href="https://cineclub-forever.web.app/" />
@@ -136,7 +143,25 @@ function PeliculaDetalle() {
                     })}
                   </p>
                 </div>
+               
               </Row>
+              <div className="rate-this--container">
+                <span className="rate-this--span">Califica esta pelicula</span>
+                <div className="rating">
+                  {[...Array(5)].map((star, index) => {
+                    return (
+                      <span
+                        key={index}
+                        className={`star ${index < rating ? "selected" : ""}`}
+                        onClick={() => handleStarClick(index)}
+                        style={{ cursor: "pointer", color: index < rating ? "gold" : "gray" }}
+                      >
+                        &#9733;
+                      </span>
+                    );
+                  })}
+                </div>
+                </div>
             </Container>
           </div>
           {userData ? (
