@@ -2,10 +2,10 @@ export const Subtitles = () => {
 
    const sutitlesObject = [
       {
-         tmdb_ID: "1064213",
-         name: "anora",
-         videoSrc: "https://mcseguros.com.mx/cineclub/anora.mp4",
-         subtitlePath: "/static/subtitles/anora-subs-esp.vtt"
+         tmdb_ID: "21575",
+         name: "a-prophet",
+         videoSrc: "https://mcseguros.com.mx/cineclub/a-prophet-movie.mp4",
+         subtitlePath: "/static/subtitles/a-prophet-subs-esp.vtt"
       },
       {
          tmdb_ID: "823219",
