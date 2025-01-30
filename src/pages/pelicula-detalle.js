@@ -152,14 +152,14 @@ function PeliculaDetalle() {
           <div className="previous-next__post">
             <Container className="links__container">
               <div>
-                <Link to={`/peliculas-detalle/${prevPost.slug}`}>
+                <a href={`/peliculas-detalle/${prevPost.slug}`}>
                   <GrPrevious /> Anterior
-                </Link>
+                </a>
               </div>
               <div>
-                <Link to={`/peliculas-detalle/${nextPost.slug}`}>
+                <a href={`/peliculas-detalle/${nextPost.slug}`}>
                   Siguiente <GrNext />
-                </Link>
+                </a>
               </div>
             </Container>
           </div>
