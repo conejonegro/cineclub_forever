@@ -9,6 +9,9 @@ import { Link } from "react-router-dom";
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
 import { Helmet } from "react-helmet";
+import saveRating from "../components/ratings/ratings";
+
+
 
 function PeliculaDetalle() {
   const IMG_PATH = process.env.REACT_APP_IMG_PATH;
@@ -79,12 +82,30 @@ function PeliculaDetalle() {
   const prevPost = myPosts[(index - 1 + myPosts.length) % myPosts.length]; // Esto asegura que vuelva al final si es el primero
   //console.log("nextpost", nextPost);
 
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(1);
 
   const handleStarClick = (index) => {
     setRating(index + 1);
+    //saveRating("user182", "movie182", rating ,"asdasdasdasdasd");
     console.log("rating", rating);
   };
+
+  useEffect(() => {
+
+    if (rating > 0) {
+      saveRating("user182", "movie182", rating);
+      console.log("rating", rating);
+  }
+
+    async function saveRatingFNAsync(userId, movieId, rating, timeStamp){
+
+      await saveRating(userId, movieId, rating, timeStamp);
+      //console.log("saveRating", saveRatingFN);
+
+    }
+    
+   
+  },[rating])
 
   return (
     <>
