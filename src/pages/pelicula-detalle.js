@@ -67,9 +67,7 @@ function PeliculaDetalle() {
   }
 */
 
-  // Encontrar en que posicion esta  nuestro slug y capturar el siguiente
 
-  //console.log("misposts", myPosts);
   let index = myPosts.findIndex((post) => {
     return post.slug === slug;
   });
@@ -177,11 +175,12 @@ function PeliculaDetalle() {
                     <b>Fecha de Lanzamiento:</b> {rDate}
                   </p>
                   <p>
-                    <b>Genero:</b>{" "}
+                    <b>Genero: </b>
                     {peliculasDataLooped.generos.map((genero) => {
                       return genero.name + ", ";
                     })}
                   </p>
+                  <span>Calificacion Cineclub: { rating }</span>
                 </div>
 
               </Row>
