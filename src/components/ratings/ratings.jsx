@@ -4,6 +4,11 @@ import { doc, setDoc, serverTimestamp, getFirestore } from "firebase/firestore";
 const firestore = getFirestore(FirebaseSettings);
 
 async function saveRating(userId, movieId, rating) {
+  if (!userId || !movieId || rating === undefined) {
+    console.error("Invalid arguments provided to saveRating");
+    return;
+  }
+
   try {
     const ratingRef = doc(firestore, "ratings", `${userId}_${movieId}`);
     await setDoc(ratingRef, {

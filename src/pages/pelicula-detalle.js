@@ -10,6 +10,7 @@ import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
 import { Helmet } from "react-helmet";
 import saveRating from "../components/ratings/ratings";
+import getUserRating from "../components/ratings/getUserRating";
 
 
 
@@ -68,11 +69,11 @@ function PeliculaDetalle() {
 
   // Encontrar en que posicion esta  nuestro slug y capturar el siguiente
 
-  console.log("misposts", myPosts);
+  //console.log("misposts", myPosts);
   let index = myPosts.findIndex((post) => {
     return post.slug === slug;
   });
-  console.log("miindex", index);
+  //console.log("miindex", index);
   // Si el índice no es válido (es -1 si no encontró el slug), establecemos el índice en 0.
   if (index === -1) {
     index = 0;
@@ -82,30 +83,48 @@ function PeliculaDetalle() {
   const prevPost = myPosts[(index - 1 + myPosts.length) % myPosts.length]; // Esto asegura que vuelva al final si es el primero
   //console.log("nextpost", nextPost);
 
-  const [rating, setRating] = useState(1);
+
+  // GET USER RATING
+  const [userRatingValue, setUserRatingValue] = useState();
+  const [rating, setRating] = useState(); // Inicializa con 0
+  const [shouldSaveRating, setShouldSaveRating] = useState(false);
+
+  useEffect(() => {
+    async function fetchUserRating() {
+      const userRatingValue = await getUserRating(userData.uid, sourceFound.name);
+  
+      // Verifica si userRatingValue es un objeto y si tiene la propiedad rating
+      const rating = userRatingValue?.rating ?? 0; 
+  
+      setUserRatingValue(rating);
+      console.log("userRatingValue", rating);
+    }
+  
+    fetchUserRating();
+  }, [userData.uid, sourceFound.name]);
+  
+
+  useEffect(() => {
+    if (userRatingValue !== undefined) {
+      setRating(userRatingValue);
+    }
+  }, [userRatingValue]);
 
   const handleStarClick = (index) => {
     setRating(index + 1);
-    //saveRating("user182", "movie182", rating ,"asdasdasdasdasd");
-    console.log("rating", rating);
+    setShouldSaveRating(true);
   };
 
   useEffect(() => {
-
-    if (rating > 0) {
-      saveRating("user182", "movie182", rating);
+    if (shouldSaveRating && rating > 0) {
+      saveRating(userData.uid, sourceFound.name, rating);
       console.log("rating", rating);
-  }
-
-    async function saveRatingFNAsync(userId, movieId, rating, timeStamp){
-
-      await saveRating(userId, movieId, rating, timeStamp);
-      //console.log("saveRating", saveRatingFN);
-
+      setShouldSaveRating(false); // Reset the flag
     }
-    
-   
-  },[rating])
+  }, [rating, shouldSaveRating, userData.uid, sourceFound.name]);
+
+  //console.log("rating", rating);
+
 
   return (
     <>
@@ -164,7 +183,7 @@ function PeliculaDetalle() {
                     })}
                   </p>
                 </div>
-               
+
               </Row>
               <div className="rate-this--container">
                 <span className="rate-this--span">Califica esta pelicula</span>
@@ -182,7 +201,7 @@ function PeliculaDetalle() {
                     );
                   })}
                 </div>
-                </div>
+              </div>
             </Container>
           </div>
           {userData ? (
@@ -192,7 +211,7 @@ function PeliculaDetalle() {
             />
           ) : (
             <h5 className="inicia-sesion">
-             Hola!, Inicia Sesion para ver la Pelicula...
+              Hola!, Inicia Sesion para ver la Pelicula...
             </h5>
           )}
           <div className="previous-next__post">
