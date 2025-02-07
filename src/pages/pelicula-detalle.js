@@ -121,7 +121,7 @@ function PeliculaDetalle() {
     }
   }, [rating, shouldSaveRating, userData.uid, sourceFound.name]);
 
-  //console.log("rating", rating);
+  //console.log("rating", rating); ratings
 
 
   return (
