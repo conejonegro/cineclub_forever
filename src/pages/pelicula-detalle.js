@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
 import { Helmet } from "react-helmet";
-import saveRating from "../components/ratings/ratings";
-import getUserRating from "../components/ratings/getUserRating";
+//import saveRating from "../components/ratings/ratings";
+//import getUserRating from "../components/ratings/getUserRating";
 
 
 
@@ -83,11 +83,11 @@ function PeliculaDetalle() {
 
 
   // GET USER RATING
-  const [userRatingValue, setUserRatingValue] = useState();
-  const [rating, setRating] = useState(); // Inicializa con 0
-  const [shouldSaveRating, setShouldSaveRating] = useState(false);
+ // const [userRatingValue, setUserRatingValue] = useState();
+ // const [rating, setRating] = useState(); // Inicializa con 0
+  //const [shouldSaveRating, setShouldSaveRating] = useState(false);
 
-  useEffect(() => {
+ /* useEffect(() => {
     async function fetchUserRating() {
       const userRatingValue = await getUserRating(userData.uid, sourceFound.name);
   
@@ -99,10 +99,10 @@ function PeliculaDetalle() {
     }
   
     fetchUserRating();
-  }, [userData.uid, sourceFound.name]);
+  }, [userData.uid, sourceFound.name]); */
   
 
-  useEffect(() => {
+/*  useEffect(() => {
     if (userRatingValue !== undefined) {
       setRating(userRatingValue);
     }
@@ -121,7 +121,7 @@ function PeliculaDetalle() {
     }
   }, [rating, shouldSaveRating, userData.uid, sourceFound.name]);
 
-  //console.log("rating", rating);
+  //console.log("rating", rating); */
 
 
   return (
@@ -180,27 +180,11 @@ function PeliculaDetalle() {
                       return genero.name + ", ";
                     })}
                   </p>
-                  <span>Calificacion Cineclub: { rating }</span>
+                 
                 </div>
 
               </Row>
-              <div className="rate-this--container">
-                <span className="rate-this--span">Califica esta pelicula</span>
-                <div className="rating">
-                  {[...Array(5)].map((star, index) => {
-                    return (
-                      <span
-                        key={index}
-                        className={`star ${index < rating ? "selected" : ""}`}
-                        onClick={() => handleStarClick(index)}
-                        style={{ cursor: "pointer", color: index < rating ? "gold" : "gray" }}
-                      >
-                        &#9733;
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
+              
             </Container>
           </div>
           {userData ? (

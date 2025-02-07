@@ -1,6 +1,12 @@
 export const Subtitles = () => {
   const sutitlesObject = [
     {
+      tmdb_ID: "1232827",
+      name: "la-chica-de-la-aguja",
+      videoSrc: "https://mcseguros.com.mx/cineclub/the-girl-with-the-needle.mp4",
+      subtitlePath: "/static/subtitles/the-girl-with-the-needle-subs-esp.vtt",
+    },
+    {
       tmdb_ID: "1064213",
       name: "anora",
       videoSrc: "https://mcseguros.com.mx/cineclub/anora.mp4",
