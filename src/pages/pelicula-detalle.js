@@ -163,7 +163,7 @@ function PeliculaDetalle() {
           }}
         >
           <div className="banner-support">
-          <a href={"/checkout"} className="buyButton" onClick={captureBuy}>Comprar</a>
+          <Link to={`/checkout/${peliculasDataLooped.slug}`} className="buyButton" onClick={captureBuy}>Comprar</Link>
             <Container>
               <Row>
                

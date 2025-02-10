@@ -11,12 +11,9 @@ import Login from "../pages/Login";
 import Dashboard from "../dashboard/Dashboard";
 import Registro from "../pages/Registro";
 import ProtectedRoutes from "./ProtectedRoutes";
-<<<<<<< HEAD
 import Checkout from "../pages/Checkout";
-=======
 import Ciclos from "../pages/Ciclos";
 import { CicloDetalle } from "../pages/CicloDetalle";
->>>>>>> bc00877e4f86aa370f08090c1ac33744f4a06056
 
 function CineclubRoutes(){
     return(
@@ -40,7 +37,7 @@ function CineclubRoutes(){
                 <Route path="/Logout" element={ <Logout /> } />
                 <Route path="/admin" element={ <Dashboard /> } /> 
                 <Route path="/profile" element={ <Logout /> } />
-                <Route path="/checkout" element={ <Checkout /> } />
+                <Route path="/checkout/:slug" element={ <Checkout /> } />
                 <Route path="*" element={<p className="container">Not Found 404</p>} />
 
             </Routes>

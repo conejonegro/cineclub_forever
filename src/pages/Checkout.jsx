@@ -1,11 +1,14 @@
 import { useState, useContext  } from 'react';
 import { UserContext } from '../components/UserProvider';
 import { Subtitles } from '../utils/subtitles';
+import { useEffect } from 'react';
 
 
 export default function MovieCheckout() {
-   const { movieToBuyFromStorage, precioCompra } = useContext(UserContext);
+  const { movieToBuyFromStorage, precioCompra } = useContext(UserContext);
   const [total, setTotal] = useState(precioCompra);
+
+
   
 
 
@@ -68,9 +71,10 @@ export default function MovieCheckout() {
             <div className="card-header">
               <h5 className="card-title">Resumen del Pedido</h5>
             </div>
-            <div className="card-body">
+            <div className="card-body text-dark">
               <p><strong>Película:</strong> {movieToBuyFromStorage}</p>
               <p><strong>Formato:</strong> Streaming HD</p>
+              <p><b>Duracion:</b> Siempre</p>
               <hr />
               <div className="d-flex justify-content-between">
                 <span>Subtotal:</span>

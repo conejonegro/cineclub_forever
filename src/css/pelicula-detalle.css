@@ -79,7 +79,7 @@ video{
     color: white;
     text-align: center;
 }
-<<<<<<< HEAD
+
 .buyButton{
     display: block;
    max-width: 8rem; 
@@ -92,8 +92,9 @@ video{
    padding: 1rem;
    text-decoration: none;
    color: black;
+   margin-top:6rem;
 
-=======
+}
 .rate-this--span{
     color: white;
     text-align: right;
@@ -107,5 +108,4 @@ video{
   display: flex;
   flex-direction: column;
   align-items: end;
->>>>>>> bc00877e4f86aa370f08090c1ac33744f4a06056
 }
