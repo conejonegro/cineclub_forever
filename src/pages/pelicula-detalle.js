@@ -8,6 +8,9 @@ import { Subtitles } from "../utils/subtitles";
 import { Link } from "react-router-dom";
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
+import { Helmet } from "react-helmet";
+//import saveRating from "../components/ratings/ratings";
+//import getUserRating from "../components/ratings/getUserRating";
 
 
 
@@ -44,7 +47,7 @@ function PeliculaDetalle() {
     setRDate(slashRDate);
 
     async function fetchposts() {
-      const postsFromApi = await TMDBApiCall();
+      const postsFromApi = await TMDBApiCall(subtitles);
       setPosts(postsFromApi);
       setLoading(false);
     }
@@ -64,13 +67,11 @@ function PeliculaDetalle() {
   }
 */
 
-  // Encontrar en que posicion esta  nuestro slug y capturar el siguiente
 
-  console.log("misposts", myPosts);
   let index = myPosts.findIndex((post) => {
     return post.slug === slug;
   });
-  console.log("miindex", index);
+  //console.log("miindex", index);
   // Si el índice no es válido (es -1 si no encontró el slug), establecemos el índice en 0.
   if (index === -1) {
     index = 0;
@@ -88,8 +89,70 @@ function PeliculaDetalle() {
     // window.location("/checkout");
   }
 
+
+  // GET USER RATING
+ // const [userRatingValue, setUserRatingValue] = useState();
+ // const [rating, setRating] = useState(); // Inicializa con 0
+  //const [shouldSaveRating, setShouldSaveRating] = useState(false);
+
+ /* useEffect(() => {
+    async function fetchUserRating() {
+      const userRatingValue = await getUserRating(userData.uid, sourceFound.name);
+  
+      // Verifica si userRatingValue es un objeto y si tiene la propiedad rating
+      const rating = userRatingValue?.rating ?? 0; 
+  
+      setUserRatingValue(rating);
+      console.log("userRatingValue", rating);
+    }
+  
+    fetchUserRating();
+  }, [userData.uid, sourceFound.name]); */
+  
+
+/*  useEffect(() => {
+    if (userRatingValue !== undefined) {
+      setRating(userRatingValue);
+    }
+  }, [userRatingValue]);
+
+  const handleStarClick = (index) => {
+    setRating(index + 1);
+    setShouldSaveRating(true);
+  };
+
+  useEffect(() => {
+    if (shouldSaveRating && rating > 0) {
+      saveRating(userData.uid, sourceFound.name, rating);
+      console.log("rating", rating);
+      setShouldSaveRating(false); // Reset the flag
+    }
+  }, [rating, shouldSaveRating, userData.uid, sourceFound.name]);
+
+  //console.log("rating", rating); */
+
+
   return (
     <>
+      {!loading && peliculasDataLooped && (
+        <Helmet>
+          <meta
+            name="description"
+            content="Join Cineclub Forever in Guadalajara, Jalisco, Mexico, for a unique cinematic experience! Discover classic and indie films with fellow movie lovers. Watch, discuss, and enjoy film screenings every week!"
+          />
+          <meta property="og:title" content="Peliculas en Cineclub Forever" />
+          <meta
+            property="og:description"
+            content="Join Cineclub Forever in Guadalajara, Jalisco, Mexico"
+          />
+          <meta
+            property="og:image"
+            content={`${IMG_PATH + peliculasDataLooped.poster}`}
+          />
+          <title>{`Película: ${peliculasDataLooped.original_title} | Cineclub Forever`}</title>
+          <link rel="canonical" href="https://cineclub-forever.web.app/" />
+        </Helmet>
+      )}
       {loading ? (
         "loading"
       ) : (
@@ -122,33 +185,40 @@ function PeliculaDetalle() {
                     <b>Fecha de Lanzamiento:</b> {rDate}
                   </p>
                   <p>
-                    <b>Genero:</b>{" "}
+                    <b>Genero: </b>
                     {peliculasDataLooped.generos.map((genero) => {
                       return genero.name + ", ";
                     })}
                   </p>
+                 
                 </div>
+
               </Row>
+              
             </Container>
           </div>
           {userData ? (
-              <Video
-                url={sourceFound?.videoSrc}
-                subtitle={sourceFound?.subtitlePath}
-              />
+            <Video
+              url={sourceFound?.videoSrc}
+              subtitle={sourceFound?.subtitlePath}
+            />
           ) : (
             <h5 className="inicia-sesion">
-              Inicia Sesion para ver el Video...
+              Hola!, Inicia Sesion para ver la Pelicula...
             </h5>
           )}
           <div className="previous-next__post">
             <Container className="links__container">
-            <div>
-              <Link to={`/peliculas-detalle/${prevPost.slug}`}><GrPrevious />  Anterior</Link>
-            </div>
-            <div>
-              <Link to={`/peliculas-detalle/${nextPost.slug}`}>Siguiente  <GrNext /></Link>
-            </div>
+              <div>
+                <a href={`/peliculas-detalle/${prevPost.slug}`}>
+                  <GrPrevious /> Anterior
+                </a>
+              </div>
+              <div>
+                <a href={`/peliculas-detalle/${nextPost.slug}`}>
+                  Siguiente <GrNext />
+                </a>
+              </div>
             </Container>
           </div>
         </section>

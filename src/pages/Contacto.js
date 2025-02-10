@@ -1,12 +1,12 @@
 import Container from "react-bootstrap/esm/Container";
 import '../css/contacto.css';
 import { Helmet } from 'react-helmet';
-function Contacto({ title, description }){
+function Contacto(){
     return(
         <Container>
             <Helmet>
-                <title>{title}</title>
-                <meta name="description" content={description} />
+                <title>{"Contacto | Cineclub Forever"}</title>
+                <meta name="description" content={"Get in touch with Cineclub Forever! Reach out for information on upcoming screenings, membership, or any questions. We're here to connect film lovers in Guadalajara!"} />
             </Helmet>
 
             <div className="contactanos-title-cont">   

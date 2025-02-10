@@ -62,6 +62,8 @@ video{
     text-align: center;
     padding: 32px 0;
     margin-bottom: 0;
+    font-size: 2.25rem;
+    font-weight: 800;
 }
 .comment-box {
     margin: 0 auto;
@@ -77,6 +79,7 @@ video{
     color: white;
     text-align: center;
 }
+<<<<<<< HEAD
 .buyButton{
     display: block;
    max-width: 8rem; 
@@ -90,4 +93,19 @@ video{
    text-decoration: none;
    color: black;
 
+=======
+.rate-this--span{
+    color: white;
+    text-align: right;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 800;
+}
+.rate-this--container{
+  margin-left: 4%;
+  margin-left: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+>>>>>>> bc00877e4f86aa370f08090c1ac33744f4a06056
 }

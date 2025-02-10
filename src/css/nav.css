@@ -1,0 +1,15 @@
+.ciclos__nav-item{
+   color: #545454;
+   display: block;
+   padding: .5rem 1rem;
+   text-decoration: none;
+}
+.navbar-nav .dropdown-menu {
+   position: absolute !important;
+}
+
+@media(max-width:1024px){
+   .nav-ul{
+      justify-content: space-evenly;
+   }
+}
