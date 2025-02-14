@@ -88,7 +88,7 @@ function PeliculaDetalle() {
             />
             <meta
               property="og:image"
-              content={`/posters/${peliculasDataLooped.original_title}`}
+              content={`https://mcseguros.com.mx/cineclub/posters/${peliculasDataLooped.original_title}.jpg`}
             />
             <title>{`Película: ${peliculasDataLooped.original_title} | Cineclub Forever`}</title>
             <link rel="canonical" href="https://cineclub-forever.web.app/" />
