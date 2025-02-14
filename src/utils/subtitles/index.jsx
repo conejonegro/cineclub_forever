@@ -1,5 +1,11 @@
 export const Subtitles = () => {
-  const sutitlesObject = [
+  const sutitlesObject = [ 
+    {
+      tmdb_ID: "1059128",
+      name: "queer",
+      videoSrc: "https://mcseguros.com.mx/cineclub/queer.mp4",
+      subtitlePath: "/static/subtitles/queer-subs-esp.vtt",
+    },
     {
       tmdb_ID: "1232827",
       name: "la-chica-de-la-aguja",

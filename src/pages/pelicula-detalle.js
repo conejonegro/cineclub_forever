@@ -12,8 +12,6 @@ import { Helmet } from "react-helmet";
 //import saveRating from "../components/ratings/ratings";
 //import getUserRating from "../components/ratings/getUserRating";
 
-
-
 function PeliculaDetalle() {
   const IMG_PATH = process.env.REACT_APP_IMG_PATH;
   const [posts, setPosts] = useState([]);
@@ -54,97 +52,21 @@ function PeliculaDetalle() {
     fetchposts();
   }, [slashRDate]);
 
-  //let value = "";
-
-  /* function textAreaValue(e) {
-    value = e.target.value;
-    // console.log(value)
-  } */
-
-  /* function postComment() {
-    // console.log(value)
-    localStorage.setItem("comment", value);
-  }
-*/
-
-
   let index = myPosts.findIndex((post) => {
     return post.slug === slug;
   });
-  //console.log("miindex", index);
-  // Si el índice no es válido (es -1 si no encontró el slug), establecemos el índice en 0.
+
   if (index === -1) {
     index = 0;
   }
-  // Definir el siguiente y el anterior post, con controles adicionales
-  const nextPost = myPosts[(index + 1) % myPosts.length]; // Esto asegura que vuelva al inicio si es el último
-  const prevPost = myPosts[(index - 1 + myPosts.length) % myPosts.length]; // Esto asegura que vuelva al final si es el primero
-  //console.log("nextpost", nextPost);
 
+  const nextPost = myPosts[(index + 1) % myPosts.length];
+  const prevPost = myPosts[(index - 1 + myPosts.length) % myPosts.length];
 
-  // GET USER RATING
- // const [userRatingValue, setUserRatingValue] = useState();
- // const [rating, setRating] = useState(); // Inicializa con 0
-  //const [shouldSaveRating, setShouldSaveRating] = useState(false);
-
- /* useEffect(() => {
-    async function fetchUserRating() {
-      const userRatingValue = await getUserRating(userData.uid, sourceFound.name);
-  
-      // Verifica si userRatingValue es un objeto y si tiene la propiedad rating
-      const rating = userRatingValue?.rating ?? 0; 
-  
-      setUserRatingValue(rating);
-      console.log("userRatingValue", rating);
-    }
-  
-    fetchUserRating();
-  }, [userData.uid, sourceFound.name]); */
-  
-
-/*  useEffect(() => {
-    if (userRatingValue !== undefined) {
-      setRating(userRatingValue);
-    }
-  }, [userRatingValue]);
-
-  const handleStarClick = (index) => {
-    setRating(index + 1);
-    setShouldSaveRating(true);
-  };
-
-  useEffect(() => {
-    if (shouldSaveRating && rating > 0) {
-      saveRating(userData.uid, sourceFound.name, rating);
-      console.log("rating", rating);
-      setShouldSaveRating(false); // Reset the flag
-    }
-  }, [rating, shouldSaveRating, userData.uid, sourceFound.name]);
-
-  //console.log("rating", rating); */
-
+  console.log("peliculas datalooped", peliculasDataLooped);
 
   return (
     <>
-      {!loading && peliculasDataLooped && (
-        <Helmet>
-          <meta
-            name="description"
-            content="Join Cineclub Forever in Guadalajara, Jalisco, Mexico, for a unique cinematic experience! Discover classic and indie films with fellow movie lovers. Watch, discuss, and enjoy film screenings every week!"
-          />
-          <meta property="og:title" content="Peliculas en Cineclub Forever" />
-          <meta
-            property="og:description"
-            content="Join Cineclub Forever in Guadalajara, Jalisco, Mexico"
-          />
-          <meta
-            property="og:image"
-            content={`${IMG_PATH + peliculasDataLooped.poster}`}
-          />
-          <title>{`Película: ${peliculasDataLooped.original_title} | Cineclub Forever`}</title>
-          <link rel="canonical" href="https://cineclub-forever.web.app/" />
-        </Helmet>
-      )}
       {loading ? (
         "loading"
       ) : (
@@ -154,6 +76,23 @@ function PeliculaDetalle() {
             backgroundImage: `url(${IMG_PATH + peliculasDataLooped.poster})`,
           }}
         >
+          <Helmet>
+            <meta
+              name="description"
+              content="Join Cineclub Forever in Guadalajara, Jalisco, Mexico, for a unique cinematic experience! Discover classic and indie films with fellow movie lovers. Watch, discuss, and enjoy film screenings every week!"
+            />
+            <meta property="og:title" content="Peliculas en Cineclub Forever" />
+            <meta
+              property="og:description"
+              content="Join Cineclub Forever in Guadalajara, Jalisco, Mexico"
+            />
+            <meta
+              property="og:image"
+              content={`/posters/${peliculasDataLooped.original_title}`}
+            />
+            <title>{`Película: ${peliculasDataLooped.original_title} | Cineclub Forever`}</title>
+            <link rel="canonical" href="https://cineclub-forever.web.app/" />
+          </Helmet>
           <div className="banner-support">
             <Container className="container">
               <Row>
@@ -167,10 +106,8 @@ function PeliculaDetalle() {
                   <div className="titulo-pelicula">
                     <h1>{peliculasDataLooped.original_title}</h1>
                     <span>({peliculasDataLooped.generos[0].name})</span>
-                    {/* <p>{peliculasDataLooped.genero}</p> */}
                   </div>
                   <p>{peliculasDataLooped.sinopsis}</p>
-
                   <p>
                     <b>Fecha de Lanzamiento:</b> {rDate}
                   </p>
@@ -180,11 +117,8 @@ function PeliculaDetalle() {
                       return genero.name + ", ";
                     })}
                   </p>
-                 
                 </div>
-
               </Row>
-              
             </Container>
           </div>
           {userData ? (
@@ -216,4 +150,5 @@ function PeliculaDetalle() {
     </>
   );
 }
+
 export default PeliculaDetalle;
