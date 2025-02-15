@@ -11,16 +11,20 @@ import { GrPrevious } from "react-icons/gr";
 import { Helmet } from "react-helmet";
 //import saveRating from "../components/ratings/ratings";
 //import getUserRating from "../components/ratings/getUserRating";
+//import getCredits from "../utils/TMDB_credits_call.jsx";
 
 function PeliculaDetalle() {
   const IMG_PATH = process.env.REACT_APP_IMG_PATH;
   const [posts, setPosts] = useState([]);
+  const [credits, setCredits] = useState();
   const [loading, setLoading] = useState(true);
   const [rDate, setRDate] = useState();
   const userDataString = localStorage.getItem("userData");
   const userData = JSON.parse(userDataString);
   const subtitles = Subtitles();
   const { slug } = useParams();
+
+  //console.log("my cresdit", credits);
 
   let myPosts = posts.map((post) => {
     post.title.toLowerCase();
@@ -46,6 +50,8 @@ function PeliculaDetalle() {
 
     async function fetchposts() {
       const postsFromApi = await TMDBApiCall(subtitles);
+     // const credits = await getCredits(1059128);
+      //setCredits(credits);
       setPosts(postsFromApi);
       setLoading(false);
     }

@@ -3,7 +3,7 @@ export const Subtitles = () => {
     {
       tmdb_ID: "1059128",
       name: "queer",
-      videoSrc: "https://mcseguros.com.mx/cineclub/queer.mp4",
+      videoSrc: "https://mcseguros.com.mx/cineclub/queer-movie.mp4",
       subtitlePath: "/static/subtitles/queer-subs-esp.vtt",
     },
     {

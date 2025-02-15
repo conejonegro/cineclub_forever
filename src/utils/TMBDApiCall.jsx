@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Subtitles } from "./subtitles";
 export default function TMDBApiCall(dataArray) {
   //const moviesData = Subtitles();
   const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
