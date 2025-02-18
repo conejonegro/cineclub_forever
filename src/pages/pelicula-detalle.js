@@ -55,7 +55,7 @@ function PeliculaDetalle() {
     }
 
     fetchPosts();
-  }, [slug]);
+  }, [slug, slashRDate]);
 
   useEffect(() => {
     if (peliculasDataLooped) {
