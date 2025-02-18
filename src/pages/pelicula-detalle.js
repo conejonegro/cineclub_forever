@@ -11,7 +11,7 @@ import { GrPrevious } from "react-icons/gr";
 import { Helmet } from "react-helmet";
 //import saveRating from "../components/ratings/ratings";
 //import getUserRating from "../components/ratings/getUserRating";
-//import getCredits from "../utils/TMDB_credits_call.jsx";
+import getCredits from "../utils/TMDB_credits_call.jsx";
 
 function PeliculaDetalle() {
   const IMG_PATH = process.env.REACT_APP_IMG_PATH;
@@ -48,15 +48,25 @@ function PeliculaDetalle() {
   useEffect(() => {
     setRDate(slashRDate);
 
-    async function fetchposts() {
+    async function fetchPosts() {
       const postsFromApi = await TMDBApiCall(subtitles);
-     // const credits = await getCredits(1059128);
-      //setCredits(credits);
       setPosts(postsFromApi);
       setLoading(false);
     }
-    fetchposts();
-  }, [slashRDate]);
+
+    fetchPosts();
+  }, [slug]);
+
+  useEffect(() => {
+    if (peliculasDataLooped) {
+      async function fetchCredits() {
+        const credits = await getCredits(peliculasDataLooped.id);
+        setCredits(credits);
+      }
+
+      fetchCredits();
+    }
+  }, [peliculasDataLooped]);
 
   let index = myPosts.findIndex((post) => {
     return post.slug === slug;
@@ -70,6 +80,7 @@ function PeliculaDetalle() {
   const prevPost = myPosts[(index - 1 + myPosts.length) % myPosts.length];
 
   console.log("peliculas datalooped", peliculasDataLooped);
+  //console.log("credits", credits?.name);
 
   return (
     <>
@@ -112,9 +123,8 @@ function PeliculaDetalle() {
                   <div className="titulo-pelicula">
                     <h1>{peliculasDataLooped.original_title}</h1>
                     <span>({peliculasDataLooped.generos[0].name})</span>
-                  </div>
-                  <p>{peliculasDataLooped.sinopsis}</p>
-                  <p>
+                    <p><b>Director:</b> {credits?.name}</p>
+                    <p>
                     <b>Fecha de Lanzamiento:</b> {rDate}
                   </p>
                   <p>
@@ -123,6 +133,10 @@ function PeliculaDetalle() {
                       return genero.name + ", ";
                     })}
                   </p>
+
+                  </div>
+                  <p>{peliculasDataLooped.sinopsis}</p>
+                  
                 </div>
               </Row>
             </Container>
@@ -131,6 +145,7 @@ function PeliculaDetalle() {
             <Video
               url={sourceFound?.videoSrc}
               subtitle={sourceFound?.subtitlePath}
+              key={slug}
             />
           ) : (
             <h5 className="inicia-sesion">
@@ -140,14 +155,14 @@ function PeliculaDetalle() {
           <div className="previous-next__post">
             <Container className="links__container">
               <div>
-                <a href={`/peliculas-detalle/${prevPost.slug}`}>
+                <Link to={`/peliculas-detalle/${prevPost.slug}`}>
                   <GrPrevious /> Anterior
-                </a>
+                </Link>
               </div>
               <div>
-                <a href={`/peliculas-detalle/${nextPost.slug}`}>
+                <Link to={`/peliculas-detalle/${nextPost.slug}`}>
                   Siguiente <GrNext />
-                </a>
+                </Link>
               </div>
             </Container>
           </div>
