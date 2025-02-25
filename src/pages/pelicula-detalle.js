@@ -20,6 +20,7 @@ function PeliculaDetalle() {
   const [loading, setLoading] = useState(true);
   const [rDate, setRDate] = useState();
   const userDataString = localStorage.getItem("userData");
+  const [alertMessage, setAlertMessage] = useState("");
   const userData = JSON.parse(userDataString);
   const subtitles = Subtitles();
   const { slug } = useParams();
@@ -47,6 +48,11 @@ function PeliculaDetalle() {
 
   useEffect(() => {
     setRDate(slashRDate);
+    setAlertMessage(
+      <>
+        Esta película fue propuesta por <strong>{sourceFound.propuestaPor}</strong> en el ciclo <strong>{sourceFound.ciclo}</strong> y será retirada en dos meses.
+      </>
+    );
 
     async function fetchPosts() {
       const postsFromApi = await TMDBApiCall(subtitles);
@@ -125,18 +131,21 @@ function PeliculaDetalle() {
                     <span>({peliculasDataLooped.generos[0].name})</span>
                     <p><b>Director:</b> {credits?.name}</p>
                     <p>
-                    <b>Fecha de Lanzamiento:</b> {rDate}
-                  </p>
-                  <p>
-                    <b>Genero: </b>
-                    {peliculasDataLooped.generos.map((genero) => {
-                      return genero.name + ", ";
-                    })}
-                  </p>
+                      <b>Fecha de Lanzamiento:</b> {rDate}
+                    </p>
+                    <p>
+                      <b>Genero: </b>
+                      {peliculasDataLooped.generos.map((genero) => {
+                        return genero.name + ", ";
+                      })}
+                    </p>
 
                   </div>
                   <p>{peliculasDataLooped.sinopsis}</p>
-                  
+                  <div className="alert-box">
+                    <p>{alertMessage}</p>
+                  </div>
+
                 </div>
               </Row>
             </Container>
