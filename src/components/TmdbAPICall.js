@@ -56,7 +56,7 @@ function TmdbApiCall() {
 
         <h1 className="my-4">Ultimas peliculas.</h1>
 
-        <Row className="justify-content-center todas-peliculas-imdb">
+        <Row className="justify-content-start todas-peliculas-imdb">
           {myPosts.map((post) => {
             return (
               <div className="movie-container" key={post.id}>

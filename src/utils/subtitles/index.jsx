@@ -1,6 +1,14 @@
 export const Subtitles = () => {
   const sutitlesObject = [ 
     {
+      tmdb_ID: "1013850",
+      name: "un-dolor-real",
+      videoSrc: "https://mcseguros.com.mx/cineclub/a-real-pain.mp4",
+      subtitlePath: "/static/subtitles/a-real-pain-subs-esp.vtt",
+      ciclo: "Oscares",
+      propuestaPor: "Cineclub Forever",
+    },
+    {
       tmdb_ID: "1059128",
       name: "queer",
       videoSrc: "https://mcseguros.com.mx/cineclub/queer-movie.mp4",
@@ -23,14 +31,6 @@ export const Subtitles = () => {
       subtitlePath: "/static/subtitles/anora-subs-esp.vtt",
       ciclo: "Libre",
       propuestaPor: "Cineclub Forever",
-    },
-    {
-      tmdb_ID: "21575",
-      name: "un-profeta",
-      videoSrc: "https://mcseguros.com.mx/cineclub/a-prophet-movie.mp4",
-      subtitlePath: "/static/subtitles/a-prophet-subs-esp.vtt",
-      ciclo: "Libre",
-      propuestaPor: "Alma",
     },
     {
       tmdb_ID: "823219",
