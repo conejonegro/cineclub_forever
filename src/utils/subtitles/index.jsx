@@ -1,6 +1,14 @@
 export const Subtitles = () => {
   const sutitlesObject = [ 
     {
+      tmdb_ID: "931944",
+      name: "el-baño-del-diablo",
+      videoSrc: "https://mcseguros.com.mx/cineclub/the-devils-bath.mp4",
+      subtitlePath: "/static/subtitles/the-devils-bath-subs-esp.vtt",
+      ciclo: "Libre",
+      propuestaPor: "Argenis",
+    },
+    {
       tmdb_ID: "1064486",
       name: "memorias-de-un-caracol",
       videoSrc: "https://mcseguros.com.mx/cineclub/memorias-de-un-caracol.mp4",
