@@ -1,6 +1,14 @@
 export const Subtitles = () => {
   const sutitlesObject = [ 
     {
+      tmdb_ID: "1050035",
+      name: "monstruo",
+      videoSrc: "https://mcseguros.com.mx/cineclub/monster.mp4",
+      subtitlePath: "/static/subtitles/monster-subs-esp.vtt",
+      ciclo: "Orgullo Gay",
+      propuestaPor: "Mingo Morales",
+    },
+    {
       tmdb_ID: "931944",
       name: "el-baño-del-diablo",
       videoSrc: "https://mcseguros.com.mx/cineclub/the-devils-bath.mp4",
