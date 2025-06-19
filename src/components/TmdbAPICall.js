@@ -43,39 +43,6 @@ function TmdbApiCall() {
     };
   });
 
-  const peliculasDataArraySliced = myPosts.slice(0, 4);
-
-  if (isHomePage === "/") {
-    return (
-      <div id="peliculasCont" className="container">
-        <Helmet>
-          <meta name="description" content={"Join Cineclub Forever in Guadalajara, Jalisco, Mexico, for a unique cinematic experience! Discover classic and indie films with fellow movie lovers. Watch, discuss, and enjoy film screenings every week!"} />
-          <title>Cineclub Forever | True Love Design</title>
-          <link rel="canonical" href="http://mysite.com/example" />
-        </Helmet>
-
-        <h1 className="my-4">Ultimas peliculas.</h1>
-
-        <Row className="justify-content-start todas-peliculas-imdb">
-          {myPosts.map((post) => {
-            return (
-              <div className="movie-container" key={post.id}>
-                <Link to={"/peliculas-detalle/" + post.slug}>
-                  <img
-                    src={IMG_PATH + post.poster}
-                    alt={post.nombre}
-                    className="poster "
-                  />
-                  <h2>{post.title}</h2>
-                  <p>{post.sinopsis.substring(0, 80) + "..."}</p>
-                </Link>
-              </div>
-            );
-          })}
-        </Row>
-      </div>
-    );
-  } else {
     return (
       <div id="peliculasCont" className="container my-4">
         <Helmet>
@@ -102,7 +69,7 @@ function TmdbApiCall() {
         </Row>
       </div>
     );
-  }
+  
 }
 
 export { TmdbApiCall };

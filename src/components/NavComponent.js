@@ -16,7 +16,6 @@ function NavComponent() {
 
   const { darkMode } = useContext(UserContext);
 
-  console.log("misciclos", navItems)
 
   return (
     <>
@@ -26,7 +25,7 @@ function NavComponent() {
         expand="lg"
       >
         <Container>
-          <NavLink to="/" className="navbar-brand" id="nav_logo">
+          <NavLink to="/peliculas" className="navbar-brand" id="nav_logo">
             <img
               src="/static/cineclub-transformed-min.png"
               alt="Cineclub Logo"
